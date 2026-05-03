@@ -1,5 +1,6 @@
 /* ============================================================
    AEVIALAB.COM — SHARED DESIGN SYSTEM
+   Editorial-minimal: Instrument Serif display + Inter Tight body
    ============================================================ */
 
 /* ── RESET ── */
@@ -7,31 +8,33 @@
 
 /* ── TOKENS ── */
 :root {
-  --color-bg: #F7F8F7;
+  --color-bg: #FBFBFA;
   --color-surface: #FFFFFF;
-  --color-surface-alt: #EEF2F0;
-  --color-text: #0E1A17;
-  --color-text-secondary: #4D5C57;
-  --color-text-tertiary: #7A8782;
-  --color-accent: #0E9F8A;
-  --color-accent-hover: #12B89F;
-  --color-accent-light: #E2F4F0;
-  --color-accent-gradient: linear-gradient(135deg, #0A7A6A 0%, #18C2A6 100%);
+  --color-surface-alt: #F2F4F2;
+  --color-text: #14201C;
+  --color-text-secondary: #5A6661;
+  --color-text-tertiary: #8B948F;
+  --color-accent: #0E7A68;
+  --color-accent-hover: #0F8C77;
+  --color-accent-light: #E6F1EE;
+  --color-accent-gradient: linear-gradient(135deg, #0A6655 0%, #14A088 100%);
   --color-dark: #1D1D1F;
   --color-dark-surface: #161617;
   --color-dark-surface-alt: #2C2C2E;
-  --color-border: #D2D2D7;
-  --color-border-light: #E8E8ED;
+  --color-border: #DFE3E0;
+  --color-border-light: #ECEFEC;
   --color-success: #30D158;
   --color-warm: #FF9F0A;
   --color-purple: #BF5AF2;
   --color-pink: #FF375F;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
-  --radius-3xl: 32px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 28px;
+  --font-serif: 'Instrument Serif', 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.08), 0 2px 10px rgba(0,0,0,0.04);
@@ -52,11 +55,14 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   color: var(--color-text);
   background: var(--color-bg);
-  line-height: 1.5;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: -0.005em;
   overflow-x: hidden;
+  font-feature-settings: 'ss01', 'cv11';
 }
 
 a { color: inherit; text-decoration: none; }
@@ -84,66 +90,81 @@ button { cursor: pointer; font-family: inherit; border: none; }
 
 /* ── TYPOGRAPHY ── */
 .heading-hero {
-  font-size: clamp(44px, 7vw, 80px);
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 8.5vw, 104px);
   font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
   color: var(--color-text);
 }
 
 .heading-xl {
-  font-size: clamp(34px, 5vw, 60px);
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 5.5vw, 68px);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-}
-
-.heading-lg {
-  font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-}
-
-.heading-md {
-  font-size: clamp(22px, 2.5vw, 32px);
-  font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.02;
   letter-spacing: -0.02em;
 }
 
-.heading-sm {
-  font-size: clamp(18px, 2vw, 24px);
+.heading-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+}
+
+.heading-md {
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 2.2vw, 28px);
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.25;
   letter-spacing: -0.015em;
 }
 
+.heading-sm {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
 .text-lg {
-  font-size: clamp(17px, 1.5vw, 21px);
-  line-height: 1.5;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55;
   color: var(--color-text-secondary);
   font-weight: 400;
+  letter-spacing: -0.005em;
 }
 
 .text-base {
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--color-text-secondary);
+  letter-spacing: -0.003em;
 }
 
 .text-sm {
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--color-text-tertiary);
 }
 
 .label {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.heading-hero em,
+.heading-xl em,
+.heading-lg em {
+  font-style: italic;
   color: var(--color-accent);
+  font-weight: 400;
 }
 
 /* ── BUTTONS ── */
@@ -151,31 +172,33 @@ button { cursor: pointer; font-family: inherit; border: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
-  border-radius: 980px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
   transition: all var(--transition-fast);
   white-space: nowrap;
 }
 
 .btn--primary {
-  background: var(--color-accent);
+  background: var(--color-text);
   color: #fff;
 }
 .btn--primary:hover {
-  background: var(--color-accent-hover);
+  background: var(--color-accent);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(14, 159, 138, 0.3);
 }
 
 .btn--secondary {
   background: transparent;
-  color: var(--color-accent);
-  border: 1.5px solid var(--color-accent);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 .btn--secondary:hover {
-  background: var(--color-accent-light);
+  background: var(--color-text);
+  color: #fff;
+  border-color: var(--color-text);
 }
 
 .btn--dark {
@@ -431,7 +454,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 
 .section--dark .label {
-  color: #64D2FF;
+  color: rgba(255,255,255,0.55);
 }
 
 .section__header {
@@ -496,10 +519,12 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 
 .hero__feature-title {
-  font-size: 15px;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
   color: var(--color-text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  font-style: italic;
 }
 
 .hero__feature-desc {
@@ -611,10 +636,11 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 
 .story__stat-number {
-  font-size: 40px;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  font-weight: 400;
   letter-spacing: -0.03em;
-  color: var(--color-accent);
+  color: var(--color-text);
   line-height: 1;
 }
 
@@ -670,19 +696,22 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 
 .quote-block__text {
-  font-size: clamp(22px, 3vw, 32px);
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.015em;
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
   color: var(--color-text);
   font-style: italic;
 }
 
 .quote-block__source {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 24px;
+  font-size: 12px;
   color: var(--color-text-tertiary);
   font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 /* ── SOLUTION BANNERS (Homepage) ── */
@@ -1482,4 +1511,92 @@ button { cursor: pointer; font-family: inherit; border: none; }
     width: 100%;
     justify-content: flex-end;
   }
+}
+
+/* ────────────────────────────────────────────────────────────
+   MEDIA PLACEHOLDER — clean blank panel for forthcoming images
+   ──────────────────────────────────────────────────────────── */
+.media-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, #F2F4F2 0%, #E6EBE8 100%);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--color-text-tertiary);
+}
+.media-placeholder--wide  { aspect-ratio: 16 / 9; }
+.media-placeholder--tall  { aspect-ratio: 3 / 4; }
+.media-placeholder--square{ aspect-ratio: 1 / 1; }
+.media-placeholder--dark {
+  background: linear-gradient(135deg, #1B2A26 0%, #14201C 100%);
+  border-color: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.45);
+}
+.media-placeholder__icon {
+  width: 28px; height: 28px;
+  opacity: 0.55;
+}
+.media-placeholder__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.media-placeholder__sublabel {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+.media-placeholder--dark .media-placeholder__sublabel {
+  color: rgba(255,255,255,0.65);
+}
+
+/* Subtle grid texture for placeholders */
+.media-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(20,32,28,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20,32,28,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+.media-placeholder--dark::before {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+}
+
+/* Section header refinements (smaller, more editorial) */
+.section__header { max-width: 760px; }
+.section__header .label { margin-bottom: 20px; display: inline-block; }
+
+/* Soften card borders globally for the minimal look */
+.pillar, .modality, .gi-card, .routing-card,
+.policy-card, .term, .app-card {
+  box-shadow: none;
+  border-color: var(--color-border-light);
+}
+
+/* Editorial logo treatment */
+.nav__logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.nav__logo::after {
+  content: '';
 }

@@ -5,379 +5,358 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aevia Lab — Decoding the Genome–Food Interface</title>
 <meta name="description" content="Aevia Lab translates nutrigenomic research into actionable cellular optimization. Epigenetic modulation, autophagy, mitochondrial output and precision phytochemistry for the post-lifespan era.">
-<meta name="theme-color" content="#0E9F8A">
+<meta name="theme-color" content="#0E7A68">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <style>
-  /* Aevia Lab — branded media panels (self-contained, no external assets) */
-  .panel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background:
-      radial-gradient(circle at 25% 30%, rgba(24, 194, 166, 0.35), transparent 55%),
-      radial-gradient(circle at 75% 70%, rgba(10, 122, 106, 0.45), transparent 60%),
-      linear-gradient(135deg, #062925 0%, #0E1A17 100%);
-    overflow: hidden;
+  /* Hero */
+  .hero {
+    padding: 180px 0 60px;
+    text-align: center;
+    background: var(--color-bg);
   }
-  .panel svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .panel--light {
-    background:
-      radial-gradient(circle at 30% 30%, rgba(14, 159, 138, 0.18), transparent 55%),
-      radial-gradient(circle at 70% 70%, rgba(24, 194, 166, 0.14), transparent 55%),
-      linear-gradient(135deg, #F1FAF7 0%, #E2F4F0 100%);
+  .hero .label { display: block; margin-bottom: 28px; color: var(--color-text-tertiary); }
+  .hero__title { max-width: 1080px; margin: 0 auto; }
+  .hero__sub {
+    max-width: 620px;
+    margin: 32px auto 0;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
   }
-  .panel__caption {
-    position: absolute;
-    left: 24px; bottom: 20px;
-    font-size: 12px;
-    letter-spacing: 0.14em;
+  .hero__cta { margin-top: 40px; display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .hero__media {
+    max-width: 1180px;
+    margin: 96px auto 0;
+    padding: 0 clamp(24px, 5vw, 80px);
+  }
+
+  .hero__meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 980px;
+    margin: 96px auto 0;
+    padding: 36px clamp(24px, 5vw, 60px);
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .hero__meta > div { text-align: center; }
+  .hero__meta-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    font-weight: 500;
+    color: var(--color-text-tertiary);
+    display: block;
+    margin-bottom: 10px;
   }
-  .panel--light .panel__caption { color: rgba(14, 26, 23, 0.45); }
-
-  /* Hero molecular grid background */
-  .hero { position: relative; overflow: hidden; }
-  .hero__bg {
-    position: absolute; inset: 0; z-index: 0;
-    background:
-      radial-gradient(circle at 50% 0%, rgba(14, 159, 138, 0.10), transparent 60%),
-      linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%);
+  .hero__meta-value {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
   }
-  .hero__bg svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.35; }
-  .hero > .container { position: relative; z-index: 1; }
-  .hero__title-accent {
-    background: var(--color-accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  @media (max-width: 760px) {
+    .hero { padding: 140px 0 40px; }
+    .hero__meta { grid-template-columns: repeat(2, 1fr); gap: 24px 0; padding: 28px 16px; }
   }
 
-  /* Pillar grid (three pillars of cellular vitality) */
+  /* Story sections */
+  .story { gap: 96px; align-items: center; }
+  .story__content { gap: 24px; }
+  .story__content .label { color: var(--color-text-tertiary); }
+  @media (max-width: 900px) { .story { gap: 48px; } }
+
+  /* Pillars */
   .pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 0;
+    border-top: 1px solid var(--color-border-light);
+    border-left: 1px solid var(--color-border-light);
+    margin-top: 16px;
   }
   .pillar {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    padding: 36px 32px;
-    display: flex; flex-direction: column; gap: 14px;
-    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    background: transparent;
+    border: 0;
+    border-right: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+    border-radius: 0;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: background var(--transition-fast);
   }
-  .pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .pillar__icon {
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    background: var(--color-accent-light);
-    color: var(--color-accent);
-    display: flex; align-items: center; justify-content: center;
+  .pillar:hover { background: var(--color-surface); transform: none; box-shadow: none; }
+  .pillar__num {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
   }
-  .pillar__title { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
-  .pillar__desc { font-size: 15px; line-height: 1.6; color: var(--color-text-secondary); }
+  .pillar__title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    color: var(--color-text);
+  }
+  .pillar__title em { font-style: italic; color: var(--color-accent); }
+  .pillar__desc { font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); }
   @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
 
-  /* Modality strip (4 cards) */
+  /* Modalities */
   .modality-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 0;
+    border-top: 1px solid var(--color-border-light);
+    margin-top: 56px;
   }
   .modality {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-xl);
-    padding: 28px 24px;
-    display: flex; flex-direction: column; gap: 10px;
+    background: transparent;
+    border: 0;
+    border-right: 1px solid var(--color-border-light);
+    border-radius: 0;
+    padding: 36px 28px 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
+  .modality:last-child { border-right: 0; }
   .modality__num {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
-    color: var(--color-accent); text-transform: uppercase;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
-  .modality__title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+  .modality__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
   .modality__desc { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); }
-  @media (max-width: 900px) { .modality-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 520px) { .modality-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) {
+    .modality-grid { grid-template-columns: 1fr 1fr; }
+    .modality { padding: 28px; border-bottom: 1px solid var(--color-border-light); }
+    .modality:nth-child(2n) { border-right: 0; }
+  }
+  @media (max-width: 520px) {
+    .modality-grid { grid-template-columns: 1fr; }
+    .modality { border-right: 0; }
+  }
 
-  /* Manifesto block */
+  /* Manifesto */
   .manifesto {
-    background: var(--color-dark);
+    background: var(--color-text);
     color: #fff;
-    padding: 120px 0;
+    padding: 140px 0;
     text-align: center;
   }
+  .manifesto .label { color: rgba(255,255,255,0.45); display: block; margin-bottom: 32px; }
   .manifesto p {
-    max-width: 820px;
+    font-family: var(--font-serif);
+    max-width: 880px;
     margin: 0 auto;
-    font-size: clamp(22px, 2.8vw, 30px);
-    line-height: 1.4;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.18;
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.018em;
     color: rgba(255,255,255,0.92);
   }
-  .manifesto .label { color: #18C2A6; }
+  .manifesto p em { font-style: italic; color: #fff; }
+  .manifesto .btn--primary { background: #fff; color: var(--color-text); }
+  .manifesto .btn--primary:hover { background: var(--color-accent); color: #fff; }
 </style>
 </head>
 <body>
 
 <div id="header-placeholder"></div>
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero__bg">
-    <svg viewBox="0 0 1600 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#0E9F8A" stroke-width="0.5" opacity="0.4"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)"/>
-      <g stroke="#0E9F8A" stroke-width="1" fill="none" opacity="0.35">
-        <circle cx="240" cy="180" r="3" fill="#0E9F8A"/>
-        <circle cx="540" cy="320" r="3" fill="#0E9F8A"/>
-        <circle cx="880" cy="220" r="3" fill="#0E9F8A"/>
-        <circle cx="1180" cy="380" r="3" fill="#0E9F8A"/>
-        <circle cx="1380" cy="160" r="3" fill="#0E9F8A"/>
-        <line x1="240" y1="180" x2="540" y2="320"/>
-        <line x1="540" y1="320" x2="880" y2="220"/>
-        <line x1="880" y1="220" x2="1180" y2="380"/>
-        <line x1="1180" y1="380" x2="1380" y2="160"/>
-        <line x1="240" y1="180" x2="880" y2="220"/>
-      </g>
-    </svg>
-  </div>
-  <div class="container" style="text-align: center; padding-top: 24px;">
-    <span class="label" style="display:inline-block; margin-bottom: 24px;">Computational Biology &middot; Precision Nutrition</span>
+  <div class="container">
+    <span class="label">Aevia Lab — Est. 2026</span>
     <h1 class="heading-hero hero__title">
-      Age is Epigenetic.<br>
-      <span class="hero__title-accent">Take Control of Your Cellular Expression.</span>
+      Age is epigenetic.<br>
+      Take control of your <em>cellular expression.</em>
     </h1>
-    <p class="text-lg hero__subtitle" style="max-width: 720px; margin-top: 24px;">
-      Aevia Lab exists at the intersection of computational biology and precision nutrition, decoding the molecular language of the human body. Your DNA is a baseline — not a destination.
+    <p class="hero__sub">
+      Aevia Lab exists at the intersection of computational biology and precision nutrition — decoding the molecular language of the human body. Your DNA is a baseline, not a destination.
     </p>
-
-    <div style="display: inline-flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; justify-content: center;">
-      <a href="/science" class="btn btn--primary">Explore the Science</a>
-      <a href="/apps" class="btn btn--secondary">View Applications</a>
+    <div class="hero__cta">
+      <a href="/science" class="btn btn--primary">Read the science</a>
+      <a href="/apps" class="btn btn--secondary">View applications</a>
     </div>
 
-    <div class="hero__features" style="margin-top: 80px;">
-      <div class="hero__feature">
-        <svg class="hero__feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c4 4 12 12 16 16M20 4C16 8 8 16 4 20"/></svg>
-        <span class="hero__feature-title">Nutrigenomic</span>
-        <span class="hero__feature-desc">Mapping bioactives to gene-expression pathways</span>
-      </div>
-      <div class="hero__feature">
-        <svg class="hero__feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
-        <span class="hero__feature-title">Epigenetic</span>
-        <span class="hero__feature-desc">Modulating SIRT1, AMPK and methylation states</span>
-      </div>
-      <div class="hero__feature">
-        <svg class="hero__feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-        <span class="hero__feature-title">Mitochondrial</span>
-        <span class="hero__feature-desc">Restoring cellular energy output to youthful levels</span>
-      </div>
-      <div class="hero__feature">
-        <svg class="hero__feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 5l14 14M5 19L19 5"/></svg>
-        <span class="hero__feature-title">Senolytic</span>
-        <span class="hero__feature-desc">Clearing the senescent cells that drive inflammaging</span>
-      </div>
+    <div class="hero__meta">
+      <div><span class="hero__meta-label">Field</span><span class="hero__meta-value">Nutrigenomics</span></div>
+      <div><span class="hero__meta-label">Lens</span><span class="hero__meta-value">Epigenetic</span></div>
+      <div><span class="hero__meta-label">Target</span><span class="hero__meta-value">Mitochondrial</span></div>
+      <div><span class="hero__meta-label">Method</span><span class="hero__meta-value">Senolytic</span></div>
+    </div>
+  </div>
+
+  <div class="hero__media">
+    <div class="media-placeholder media-placeholder--wide media-placeholder--dark">
+      <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <span class="media-placeholder__label">Hero film &middot; placeholder</span>
+      <span class="media-placeholder__sublabel">A laboratory study, in motion.</span>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     STORY 1 — Decoding the Genome–Food Interface
-     ============================================================ -->
+<!-- STORY 01 -->
 <section class="section" id="genome-food">
   <div class="container">
     <div class="story">
       <div class="story__content">
-        <span class="label">Genome &times; Food</span>
-        <h2 class="heading-lg">Decoding the Genome–Food Interface.</h2>
+        <span class="label">01 — Genome &times; Food</span>
+        <h2 class="heading-lg">Decoding the genome–food <em>interface.</em></h2>
         <p class="text-base">
-          Historically, human nutrition was approached as a simple thermodynamic equation: calories in, energy out. Today, we understand that the food we consume is actually a highly complex biological code. <strong style="color: var(--color-text);">Nutrigenomics</strong> is the scientific study of the bidirectional relationship between the human genome and our nutritional environment.
+          Historically, human nutrition was approached as a thermodynamic equation: calories in, energy out. Today, we understand the food we consume is a complex biological code. Nutrigenomics is the bidirectional study of how the human genome and our nutritional environment shape each other.
         </p>
         <p class="text-base">
-          Every day, the bioactive molecules you ingest act as chemical signals that communicate directly with your DNA. They dictate how your genes are expressed, influence DNA methylation, and regulate the biological pathways responsible for healthspan and aging.
+          Every day, the bioactive molecules you ingest act as chemical signals that communicate directly with your DNA — dictating gene expression, influencing methylation, and regulating the pathways behind healthspan and aging.
         </p>
         <p class="text-base">
-          At Aevia Lab, we synthesize decades of genomic research to map how specific phytochemicals — found in precise ratios — can modulate gene expression, protect telomere integrity, and mitigate the molecular damage that leads to cellular senescence.
+          Aevia Lab synthesizes decades of genomic research to map how specific phytochemicals — in precise ratios — modulate gene expression, protect telomere integrity, and mitigate the molecular damage of cellular senescence.
         </p>
       </div>
       <div class="story__media">
-        <div class="panel">
-          <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- DNA helix -->
-            <g stroke="#18C2A6" stroke-width="1.4" fill="none" opacity="0.85">
-              <path d="M140,30 C220,80 220,160 140,210 C220,260 220,300 140,330" />
-              <path d="M260,30 C180,80 180,160 260,210 C180,260 180,300 260,330" />
-            </g>
-            <g stroke="#0E9F8A" stroke-width="1" opacity="0.7">
-              <line x1="155" y1="50" x2="245" y2="50"/>
-              <line x1="170" y1="80" x2="230" y2="80"/>
-              <line x1="180" y1="110" x2="220" y2="110"/>
-              <line x1="180" y1="140" x2="220" y2="140"/>
-              <line x1="170" y1="170" x2="230" y2="170"/>
-              <line x1="155" y1="200" x2="245" y2="200"/>
-              <line x1="170" y1="230" x2="230" y2="230"/>
-              <line x1="180" y1="260" x2="220" y2="260"/>
-              <line x1="180" y1="290" x2="220" y2="290"/>
-            </g>
-            <g fill="#18C2A6">
-              <circle cx="155" cy="50" r="3"/><circle cx="245" cy="50" r="3"/>
-              <circle cx="180" cy="110" r="3"/><circle cx="220" cy="110" r="3"/>
-              <circle cx="170" cy="170" r="3"/><circle cx="230" cy="170" r="3"/>
-              <circle cx="180" cy="260" r="3"/><circle cx="220" cy="260" r="3"/>
-            </g>
-          </svg>
-          <span class="panel__caption">Bidirectional Genome &times; Nutrition Signalling</span>
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="media-placeholder__label">Image &middot; placeholder</span>
+          <span class="media-placeholder__sublabel">Genome &times; nutrition signalling</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     STORY 2 — From Lifespan to Cellular Rejuvenation
-     ============================================================ -->
+<!-- STORY 02 -->
 <section class="section section--alt">
   <div class="container">
     <div class="story story--reverse">
       <div class="story__content">
-        <span class="label">Post-Lifespan Era</span>
-        <h2 class="heading-lg">From Lifespan to Cellular Rejuvenation.</h2>
+        <span class="label">02 — Post-lifespan era</span>
+        <h2 class="heading-lg">From lifespan to <em>cellular rejuvenation.</em></h2>
         <p class="text-base">
-          The biotechnology industry has crossed a critical threshold. With recent FDA clearances of the first human clinical trials utilizing partial epigenetic reprogramming, the scientific consensus has fundamentally shifted. The goal is no longer simply extending lifespan — it is achieving <strong style="color: var(--color-text);">functional cellular rejuvenation</strong>.
+          The biotechnology industry has crossed a critical threshold. With recent FDA clearances of the first human clinical trials utilizing partial epigenetic reprogramming, the scientific consensus has fundamentally shifted. The goal is no longer extending lifespan — it is achieving functional cellular rejuvenation.
         </p>
         <p class="text-base">
-          While clinical gene therapies target severe pathologies through viral vectors, the broader frontier of longevity science focuses on non-invasive, accessible interventions. Today's leading bio-gerontology research confirms that dietary bioactives and metabolic timing are among the most powerful — and safest — epigenetic modulators available.
+          While clinical gene therapies target severe pathologies through viral vectors, the broader frontier of longevity science focuses on non-invasive interventions. Today's leading bio-gerontology research confirms that dietary bioactives and metabolic timing are among the safest, most powerful epigenetic modulators available.
         </p>
         <p class="text-base">
-          By strategically manipulating biological inputs, we can activate SIRT1 longevity genes, stimulate AMPK energy pathways, and naturally prompt the body to repair DNA — without the risks associated with genetic modification.
+          By strategically manipulating biological inputs, we can activate SIRT1 longevity genes, stimulate AMPK energy pathways, and naturally prompt the body to repair its own DNA — without the risks associated with genetic modification.
         </p>
       </div>
       <div class="story__media">
-        <div class="panel panel--light">
-          <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g fill="none" stroke="#0A7A6A" stroke-width="1.2">
-              <circle cx="200" cy="160" r="120" opacity="0.25"/>
-              <circle cx="200" cy="160" r="92" opacity="0.35"/>
-              <circle cx="200" cy="160" r="64" opacity="0.45"/>
-              <circle cx="200" cy="160" r="36" opacity="0.65"/>
-            </g>
-            <g fill="#0A7A6A">
-              <circle cx="200" cy="40" r="4"/>
-              <circle cx="320" cy="160" r="4"/>
-              <circle cx="200" cy="280" r="4"/>
-              <circle cx="80" cy="160" r="4"/>
-            </g>
-            <text x="200" y="166" text-anchor="middle" fill="#0A7A6A" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="0.15em">SIRT1 · AMPK</text>
-          </svg>
-          <span class="panel__caption">Pathway Activation Schematic</span>
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+          <span class="media-placeholder__label">Image &middot; placeholder</span>
+          <span class="media-placeholder__sublabel">SIRT1 / AMPK pathway diagram</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     QUOTE
-     ============================================================ -->
-<section class="section" style="padding: 80px 0;">
+<!-- QUOTE -->
+<section class="section" style="padding: 120px 0;">
   <div class="container">
     <blockquote class="quote-block">
       <p class="quote-block__text">"Your DNA is the hardware. The food you eat — and when you eat it — is the software that decides which programs your cells run today."</p>
-      <p class="quote-block__source">Aevia Lab Research Brief, 2026</p>
+      <p class="quote-block__source">Aevia Lab Research Brief &middot; 2026</p>
     </blockquote>
   </div>
 </section>
 
-<!-- ============================================================
-     PILLARS — Architecture of Optimization
-     ============================================================ -->
-<section class="section section--alt" id="pillars">
+<!-- PILLARS -->
+<section class="section section--alt" id="pillars" style="padding: 120px 0;">
   <div class="container">
-    <div class="section__header">
-      <span class="label">The Architecture of Optimization</span>
-      <h2 class="heading-xl">Three Pillars of Cellular Vitality.</h2>
-      <p class="text-lg" style="margin-top: 16px;">Aevia Lab translates complex cellular mechanisms into actionable biological insights organized around the three systems most responsive to non-invasive intervention.</p>
+    <div class="section__header" style="text-align: left; max-width: 880px; margin: 0 0 64px;">
+      <span class="label">The architecture of optimization</span>
+      <h2 class="heading-xl">Three pillars of <em>cellular vitality.</em></h2>
+      <p class="text-lg" style="margin-top: 20px; max-width: 640px;">Aevia Lab translates complex cellular mechanisms into actionable biological insights — organized around the three systems most responsive to non-invasive intervention.</p>
     </div>
 
     <div class="pillars">
       <article class="pillar">
-        <div class="pillar__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="7" cy="6" r="1.5" fill="currentColor"/><circle cx="14" cy="12" r="1.5" fill="currentColor"/><circle cx="9" cy="18" r="1.5" fill="currentColor"/></svg>
-        </div>
-        <h3 class="pillar__title">Autophagy &amp; Senolytic Clearance</h3>
-        <p class="pillar__desc">When the body enters specific metabolic states, such as timed fasting, it triggers autophagy — the cell's internal recycling program. This process targets and dismantles damaged proteins and senescent "zombie" cells, converting cellular waste into fresh building blocks.</p>
+        <span class="pillar__num">Pillar 01</span>
+        <h3 class="pillar__title">Autophagy &amp; senolytic <em>clearance.</em></h3>
+        <p class="pillar__desc">When the body enters specific metabolic states — such as timed fasting — it triggers autophagy, the cell's internal recycling program. This dismantles damaged proteins and senescent "zombie" cells, converting cellular waste into fresh building blocks.</p>
       </article>
 
       <article class="pillar">
-        <div class="pillar__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
-        </div>
-        <h3 class="pillar__title">Oxidative Stress Modulation</h3>
-        <p class="pillar__desc">Unstable free radicals degrade cellular membranes and accelerate the shortening of telomeres. We analyze how high-density plant polyphenols and antioxidants can systematically neutralize this oxidative stress, preventing chronic "inflammaging."</p>
+        <span class="pillar__num">Pillar 02</span>
+        <h3 class="pillar__title">Oxidative stress <em>modulation.</em></h3>
+        <p class="pillar__desc">Unstable free radicals degrade cellular membranes and accelerate telomere shortening. We analyze how high-density plant polyphenols and antioxidants systematically neutralize this oxidative load, preventing chronic inflammaging.</p>
       </article>
 
       <article class="pillar">
-        <div class="pillar__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-4 3-7 9-7s9 3 9 7-3 7-9 7-9-3-9-7z"/><path d="M7 12h10M7 9c2 1 8 1 10 0M7 15c2-1 8-1 10 0"/></svg>
-        </div>
-        <h3 class="pillar__title">Mitochondrial Output</h3>
-        <p class="pillar__desc">Mitochondria are the power plants of human biology. We explore how specific nutrient catalysts — such as the conversion of ellagitannins to Urolithin A — can enhance mitochondrial biogenesis, restoring cellular energy production to youthful levels.</p>
+        <span class="pillar__num">Pillar 03</span>
+        <h3 class="pillar__title">Mitochondrial <em>output.</em></h3>
+        <p class="pillar__desc">Mitochondria are the power plants of human biology. We explore how nutrient catalysts — such as the conversion of ellagitannins to Urolithin A — enhance mitochondrial biogenesis, restoring cellular energy production to youthful levels.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     MODALITIES — Systems-Biology Approach
-     ============================================================ -->
-<section class="section">
+<!-- IMAGE BREAK -->
+<section style="padding: 120px 0;">
   <div class="container">
-    <div class="section__header">
-      <span class="label">A Systems-Biology Approach</span>
-      <h2 class="heading-xl">Four Modalities. One Integrated Healthspan Framework.</h2>
-      <p class="text-lg" style="margin-top: 16px;">True precision health cannot exist in a vacuum. It requires a systemic, multi-layered approach to human biology.</p>
+    <div class="media-placeholder media-placeholder--wide">
+      <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span class="media-placeholder__label">Editorial photograph &middot; placeholder</span>
+      <span class="media-placeholder__sublabel">Inside the lab — wide-format hero</span>
+    </div>
+  </div>
+</section>
+
+<!-- MODALITIES -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section__header" style="text-align: left; max-width: 880px; margin: 0 0 32px;">
+      <span class="label">A systems-biology approach</span>
+      <h2 class="heading-xl">Four modalities. One <em>integrated framework.</em></h2>
+      <p class="text-lg" style="margin-top: 20px; max-width: 640px;">True precision health cannot exist in a vacuum. It requires a systemic, multi-layered approach to human biology.</p>
     </div>
 
     <div class="modality-grid">
       <div class="modality">
-        <span class="modality__num">01 / Telemetry</span>
+        <span class="modality__num">01</span>
         <h3 class="modality__title">Nutritional Telemetry</h3>
         <p class="modality__desc">Mapping complex phytochemical payloads to specific biological targets, ensuring the precise intake of vital biomaterials.</p>
       </div>
       <div class="modality">
-        <span class="modality__num">02 / Translation</span>
+        <span class="modality__num">02</span>
         <h3 class="modality__title">Bioactive Translation</h3>
         <p class="modality__desc">Decoding the molecular value of organic compounds to understand their exact epigenetic impact.</p>
       </div>
       <div class="modality">
-        <span class="modality__num">03 / Rhythm</span>
+        <span class="modality__num">03</span>
         <h3 class="modality__title">Circadian Metabolism</h3>
         <p class="modality__desc">Aligning metabolic states with natural biological rhythms to maximize gene expression and tissue repair.</p>
       </div>
       <div class="modality">
-        <span class="modality__num">04 / Intervention</span>
+        <span class="modality__num">04</span>
         <h3 class="modality__title">Targeted Intervention</h3>
-        <p class="modality__desc">Identifying optimization gaps and exploring highly bioavailable compounds designed to support systemic cellular function.</p>
+        <p class="modality__desc">Identifying optimization gaps and exploring highly bioavailable compounds that support systemic cellular function.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     APPLICATIONS — Solution Banners (placeholders)
+     APPLICATIONS — DO NOT MODIFY (preserved per request)
      ============================================================ -->
 <section class="section" id="solutions" style="padding-bottom: 0;">
   <div class="container">
@@ -443,17 +422,15 @@
   </div>
 </section>
 
-<!-- ============================================================
-     MANIFESTO — Democratizing Precision Health
-     ============================================================ -->
+<!-- MANIFESTO -->
 <section class="manifesto">
   <div class="container">
-    <span class="label" style="display:block; margin-bottom: 24px;">Democratizing Precision Health</span>
+    <span class="label">Democratizing precision health</span>
     <p>
-      Aevia Lab is dedicated to advancing the public understanding of precision health. By demystifying the science of nutrigenomics, we empower individuals to architect their own biology — moving humanity from reactive healthcare into an era of <strong style="color:#fff; font-weight:500;">proactive, cellular mastery</strong>.
+      We translate clinical data into everyday optimization — moving humanity from reactive healthcare into an era of <em>proactive, cellular mastery.</em>
     </p>
-    <div style="margin-top: 48px;">
-      <a href="/science" class="btn btn--primary">Read the Research</a>
+    <div style="margin-top: 56px;">
+      <a href="/science" class="btn btn--primary">Read the research</a>
     </div>
   </div>
 </section>
