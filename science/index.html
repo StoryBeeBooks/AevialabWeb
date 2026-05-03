@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Science — Aevia Lab</title>
+<meta name="description" content="The mechanisms behind Aevia Lab: nutrigenomics, partial epigenetic reprogramming, autophagy, oxidative modulation and mitochondrial biogenesis explained.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .science-hero { padding: 160px 0 80px; text-align: center; background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%); }
+  .science-hero .label { display: block; margin-bottom: 16px; }
+  .science-hero .heading-xl { max-width: 820px; margin: 0 auto 20px; }
+  .science-hero .text-lg { max-width: 680px; margin: 0 auto; }
+  .pillar-section { padding: 100px 0; border-top: 1px solid var(--color-border-light); }
+  .pillar-section--alt { background: var(--color-surface-alt); border-top-color: transparent; }
+  .pillar-anchor { scroll-margin-top: 100px; }
+  .pillar-grid { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; }
+  .pillar-grid .label { display: block; margin-bottom: 12px; }
+  .pillar-grid h2 { font-size: clamp(28px, 3.2vw, 40px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.15; }
+  .pillar-grid p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin-top: 16px; }
+  .pillar-grid ul { margin-top: 16px; padding-left: 20px; color: var(--color-text-secondary); }
+  .pillar-grid li { font-size: 16px; line-height: 1.7; margin-bottom: 8px; }
+  .pillar-grid li strong { color: var(--color-text); font-weight: 600; }
+  @media (max-width: 900px) { .pillar-grid { grid-template-columns: 1fr; gap: 24px; } }
+  .term-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+  .term { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 24px; }
+  .term__name { font-size: 15px; font-weight: 600; color: var(--color-accent); letter-spacing: 0.02em; }
+  .term__def { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-top: 8px; }
+  @media (max-width: 700px) { .term-list { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="science-hero">
+  <div class="container">
+    <span class="label">The Science</span>
+    <h1 class="heading-xl">The Molecular Language of Healthspan.</h1>
+    <p class="text-lg">A working overview of the biological mechanisms Aevia Lab translates into precision protocols. Grounded in peer-reviewed nutrigenomics, bio-gerontology and computational biology.</p>
+  </div>
+</section>
+
+<section class="pillar-section pillar-anchor" id="autophagy">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">Pillar 01</span>
+        <h2>Autophagy &amp; Senolytic Clearance.</h2>
+      </div>
+      <div>
+        <p>Autophagy is the cell's intrinsic recycling program. When the body enters specific metabolic states — most notably timed fasting and caloric restriction — autophagy is upregulated through nutrient-sensing pathways including mTOR inhibition and AMPK activation. The cell identifies misfolded proteins, dysfunctional organelles and senescent components, packages them into autophagosomes, and breaks them down into amino-acid building blocks for reuse.</p>
+        <p>The accumulation of senescent ("zombie") cells is one of the central drivers of biological aging. These cells stop dividing but resist apoptosis, secreting a pro-inflammatory cocktail (the senescence-associated secretory phenotype) that damages neighbouring tissue. Senolytic phytochemicals — including fisetin, quercetin and specific flavonoids — selectively trigger apoptosis in senescent cells without harming healthy ones.</p>
+        <ul>
+          <li><strong>Mechanism.</strong> mTOR inhibition &rarr; ULK1 activation &rarr; autophagosome formation &rarr; lysosomal degradation.</li>
+          <li><strong>Triggers.</strong> Fasting windows &gt; 14 hours, polyphenol intake, exercise-induced metabolic stress.</li>
+          <li><strong>Endpoint.</strong> Reduced senescent cell burden, lower inflammaging markers, restored tissue homeostasis.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-section--alt pillar-anchor" id="oxidative">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">Pillar 02</span>
+        <h2>Oxidative Stress Modulation.</h2>
+      </div>
+      <div>
+        <p>Reactive oxygen species (ROS) are an unavoidable byproduct of mitochondrial respiration. At physiological levels they serve as signalling molecules; in excess they oxidize lipid membranes, fragment DNA and accelerate telomere attrition. Chronic oxidative load is a primary mechanism behind "inflammaging" — the low-grade systemic inflammation that underlies most age-related disease.</p>
+        <p>The body's endogenous antioxidant systems (glutathione, superoxide dismutase, catalase) are themselves regulated by gene-expression cascades, most notably the Nrf2/Keap1 pathway. High-density plant polyphenols — sulforaphane from cruciferous vegetables, EGCG from green tea, anthocyanins from berries — act not as direct radical scavengers but as <em>hormetic activators</em> that train the body to upregulate its own antioxidant defenses.</p>
+        <ul>
+          <li><strong>Pathway.</strong> Polyphenol intake &rarr; Nrf2 nuclear translocation &rarr; transcription of cytoprotective enzymes.</li>
+          <li><strong>Targets.</strong> Lipid peroxidation, mitochondrial DNA damage, telomere shortening rate.</li>
+          <li><strong>Endpoint.</strong> Lower hsCRP, IL-6 and 8-OHdG; preserved telomere length.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-anchor" id="mitochondria">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">Pillar 03</span>
+        <h2>Mitochondrial Output.</h2>
+      </div>
+      <div>
+        <p>Mitochondria generate the ATP that powers every active process in the body. With age, mitochondrial density and efficiency decline — fewer mitochondria per cell, more mutations in mitochondrial DNA, and a backlog of damaged organelles that mitophagy fails to clear. The downstream effect is the energy collapse most people experience as "feeling older."</p>
+        <p>Mitochondrial biogenesis can be stimulated through both metabolic stress (exercise, cold, fasting) and specific nutrient catalysts. The most studied recent example is Urolithin A — a postbiotic produced when gut bacteria metabolize ellagitannins from pomegranate, walnuts and certain berries. Urolithin A has been shown in clinical trials to selectively trigger mitophagy and improve muscle mitochondrial function in older adults.</p>
+        <ul>
+          <li><strong>Pathway.</strong> AMPK &rarr; PGC-1&alpha; &rarr; mitochondrial biogenesis transcription program.</li>
+          <li><strong>Catalysts.</strong> Urolithin A, NAD+ precursors (NMN, NR), CoQ10, PQQ.</li>
+          <li><strong>Endpoint.</strong> Higher VO&#8322;max, improved muscle endurance, restored cellular ATP.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-section--alt">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">Reference</span>
+        <h2>A Working Glossary.</h2>
+      </div>
+      <div>
+        <p>Aevia Lab uses precise terminology drawn from molecular biology and bio-gerontology. The terms below appear throughout our research notes and application copy.</p>
+        <div class="term-list">
+          <div class="term"><div class="term__name">Nutrigenomics</div><div class="term__def">The bidirectional study of how nutrients influence gene expression and how genetic variation modifies nutrient response.</div></div>
+          <div class="term"><div class="term__name">Epigenetic Reprogramming</div><div class="term__def">Resetting age-associated chemical marks on DNA (methylation, histone modification) to restore a more youthful gene-expression profile.</div></div>
+          <div class="term"><div class="term__name">Cellular Senescence</div><div class="term__def">Cells that have permanently exited the cell cycle but resist apoptosis, secreting inflammatory factors that damage surrounding tissue.</div></div>
+          <div class="term"><div class="term__name">Yamanaka Factors</div><div class="term__def">A set of four transcription factors (Oct4, Sox2, Klf4, c-Myc) that can reset cells to a pluripotent, youthful state.</div></div>
+          <div class="term"><div class="term__name">SIRT1</div><div class="term__def">A NAD+-dependent deacetylase that regulates DNA repair, metabolism and longevity-associated gene expression.</div></div>
+          <div class="term"><div class="term__name">AMPK</div><div class="term__def">The cellular energy sensor activated by low ATP. Drives autophagy, mitochondrial biogenesis and metabolic flexibility.</div></div>
+          <div class="term"><div class="term__name">Urolithin A</div><div class="term__def">A postbiotic metabolite of dietary ellagitannins that triggers mitophagy and improves mitochondrial function.</div></div>
+          <div class="term"><div class="term__name">Inflammaging</div><div class="term__def">Chronic low-grade systemic inflammation that develops with age and underlies most age-related disease.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/js/layout.js"></script>
+</body>
+</html>
