@@ -917,8 +917,8 @@ button { cursor: pointer; font-family: inherit; border: none; }
 
 /* ── FOOTER ── */
 .footer {
-  background: var(--color-dark);
-  color: rgba(255,255,255,0.7);
+  background: transparent;
+  color: var(--color-text-secondary);
   padding: 62px 0 24px;
 }
 
@@ -935,7 +935,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
   font-size: 34px;
   font-weight: 400;
   line-height: 1;
-  color: #fff;
+  color: var(--color-text);
   margin-bottom: 14px;
   letter-spacing: -0.018em;
 }
@@ -943,7 +943,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .footer__brand-desc {
   font-size: 15px;
   line-height: 1.66;
-  color: rgba(255,255,255,0.58);
+  color: var(--color-text-secondary);
   max-width: 620px;
   text-wrap: pretty;
 }
@@ -956,12 +956,12 @@ button { cursor: pointer; font-family: inherit; border: none; }
   font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.008em;
-  color: rgba(255,255,255,0.9);
+  color: var(--color-text);
   transition: color var(--transition-fast);
 }
 
 .footer__contact a:hover {
-  color: #fff;
+  color: var(--color-accent);
 }
 
 .footer__secondary {
@@ -974,7 +974,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: rgba(255,255,255,0.4);
+  color: var(--color-text-tertiary);
   margin-bottom: 16px;
 }
 
@@ -989,17 +989,17 @@ button { cursor: pointer; font-family: inherit; border: none; }
   font-size: 18px;
   font-weight: 400;
   letter-spacing: -0.01em;
-  color: rgba(255,255,255,0.86);
+  color: var(--color-text);
   transition: color var(--transition-fast);
 }
 
 .footer__links a:hover {
-  color: #fff;
+  color: var(--color-accent);
 }
 
 .footer__bottom {
   padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--color-border-light);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -1007,7 +1007,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
 
 .footer__copyright {
   font-size: 13px;
-  color: rgba(255,255,255,0.35);
+  color: var(--color-text-tertiary);
   letter-spacing: -0.005em;
   line-height: 1.4;
 }
