@@ -941,10 +941,11 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 
 .footer__brand-desc {
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.8;
   color: rgba(255,255,255,0.58);
-  max-width: 640px;
+  max-width: 500px;
+  text-wrap: pretty;
 }
 
 .footer__contact {
