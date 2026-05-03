@@ -919,37 +919,37 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .footer {
   background: var(--color-dark);
   color: rgba(255,255,255,0.7);
-  padding: 88px 0 36px;
+  padding: 62px 0 24px;
 }
 
 .footer__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
-  gap: clamp(36px, 6vw, 120px);
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 0.5fr);
+  gap: clamp(24px, 4vw, 72px);
   align-items: start;
-  margin-bottom: 48px;
+  margin-bottom: 30px;
 }
 
 .footer__brand {
   font-family: var(--font-serif);
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 400;
   line-height: 1;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   letter-spacing: -0.018em;
 }
 
 .footer__brand-desc {
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.66;
   color: rgba(255,255,255,0.58);
-  max-width: 500px;
+  max-width: 620px;
   text-wrap: pretty;
 }
 
 .footer__contact {
-  margin-top: 26px;
+  margin-top: 18px;
 }
 
 .footer__contact a {
@@ -975,14 +975,14 @@ button { cursor: pointer; font-family: inherit; border: none; }
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: rgba(255,255,255,0.4);
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 
 .footer__links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .footer__links a {
@@ -998,7 +998,7 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 
 .footer__bottom {
-  padding-top: 26px;
+  padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
@@ -1015,14 +1015,14 @@ button { cursor: pointer; font-family: inherit; border: none; }
 @media (max-width: 768px) {
   .footer__grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 24px;
   }
   .footer__secondary {
     justify-self: start;
     min-width: 0;
   }
   .footer__brand {
-    font-size: 32px;
+    font-size: 30px;
   }
   .footer__brand-desc {
     font-size: 15px;
@@ -1032,14 +1032,14 @@ button { cursor: pointer; font-family: inherit; border: none; }
     font-size: 16px;
   }
   .footer__bottom {
-    padding-top: 20px;
+    padding-top: 14px;
   }
   .footer__copyright { font-size: 13px; }
 }
 
 @media (max-width: 600px) {
   .footer {
-    padding: 72px 0 30px;
+    padding: 54px 0 20px;
   }
   .footer__brand {
     font-size: 28px;
