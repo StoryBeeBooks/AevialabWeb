@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aevia Revive — Aevia Lab</title>
+<meta name="description" content="Aevia Revive is a comprehensive phytochemistry and metabolic telemetry app. Vision-powered meal logging, bioactive profiling, circadian tracking, exposome monitoring — with absolute data sovereignty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* ── Hero ──────────────────────────────────────────── */
+  .revive-hero {
+    padding: 160px 0 0;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%);
+  }
+  .revive-hero .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
+  .revive-hero .heading-hero { max-width: 900px; margin: 0 auto; }
+  .revive-hero__sub {
+    max-width: 640px;
+    margin: 24px auto 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+  .revive-hero__badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 36px auto 0;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+  }
+  .badge::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+  .revive-hero__media {
+    max-width: 1180px;
+    margin: 72px auto 0;
+    padding: 0 clamp(24px, 5vw, 80px);
+  }
+
+  /* ── Feature sections ─────────────────────────────── */
+  .feature { padding: 100px 0; }
+  .feature--alt { background: var(--color-surface-alt); }
+  .feature__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .feature__grid--reverse { direction: rtl; }
+  .feature__grid--reverse > * { direction: ltr; }
+  .feature__content { display: flex; flex-direction: column; gap: 20px; }
+  .feature__num {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  .feature__title {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  .feature__title em { font-style: italic; color: var(--color-accent); }
+  .feature__desc { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); }
+  .feature__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .feature__bullets li {
+    display: flex;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+  }
+  .feature__bullets li::before {
+    content: '→';
+    color: var(--color-accent);
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+  @media (max-width: 900px) {
+    .feature__grid { grid-template-columns: 1fr; gap: 40px; }
+    .feature__grid--reverse { direction: ltr; }
+  }
+
+  /* ── Data sovereignty dark section ───────────────── */
+  .sovereignty {
+    background: var(--color-text);
+    color: #fff;
+    padding: 120px 0;
+  }
+  .sovereignty .label { color: rgba(255,255,255,0.4); display: block; margin-bottom: 16px; }
+  .sovereignty__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .sovereignty__title {
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 3.4vw, 44px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .sovereignty__title em { font-style: italic; color: #6EDFC8; }
+  .sovereignty__desc { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.65); margin-top: 20px; }
+  .sovereignty__pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .sovereignty__pillar {
+    padding: 24px 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+  }
+  .sovereignty__pillar-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .sovereignty__pillar-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+  }
+  @media (max-width: 900px) {
+    .sovereignty__grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* ── CTA strip ────────────────────────────────────── */
+  .revive-cta {
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border-light);
+  }
+  .revive-cta .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
+  .revive-cta p { font-size: 16px; color: var(--color-text-secondary); margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="revive-hero">
+  <div class="container">
+    <span class="label">Application 01 &middot; Phytochemistry &amp; Metabolic Telemetry</span>
+    <h1 class="heading-hero revive-hero__title">Aevia <em>Revive.</em></h1>
+    <p class="revive-hero__sub">
+      A comprehensive on-device analytics engine for cellular nutrition, metabolic timing, and environmental stressors. Pure data. Total visibility. Zero prescriptions.
+    </p>
+    <div class="revive-hero__badges">
+      <span class="badge">Vision-Powered Telemetry</span>
+      <span class="badge">Bioactive Profiling</span>
+      <span class="badge">Circadian Metabolism</span>
+      <span class="badge">Exposome Monitoring</span>
+      <span class="badge">On-Device Data</span>
+    </div>
+  </div>
+  <div class="revive-hero__media">
+    <div class="media-placeholder media-placeholder--wide media-placeholder--dark">
+      <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <span class="media-placeholder__label">App demo &middot; placeholder</span>
+      <span class="media-placeholder__sublabel">Aevia Revive — product walkthrough</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 01 — Vision-Powered Telemetry -->
+<section class="feature">
+  <div class="container">
+    <div class="feature__grid">
+      <div class="feature__content">
+        <span class="feature__num">01 — Vision-Powered Telemetry</span>
+        <h2 class="feature__title">Photograph your plate. <em>Decode its biology.</em></h2>
+        <p class="feature__desc">
+          Aevia Revive eliminates manual entry. Simply photograph your raw ingredients or a prepared meal and the app's visual AI engine estimates portion sizes and weights with precision. That data is instantly cross-referenced with the Canadian Nutrient File — the country's authoritative dietary database — delivering real-time macro and micronutrient readouts calibrated to your actual inputs.
+        </p>
+        <ul class="feature__bullets">
+          <li>AI portion estimation from a single photo — no scales required.</li>
+          <li>Canadian Nutrient File as the accuracy benchmark for all nutrient data.</li>
+          <li>Immediate readouts for macros, micros, and caloric density.</li>
+          <li>Functions purely as a factual calculator — no dietary directives.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="media-placeholder__label">Screen · Vision Telemetry UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 02 — Bioactive Profiling -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">02 — Bioactive Profiling</span>
+        <h2 class="feature__title">Beyond calories. Into <em>molecular intelligence.</em></h2>
+        <p class="feature__desc">
+          Where conventional nutrition apps stop at macros, Aevia Revive maps your food to a proprietary bioactive compound database. Logging an ingredient reveals its precise molecular profile — illustrating, for example, how the anthocyanins in a given berry modulate oxidative stress pathways, or how sulforaphane from cruciferous vegetables activates Nrf2-mediated antioxidant defenses.
+        </p>
+        <ul class="feature__bullets">
+          <li>Proprietary database of phytochemicals, polyphenols, and bioactive metabolites.</li>
+          <li>Real-time readout of daily phytochemical saturation by compound class.</li>
+          <li>Pathway mapping: see which cellular mechanisms each bioactive influences.</li>
+          <li>Objective data only — no supplement recommendations pushed.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <span class="media-placeholder__label">Screen · Bioactive Profiling UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 03 — Metabolic Timing -->
+<section class="feature">
+  <div class="container">
+    <div class="feature__grid">
+      <div class="feature__content">
+        <span class="feature__num">03 — Metabolic Timing</span>
+        <h2 class="feature__title">Visualize your cellular <em>metabolic state.</em></h2>
+        <p class="feature__desc">
+          The app's user-controlled insight toggles track the biological timing of your meals and fasting windows. By visualising your cellular states — from insulin baseline through glycogen depletion, fat oxidation, and into autophagy — and aligning meal times with your local circadian rhythm, Aevia Revive frames daily fasting as metabolic conditioning rather than restriction.
+        </p>
+        <ul class="feature__bullets">
+          <li>Real-time metabolic state timeline: insulin, fat-oxidation, autophagy windows.</li>
+          <li>Circadian alignment engine calibrated to your time zone and sunrise/sunset.</li>
+          <li>Opt-in alerts — e.g., a reminder to stop eating three hours before sleep.</li>
+          <li>All alerts are user-defined and based entirely on your inputted schedule.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+          <span class="media-placeholder__label">Screen · Metabolic Timing UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 04 — Exposome & Hydration -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">04 — Exposome &amp; Hydration</span>
+        <h2 class="feature__title">Monitor what surrounds you — <em>inside and out.</em></h2>
+        <p class="feature__desc">
+          Cellular health does not exist in isolation. Aevia Revive tracks both your internal electrolyte gradient and the external environmental stressors your body is navigating. Sodium, potassium, and magnesium inputs provide factual updates on cellular conductivity and hydration status. Simultaneously, real-time UV index and air quality data from your city context environmental oxidative load — and opt-in alerts allow you to adapt your protocol accordingly.
+        </p>
+        <ul class="feature__bullets">
+          <li>Electrolyte tracking: sodium, potassium, magnesium — cellular conductivity readout.</li>
+          <li>Live environmental data: UV index and air quality index by location.</li>
+          <li>Opt-in oxidative stress alerts tied to environmental thresholds.</li>
+          <li>Suggested protocol adjustments (e.g. antioxidant dosage) are fully user-controlled.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M2 12h20"/></svg>
+          <span class="media-placeholder__label">Screen · Exposome &amp; Hydration UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 05 — Data Sovereignty -->
+<section class="sovereignty">
+  <div class="container">
+    <div class="sovereignty__grid">
+      <div>
+        <span class="label">05 — Absolute Data Sovereignty</span>
+        <h2 class="sovereignty__title">Your biology stays <em>on your device.</em></h2>
+        <p class="sovereignty__desc">
+          Aevia Revive operates strictly as a wellness and telemetry tool. All photographic records, nutritional logs, metabolic timelines, and bioactive readouts are stored entirely on your local device. No health data is transmitted to external servers. Your biological information remains completely private and under your absolute control — by architectural design, not policy promise.
+        </p>
+      </div>
+      <div class="sovereignty__pillars">
+        <div class="sovereignty__pillar">
+          <div class="sovereignty__pillar-title">Local-First Architecture</div>
+          <div class="sovereignty__pillar-desc">All data processing and storage occurs on-device. No cloud sync, no remote health databases.</div>
+        </div>
+        <div class="sovereignty__pillar">
+          <div class="sovereignty__pillar-title">No Personal Health Transmission</div>
+          <div class="sovereignty__pillar-desc">Photographic records, meal logs, fasting windows, and bioactive data never leave your device.</div>
+        </div>
+        <div class="sovereignty__pillar">
+          <div class="sovereignty__pillar-title">Pure Analytics Engine</div>
+          <div class="sovereignty__pillar-desc">Aevia Revive provides data — it does not prescribe, diagnose, or make medical recommendations.</div>
+        </div>
+        <div class="sovereignty__pillar">
+          <div class="sovereignty__pillar-title">Opt-In Everything</div>
+          <div class="sovereignty__pillar-desc">Alerts, location access, and environmental monitoring require explicit user activation and can be disabled at any time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="revive-cta">
+  <div class="container">
+    <span class="label">Development Status</span>
+    <h2 class="heading-lg">Currently in development.</h2>
+    <p>Aevia Revive is in active development. Release details will be published on this page as the launch approaches. Aevia Lab does not pre-sell or take deposits prior to release.</p>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/js/layout.js"></script>
+</body>
+</html>
