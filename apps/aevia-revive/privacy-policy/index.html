@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Aevia Revive</title>
+<meta name="description" content="Privacy Policy for Aevia Revive, developed by West Solution Consulting Corp. Learn how your data is stored, protected, and managed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="legal">
+<div class="container--narrow">
+
+<h1>Privacy Policy</h1>
+<p class="subtitle">Aevia Revive &mdash; West Solution Consulting Corp.<br>Effective Date: May 10, 2026 &nbsp;|&nbsp; Last Updated: May 10, 2026</p>
+
+<div class="highlight">
+  <strong>Privacy-first, on-device architecture.</strong> Our fundamental principle is that your health and nutrition data belongs to you. The vast majority of the data you generate within the App never leaves your device or your personal iCloud account.
+</div>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Data Stored Exclusively On Your Device</h3>
+<p>The vast majority of the data you enter or generate within the App never leaves your device or your personal iCloud account. This includes:</p>
+<ul>
+  <li><strong>User Profiles:</strong> Names, avatar colors, and custom profile photos for your household members.</li>
+  <li><strong>Nutritional Logs:</strong> Any meal logs, smoothie logs, fasting timers, weight inputs, or dietary patterns.</li>
+  <li><strong>Photos:</strong> Images you capture or import to attach to meal records.</li>
+  <li><strong>Health Goals &amp; Preferences:</strong> Your personal targets, fasting schedules, and UI preferences.</li>
+  <li><strong>Locally Generated Insights:</strong> All trends, insights, and warnings (such as allergen detection or FDA Daily Value comparisons) are computed entirely on your device using bundled, offline datasets. Aevia Revive does not use cloud-based Large Language Models (LLMs) or send your logs to external servers for processing.</li>
+</ul>
+
+<h3>1.2 Data Processed via Cloud Services</h3>
+<p>To provide core functionality, the App communicates with the internet in highly restricted ways:</p>
+<ul>
+  <li><strong>Authentication (Sign in with Apple):</strong> We use Sign in with Apple for anonymous authentication. The App securely sends your Apple identity token to our server (hosted on Supabase) via a single verification endpoint (<code>verify-siwa</code>) to create a secure, stable user identifier (an anonymous string). We do not collect your name or email.</li>
+  <li><strong>CloudKit Sync (Optional):</strong> If you enable iCloud backup for your device, iOS may securely encrypt and back up your App data (via SwiftData / CloudKit) to your personal Apple iCloud account. This data is managed directly by Apple, is encrypted end-to-end where supported by Apple, and is intrinsically inaccessible to West Solution Consulting Corp.</li>
+  <li><strong>Subscriptions (StoreKit):</strong> We use Apple's native StoreKit to verify your household seat subscriptions on-device. Payment processing is handled entirely by Apple. We do not have access to your billing information or credit card details.</li>
+</ul>
+
+<h2>2. How We Use Information</h2>
+<p>Because we do not have access to your health and nutrition logs, we do not use your data for advertising, analytics, or model training.</p>
+<p>The minimal authentication data we process (your anonymous Apple identifier) is used exclusively to:</p>
+<ul>
+  <li>Authenticate your device.</li>
+  <li>Ensure that your local App environment is secure.</li>
+  <li>Facilitate account deletion requests made from within the App.</li>
+</ul>
+
+<h2>3. How We Share Information</h2>
+<p><strong>We do not sell, rent, or trade your personal or health data.</strong> We also do not employ third-party analytics SDKs, advertising trackers, or external behavioral monitors.</p>
+<p>We may disclose your anonymous authentication identifier only:</p>
+<ul>
+  <li>To our service providers (e.g., Supabase) who provide the secure infrastructure required for authentication. These providers are strictly bound by data processing agreements prohibiting secondary use.</li>
+  <li>As required by law, such as to comply with a subpoena or similar legal process.</li>
+</ul>
+
+<h2>4. Your Choices and Rights</h2>
+<p>You possess total control over the data generated within Aevia Revive:</p>
+<ul>
+  <li><strong>Local Deletion:</strong> You can delete any individual log or photo directly within the App.</li>
+  <li><strong>Full Account Deletion:</strong> You may delete your entire account directly from the App's Settings panel (<strong>Settings &gt; Account &gt; Delete Account</strong>). Executing this command will:
+    <ol style="margin-top: 8px;">
+      <li>Wipe your local device database (SwiftData).</li>
+      <li>Issue a revocation request to Apple to sever the Sign in with Apple connection.</li>
+      <li>Purge your data from your personal CloudKit container.</li>
+    </ol>
+    <p style="margin-top: 8px; font-size: 14px; color: var(--color-text-tertiary);"><em>Note: Once this action is performed, your data is irrevocably destroyed and cannot be recovered by us.</em></p>
+  </li>
+  <li><strong>System Permissions:</strong> You can revoke the App's access to your Camera or Photo Library at any time via your iOS Settings.</li>
+</ul>
+
+<h2>5. Security Practices</h2>
+<p>We have implemented aggressive security practices:</p>
+<ul>
+  <li><strong>Zero-Egress Architecture:</strong> Beyond the SIWA authentication ping, the App operates entirely offline.</li>
+  <li><strong>No Third-Party APIs:</strong> We stripped out all third-party APIs (including external AI/vision APIs) during the development of version 1.0 to ensure deterministic, contained execution.</li>
+  <li><strong>Secure Key Storage:</strong> Authentication tokens are stored in the iOS secure enclave (Keychain).</li>
+</ul>
+
+<h2>6. Children's Privacy</h2>
+<p>Aevia Revive is not intended for use by children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information natively, you may utilize the in-app account deletion mechanism to destroy the local data.</p>
+
+<h2>7. Medical Disclaimer</h2>
+<p>Aevia Revive is an educational and organizational tool, not a medical device. The data, aggregations, and insights provided by the App are reference estimates based on public databases (like the USDA FDC and Health Canada CNF) and should not be construed as medical diagnoses or treatment recommendations. Always consult a qualified healthcare provider before altering your diet or making medical decisions.</p>
+
+<h2>8. Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you by updating the "Last Updated" date at the top of this document or by providing notice within the App.</p>
+
+<h2>9. Contact Us</h2>
+<p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+<ul>
+  <li><strong>Company:</strong> West Solution Consulting Corp.</li>
+  <li><strong>Email:</strong> <a href="mailto:support@wtheory.com">support@wtheory.com</a></li>
+</ul>
+
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/layout.js"></script>
+</body>
+</html>

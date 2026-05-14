@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support &amp; FAQ — Aevia Revive</title>
+<meta name="description" content="Support and frequently asked questions for the Aevia Revive app. Get help with account, data privacy, nutrition logging, allergen scanning, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="faq-page">
+<div class="container--narrow">
+
+<h1 style="font-size: 32px; font-weight: 700; margin-bottom: 8px;">Aevia Revive — Support &amp; FAQ</h1>
+<p class="subtitle" style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: 32px;">
+  Need help with Aevia Revive? You're in the right place. If your question isn't answered below, please reach out to us directly at <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>.
+</p>
+
+<div class="faq-toc">
+  <h3>Sections</h3>
+  <ul>
+    <li><a href="#account">Account &amp; Data Privacy</a></li>
+    <li><a href="#logging">Logging &amp; Nutrition Data</a></li>
+    <li><a href="#allergen">Allergen Scanner &amp; Warnings</a></li>
+    <li><a href="#insights">Insights &amp; Patterns</a></li>
+    <li><a href="#household">Household Profiles &amp; Subscriptions</a></li>
+    <li><a href="#contact">Contact Support</a></li>
+  </ul>
+</div>
+
+<!-- SECTION 1 -->
+<h2 class="faq-section-heading" id="account">Account &amp; Data Privacy</h2>
+
+<div class="faq-item"><details><summary>Where is my data stored?</summary><div class="faq-answer">
+<p>Aevia Revive was built with a "privacy-first, on-device" architecture. Your logs, photos, and insights are generated and stored entirely on your device. If you have iCloud Backup enabled, your data is securely synced to your personal Apple CloudKit account. We do not maintain remote access to your health data.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Do you use AI or send my photos to the cloud?</summary><div class="faq-answer">
+<p>No. In our version 1.0 architecture, we removed all reliance on cloud-based LLMs or vision processing APIs. All data aggregation, pattern analysis, and allergen detection run deterministically on your local device.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>How do I delete my account?</summary><div class="faq-answer">
+<p>You can delete your account by navigating to <strong>Settings &gt; Account &gt; Delete Account</strong>. This action revokes your Sign in with Apple credential and completely wipes your local SwiftData store. Because we don't store your logs on our servers, there are no backups for us to purge — your data (including all household profiles on your device) is deleted instantly.</p>
+</div></details></div>
+
+<!-- SECTION 2 -->
+<h2 class="faq-section-heading" id="logging">Logging &amp; Nutrition Data</h2>
+
+<div class="faq-item"><details><summary>Where does the nutritional data come from?</summary><div class="faq-answer">
+<p>Aevia Revive uses heavily curated, offline bundles composed primarily of:</p>
+<ul>
+  <li><strong>Canadian Nutrient File (CNF 2015):</strong> The primary offline database.</li>
+  <li><strong>USDA FoodData Central:</strong> For specific supplement exceptions.</li>
+  <li><strong>Published Scientific Databases:</strong> Various international food databases (e.g., Japan MEXT, Australian FSANZ) to provide insight into exotic whole foods and phytonutrients.</li>
+</ul>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Why did my meal return an "Unavailable" value for certain nutrients?</summary><div class="faq-answer">
+<p>If an ingredient requires nutritional parsing that falls outside of our curated, on-device tier systems, it may return unavailable rather than hallucinating or guessing a value. Try using the exact name of the whole food.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Can I log a completely custom food?</summary><div class="faq-answer">
+<p>Currently, Aevia Revive operates off a strict semantic catalog to ensure high-fidelity insights and phytonutrient tracking. If you can't find an exact item, we recommend logging its primary raw constituents.</p>
+</div></details></div>
+
+<!-- SECTION 3 -->
+<h2 class="faq-section-heading" id="allergen">Allergen Scanner &amp; Warnings</h2>
+
+<div class="faq-item"><details><summary>How does the Allergen Scanner work?</summary><div class="faq-answer">
+<p>The on-device Allergen Scanner uses deterministic text-matching against the FDA Big-9 allergens (milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soy, sesame).</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Is the Allergen Scanner 100% accurate?</summary><div class="faq-answer">
+<p><strong>No.</strong> The scanner is a supportive tool, not a medical or safety device. It checks the text titles of foods in your plate. It cannot detect cross-contamination, mislabeled foods, or unlisted ingredients in processed foods. Always verify the safety of your food independently if you have severe allergies.</p>
+</div></details></div>
+
+<!-- SECTION 4 -->
+<h2 class="faq-section-heading" id="insights">Insights &amp; Patterns</h2>
+
+<div class="faq-item"><details><summary>What are "Patterns"?</summary><div class="faq-answer">
+<p>In the Dashboard, the Patterns card computes plain-language signals by comparing your current eating window to your previous window. It checks for metric consistency, macronutrient trends, and dietary diversity (e.g., scoring you against the American Gut Project metric of 30+ distinct plant foods per week).</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Does Aevia Revive provide medical advice?</summary><div class="faq-answer">
+<p><strong>No.</strong> All pattern insights, synergy breakdowns, and micronutrient comparisons (such as tracking against FDA Daily Values) are strictly for educational reference. Consult your physician or a registered dietitian before undergoing significant dietary shifts or starting a fasting protocol.</p>
+</div></details></div>
+
+<!-- SECTION 5 -->
+<h2 class="faq-section-heading" id="household">Household Profiles &amp; Subscriptions</h2>
+
+<div class="faq-item"><details><summary>Can I share Aevia Revive with my family?</summary><div class="faq-answer">
+<p>Yes. Aevia Revive features a multi-profile household system. The app opens to a Profile Gate where you can select who is logging data. Each profile's logging history and insights are completely isolated from others.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Is there a limit to how many profiles I can create?</summary><div class="faq-answer">
+<p>Your app comes with 1 primary owner profile. You can unlock up to 6 additional seats (for a total of 7 profiles) via our Household subscriptions. Each additional seat is managed natively through your Apple ID settings.</p>
+</div></details></div>
+
+<!-- CONTACT -->
+<h2 class="faq-section-heading" id="contact">Contact Support</h2>
+
+<div style="padding: 28px 32px; background: var(--color-surface-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); margin-bottom: 40px;">
+  <p style="font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); margin-bottom: 16px;">
+    Still stuck? Have a feature request? We'd love to hear from you.
+  </p>
+  <p style="font-size: 15px; color: var(--color-text); font-weight: 500; margin-bottom: 16px;">
+    Email: <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>
+  </p>
+  <p style="font-size: 13px; line-height: 1.6; color: var(--color-text-tertiary); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">When emailing support, please include:</p>
+  <ul style="font-size: 14px; line-height: 1.7; color: var(--color-text-secondary); padding-left: 20px; margin: 8px 0 0;">
+    <li>The device you are using (e.g., iPad Pro 13").</li>
+    <li>Your current iOS version.</li>
+    <li>A brief description of the bug or issue.</li>
+  </ul>
+  <p style="font-size: 13px; color: var(--color-text-tertiary); margin-top: 16px; margin-bottom: 0; font-style: italic;">
+    Please do not include sensitive health information or diagnostic reports in your emails.
+  </p>
+</div>
+
+<p style="font-size: 13px; color: var(--color-text-tertiary); margin-bottom: 0;">
+  <em>West Solution Consulting Corp.</em>
+</p>
+
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/js/layout.js"></script>
+</body>
+</html>
