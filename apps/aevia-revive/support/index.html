@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support &amp; FAQ — Aevia Revive</title>
-<meta name="description" content="Support and frequently asked questions for the Aevia Revive app. Get help with account, data privacy, nutrition logging, allergen scanning, and more.">
+<meta name="description" content="Support and frequently asked questions for Aevia Revive. Get help with meal logging, the Smoothie Builder, nutrient analysis, household profiles, Aevia Chronos, and data privacy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 
 <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 8px;">Aevia Revive — Support &amp; FAQ</h1>
 <p class="subtitle" style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: 32px;">
-  Need help with Aevia Revive? You're in the right place. If your question isn't answered below, please reach out to us directly at <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>.
+  Need help with Aevia Revive? You're in the right place. If your question isn't answered below, please reach out at <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>.
 </p>
 
 <div class="faq-toc">
@@ -27,9 +27,11 @@
   <ul>
     <li><a href="#account">Account &amp; Data Privacy</a></li>
     <li><a href="#logging">Logging &amp; Nutrition Data</a></li>
+    <li><a href="#smoothie">Smoothie Builder</a></li>
     <li><a href="#allergen">Allergen Scanner &amp; Warnings</a></li>
-    <li><a href="#insights">Insights &amp; Patterns</a></li>
-    <li><a href="#household">Household Profiles &amp; Subscriptions</a></li>
+    <li><a href="#insights">Insights, Patterns &amp; Export</a></li>
+    <li><a href="#chronos">Aevia Chronos &amp; Aevia Circadia</a></li>
+    <li><a href="#household">Household Profiles</a></li>
     <li><a href="#contact">Contact Support</a></li>
   </ul>
 </div>
@@ -38,68 +40,128 @@
 <h2 class="faq-section-heading" id="account">Account &amp; Data Privacy</h2>
 
 <div class="faq-item"><details><summary>Where is my data stored?</summary><div class="faq-answer">
-<p>Aevia Revive was built with a "privacy-first, on-device" architecture. Your logs, photos, and insights are generated and stored entirely on your device. If you have iCloud Backup enabled, your data is securely synced to your personal Apple CloudKit account. We do not maintain remote access to your health data.</p>
+<p>Aevia Revive was built with a privacy-first, on-device architecture. Your meal logs, nutrient records, and all profile data are stored entirely on your device. If you have iCloud Backup enabled, your data is synced to your personal Apple CloudKit account. We do not have access to your health or nutrition data.</p>
 </div></details></div>
 
-<div class="faq-item"><details><summary>Do you use AI or send my photos to the cloud?</summary><div class="faq-answer">
-<p>No. In our version 1.0 architecture, we removed all reliance on cloud-based LLMs or vision processing APIs. All data aggregation, pattern analysis, and allergen detection run deterministically on your local device.</p>
+<div class="faq-item"><details><summary>Does the app send any data to external servers?</summary><div class="faq-answer">
+<p>No. All nutrient calculations, phyto-class analysis, pattern generation, and allergen detection run locally on your device using offline databases. Nothing about your diet, eating schedule, or household profiles is transmitted to our servers.</p>
 </div></details></div>
 
 <div class="faq-item"><details><summary>How do I delete my account?</summary><div class="faq-answer">
-<p>You can delete your account by navigating to <strong>Settings &gt; Account &gt; Delete Account</strong>. This action revokes your Sign in with Apple credential and completely wipes your local SwiftData store. Because we don't store your logs on our servers, there are no backups for us to purge — your data (including all household profiles on your device) is deleted instantly.</p>
+<p>Navigate to <strong>Settings &gt; Account &gt; Delete Account</strong>. This revokes your Sign in with Apple credential and permanently wipes all local data, including every household profile stored on the device. Because your logs are not held on our servers, the deletion is immediate and complete.</p>
 </div></details></div>
 
 <!-- SECTION 2 -->
 <h2 class="faq-section-heading" id="logging">Logging &amp; Nutrition Data</h2>
 
 <div class="faq-item"><details><summary>Where does the nutritional data come from?</summary><div class="faq-answer">
-<p>Aevia Revive uses heavily curated, offline bundles composed primarily of:</p>
+<p>Aevia Revive uses a curated offline database built from several authoritative sources:</p>
 <ul>
-  <li><strong>Canadian Nutrient File (CNF 2015):</strong> The primary offline database.</li>
-  <li><strong>USDA FoodData Central:</strong> For specific supplement exceptions.</li>
-  <li><strong>Published Scientific Databases:</strong> Various international food databases (e.g., Japan MEXT, Australian FSANZ) to provide insight into exotic whole foods and phytonutrients.</li>
+  <li><strong>USDA FoodData Central:</strong> The primary reference for whole foods, ingredients, and macro and micronutrient values.</li>
+  <li><strong>FDA Daily Values:</strong> Used for all percentage-of-DV calculations displayed in the app.</li>
+  <li><strong>NIH Office of Dietary Supplements and published literature:</strong> Referenced for phyto-class classification and nutrient priority tiers.</li>
 </ul>
 </div></details></div>
 
-<div class="faq-item"><details><summary>Why did my meal return an "Unavailable" value for certain nutrients?</summary><div class="faq-answer">
-<p>If an ingredient requires nutritional parsing that falls outside of our curated, on-device tier systems, it may return unavailable rather than hallucinating or guessing a value. Try using the exact name of the whole food.</p>
+<div class="faq-item"><details><summary>What are the three logging modes?</summary><div class="faq-answer">
+<p>Aevia Revive offers three distinct ways to record a meal, each suited to a different situation:</p>
+<ul>
+  <li><strong>Plate mode</strong> is for whole, recognizable ingredients. Browse a visual catalog organized by food category — Bases and Grains, Vegetables, Fruits, Proteins, Plant-Based and Phyto-Proteins, Fats and Toppings, and Drinks. Select each component and enter the gram weight you consumed. The app generates the full nutrient and phyto-class profile immediately.</li>
+  <li><strong>Food Label mode</strong> is for packaged products. Enter the nutrition facts panel values exactly as printed on the label, then enter your actual portion in grams or millilitres. The app scales every listed nutrient — including the full vitamin and mineral breakdown — to your actual intake. This is the right mode for nutrition bars, fortified foods, and any item with a printed nutrition facts panel.</li>
+  <li><strong>Photo mode</strong> saves a timestamped snapshot to your calendar for visual reference. Photo entries appear in your logging history but do not contribute to nutrient or phyto-class totals.</li>
+</ul>
 </div></details></div>
 
-<div class="faq-item"><details><summary>Can I log a completely custom food?</summary><div class="faq-answer">
-<p>Currently, Aevia Revive operates off a strict semantic catalog to ensure high-fidelity insights and phytonutrient tracking. If you can't find an exact item, we recommend logging its primary raw constituents.</p>
+<div class="faq-item"><details><summary>Can I log packaged foods or nutrition bars?</summary><div class="faq-answer">
+<p>Yes. Use Food Label mode. Enter the calories, fat, saturated fat, trans fat, carbohydrates, fibre, sugars, protein, cholesterol, sodium, potassium, and any vitamins or minerals listed on the package. Input your actual portion size in grams or millilitres, and the app calculates every value proportionally. This works for any product with a standard nutrition facts panel.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Can I log a food that isn't in the catalog?</summary><div class="faq-answer">
+<p>If an ingredient does not appear in the Plate mode catalog, you have two options. For a whole food, try searching by its most common name — many ingredients appear under alternate terms. For any packaged product, Food Label mode accepts the nutrition facts panel directly, so you can log it precisely regardless of whether it is in the catalog.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Why does a nutrient show as "Unavailable" for a logged ingredient?</summary><div class="faq-answer">
+<p>Some whole foods have incomplete entries in available reference databases for specific micronutrients. When the app cannot produce a reliable value, it displays "Unavailable" rather than estimating. The total for that nutrient across your day will reflect only the entries where a verified value exists.</p>
 </div></details></div>
 
 <!-- SECTION 3 -->
-<h2 class="faq-section-heading" id="allergen">Allergen Scanner &amp; Warnings</h2>
+<h2 class="faq-section-heading" id="smoothie">Smoothie Builder</h2>
 
-<div class="faq-item"><details><summary>How does the Allergen Scanner work?</summary><div class="faq-answer">
-<p>The on-device Allergen Scanner uses deterministic text-matching against the FDA Big-9 allergens (milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soy, sesame).</p>
+<div class="faq-item"><details><summary>What is the Smoothie Builder?</summary><div class="faq-answer">
+<p>The Smoothie Builder is a dedicated feature for assembling blends from whole, fresh ingredients. It gives you a searchable library of fruits, vegetables, seeds, and functional foods, along with two filter systems designed specifically for intentional ingredient selection. When you finalize a blend, the app computes the complete nutrient and molecular profile for everything in the glass. Smoothie entries contribute fully to your daily nutrient and phyto-class totals.</p>
 </div></details></div>
 
-<div class="faq-item"><details><summary>Is the Allergen Scanner 100% accurate?</summary><div class="faq-answer">
-<p><strong>No.</strong> The scanner is a supportive tool, not a medical or safety device. It checks the text titles of foods in your plate. It cannot detect cross-contamination, mislabeled foods, or unlisted ingredients in processed foods. Always verify the safety of your food independently if you have severe allergies.</p>
+<div class="faq-item"><details><summary>What are the health-context filters?</summary><div class="faq-answer">
+<p>Health-context filters surface or suppress ingredients based on specific dietary considerations. The available filters are Antioxidant Boost, Skin Support, Cellular Defense, Oxalate, Phytic Acid, Dietary Nitrates, and Goitrogens. You can activate one or several simultaneously. For example, enabling the Oxalate filter highlights ingredients that are high in oxalates — useful if you are managing kidney stone risk or following a low-oxalate protocol.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What does the color sidebar in the Smoothie Builder mean?</summary><div class="faq-answer">
+<p>The phyto-class color sidebar organizes every ingredient by its dominant polyphenol family. There are thirteen categories: Anthocyanins, Lycopene, Carotenoids, Quercetin and Flavonols, Glucosinolates, Chlorophyll and Polyphenols, Organosulfur Compounds, Curcuminoids, Omega-3 and Lignans, Ellagitannins, Catechins and Flavanols, Beta-Glucans, and Probiotic Cultures. Tapping a color class filters the ingredient library to show only items from that family. This makes it straightforward to build a blend that deliberately covers several phyto classes at once.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Do Smoothie Builder entries count toward my daily totals?</summary><div class="faq-answer">
+<p>Yes. Every smoothie you build and save is logged to your calendar and contributes to your daily calorie, macro, micronutrient, and phyto-class totals exactly the same as a Plate mode meal entry.</p>
 </div></details></div>
 
 <!-- SECTION 4 -->
-<h2 class="faq-section-heading" id="insights">Insights &amp; Patterns</h2>
+<h2 class="faq-section-heading" id="allergen">Allergen Scanner &amp; Warnings</h2>
 
-<div class="faq-item"><details><summary>What are "Patterns"?</summary><div class="faq-answer">
-<p>In the Dashboard, the Patterns card computes plain-language signals by comparing your current eating window to your previous window. It checks for metric consistency, macronutrient trends, and dietary diversity (e.g., scoring you against the American Gut Project metric of 30+ distinct plant foods per week).</p>
+<div class="faq-item"><details><summary>How does the Allergen Scanner work?</summary><div class="faq-answer">
+<p>The Allergen Scanner uses deterministic text-matching against the FDA Big-9 allergens: milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soy, and sesame. When a logged ingredient matches a known allergen, the app surfaces a visible warning in the relevant meal record.</p>
 </div></details></div>
 
-<div class="faq-item"><details><summary>Does Aevia Revive provide medical advice?</summary><div class="faq-answer">
-<p><strong>No.</strong> All pattern insights, synergy breakdowns, and micronutrient comparisons (such as tracking against FDA Daily Values) are strictly for educational reference. Consult your physician or a registered dietitian before undergoing significant dietary shifts or starting a fasting protocol.</p>
+<div class="faq-item"><details><summary>Is the Allergen Scanner 100% accurate?</summary><div class="faq-answer">
+<p><strong>No.</strong> The scanner is a supportive reference tool, not a medical or safety device. It checks the names of foods in your logged records against a known allergen list. It cannot detect cross-contamination, mislabeled products, or unlisted trace ingredients in processed foods. If you have a diagnosed allergy or severe sensitivity, always verify the safety of every food independently before consuming it.</p>
 </div></details></div>
 
 <!-- SECTION 5 -->
-<h2 class="faq-section-heading" id="household">Household Profiles &amp; Subscriptions</h2>
+<h2 class="faq-section-heading" id="insights">Insights, Patterns &amp; Export</h2>
 
-<div class="faq-item"><details><summary>Can I share Aevia Revive with my family?</summary><div class="faq-answer">
-<p>Yes. Aevia Revive features a multi-profile household system. The app opens to a Profile Gate where you can select who is logging data. Each profile's logging history and insights are completely isolated from others.</p>
+<div class="faq-item"><details><summary>What does the Patterns view show?</summary><div class="faq-answer">
+<p>Patterns computes plain-language observations from your logged data across any time window you select — Today, Week, Month, Year, or a custom range. It identifies facts like which ingredient supplies the highest concentration of a given vitamin, how your potassium-to-sodium ratio compares to reference targets, how many of the five phyto-class color families appeared in your diet, and how each micronutrient tracks against its FDA Daily Value. Every observation is presented alongside its source reference, whether USDA, FDA, NIH ODS, or published scientific literature.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What is the Phyto Spectrum?</summary><div class="faq-answer">
+<p>The Phyto Spectrum maps your diet across five polyphenol color families: Red (lycopene and ellagitannins), Orange and Yellow (carotenoids and flavonols), Green (glucosinolates and chlorophyll), Blue and Purple (anthocyanins), and White and Tan (organosulfurs, catechins, beta-glucans, and select minerals). Covering all five families within a given time window is tracked as a polyphenol diversity benchmark, reflecting a range of plant-based compounds in the diet.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What is the Intake Map?</summary><div class="faq-answer">
+<p>The Intake Map is a proportional treemap that visualizes everything you ate in the selected time window. Each tile represents a food, with its size corresponding to the gram weight you consumed. You can switch between coloring the tiles by phyto class or by food category. You can also resize tiles by total energy (calories) or by the number of times that food appeared in your logs, giving you a quick visual sense of what dominates your diet in different dimensions.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Can I export my nutrition data?</summary><div class="faq-answer">
+<p>Yes. The Export function generates a PDF that includes your full macro and micronutrient totals with FDA Daily Value percentages, the phyto-color spectrum breakdown, your most-consumed foods, and a 14-day daily intake summary. You can share this directly from the app with a registered dietitian, physician, or into any app that accepts PDF files.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Does Aevia Revive provide medical advice?</summary><div class="faq-answer">
+<p><strong>No.</strong> All nutrient readouts, phyto-class analysis, Patterns observations, and Nutrient Priority tiers are provided for educational reference only. They are not a substitute for advice from a physician or registered dietitian. Consult a qualified healthcare professional before making significant dietary changes or beginning a fasting protocol.</p>
+</div></details></div>
+
+<!-- SECTION 6 -->
+<h2 class="faq-section-heading" id="chronos">Aevia Chronos &amp; Aevia Circadia</h2>
+
+<div class="faq-item"><details><summary>What is Aevia Chronos?</summary><div class="faq-answer">
+<p>Aevia Chronos is a fasting timer built into the Notifications tab. It counts the elapsed time since your last logged meal. You can set a target fasting window — 12, 14, 16, or 18 hours, or a fully custom duration — and the app sends a notification when that window is reached. Use the Mark Last Meal button to anchor the timer to your most recent entry, or tap Reset to start fresh at any point.</p>
+<p>The app displays a health notice within this feature: intermittent fasting is not appropriate for everyone. The timer reflects only the time elapsed since your last logged intake and is not a medical assessment of any kind. If you have any medical condition or are pregnant, speak with a physician before using fasting protocols.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What is Aevia Circadia?</summary><div class="faq-answer">
+<p>Aevia Circadia is a sleep-aligned reminder also found in the Notifications tab. Set your intended bedtime, and the app sends an alert three hours before that time as a consistent cue to close your eating window ahead of sleep. The reminder is optional and fully adjustable.</p>
+</div></details></div>
+
+<!-- SECTION 7 -->
+<h2 class="faq-section-heading" id="household">Household Profiles</h2>
+
+<div class="faq-item"><details><summary>Can I track nutrition for other members of my household?</summary><div class="faq-answer">
+<p>Yes. Aevia Revive includes a multi-profile household system. From the sidebar, the primary account holder can add separate profiles for children, parents, a partner, or even a pet. Every profile has a completely isolated logging history, nutrient timeline, Phyto Spectrum, and Patterns view. Switching between profiles is a single tap, and no data is shared or merged across them.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Do all profiles have access to the full feature set?</summary><div class="faq-answer">
+<p>Yes. Dashboard, Meal Records, Smoothie Builder, Nutrients, Patterns, the Intake Map, and PDF export are all available for every profile you create, including household members other than the primary account holder.</p>
 </div></details></div>
 
 <div class="faq-item"><details><summary>Is there a limit to how many profiles I can create?</summary><div class="faq-answer">
-<p>Your app comes with 1 primary owner profile. You can unlock up to 6 additional seats (for a total of 7 profiles) via our Household subscriptions. Each additional seat is managed natively through your Apple ID settings.</p>
+<p>Your account comes with one primary profile. Additional household profiles can be created via the in-app subscription options, managed natively through your Apple ID settings.</p>
 </div></details></div>
 
 <!-- CONTACT -->
@@ -107,19 +169,19 @@
 
 <div style="padding: 28px 32px; background: var(--color-surface-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); margin-bottom: 40px;">
   <p style="font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); margin-bottom: 16px;">
-    Still stuck? Have a feature request? We'd love to hear from you.
+    Still stuck? Have a feature request or a bug to report? We want to hear from you.
   </p>
   <p style="font-size: 15px; color: var(--color-text); font-weight: 500; margin-bottom: 16px;">
     Email: <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>
   </p>
   <p style="font-size: 13px; line-height: 1.6; color: var(--color-text-tertiary); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">When emailing support, please include:</p>
   <ul style="font-size: 14px; line-height: 1.7; color: var(--color-text-secondary); padding-left: 20px; margin: 8px 0 0;">
-    <li>The device you are using (e.g., iPad Pro 13").</li>
-    <li>Your current iOS version.</li>
-    <li>A brief description of the bug or issue.</li>
+    <li>The device you are using (for example, iPhone 15 Pro or iPad Air).</li>
+    <li>Your current iOS or iPadOS version.</li>
+    <li>A brief description of the issue or question.</li>
   </ul>
   <p style="font-size: 13px; color: var(--color-text-tertiary); margin-top: 16px; margin-bottom: 0; font-style: italic;">
-    Please do not include sensitive health information or diagnostic reports in your emails.
+    Please do not include sensitive health information or personal diagnostic data in your support emails.
   </p>
 </div>
 

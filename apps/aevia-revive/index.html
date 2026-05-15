@@ -4,20 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aevia Revive — Aevia Lab</title>
-<meta name="description" content="Aevia Revive is a comprehensive phytochemistry and metabolic telemetry app. Vision-powered meal logging, bioactive profiling, circadian tracking, exposome monitoring — with absolute data sovereignty.">
+<meta name="description" content="Aevia Revive is a precision nutrition companion for iPhone and iPad. Log meals, build smoothies, track FDA Daily Values, and explore your full phyto spectrum — all on your device.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <style>
-  /* ── Hero ──────────────────────────────────────────── */
+  /* Hero */
   .revive-hero {
     padding: 160px 0 0;
     text-align: center;
     background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%);
   }
   .revive-hero .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
-  .revive-hero .heading-hero { max-width: 900px; margin: 0 auto; }
   .revive-hero__sub {
     max-width: 640px;
     margin: 24px auto 0;
@@ -57,8 +56,34 @@
     margin: 72px auto 0;
     padding: 0 clamp(24px, 5vw, 80px);
   }
+  .revive-hero__icon-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  }
+  .revive-hero__icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+    margin-bottom: 24px;
+  }
+  .revive-hero__icon-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .revive-hero__download { font-size: 14px; color: var(--color-text-tertiary); }
 
-  /* ── Feature sections ─────────────────────────────── */
+  /* Feature sections */
   .feature { padding: 100px 0; }
   .feature--alt { background: var(--color-surface-alt); }
   .feature__grid {
@@ -113,20 +138,20 @@
     .feature__grid--reverse { direction: ltr; }
   }
 
-  /* ── Data sovereignty dark section ───────────────── */
-  .sovereignty {
+  /* Household dark section */
+  .revive-household {
     background: var(--color-text);
     color: #fff;
     padding: 120px 0;
   }
-  .sovereignty .label { color: rgba(255,255,255,0.4); display: block; margin-bottom: 16px; }
-  .sovereignty__grid {
+  .revive-household .label { color: rgba(255,255,255,0.4); display: block; margin-bottom: 16px; }
+  .revive-household__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
   }
-  .sovereignty__title {
+  .revive-household__title {
     font-family: var(--font-serif);
     font-size: clamp(30px, 3.4vw, 44px);
     font-weight: 400;
@@ -134,35 +159,22 @@
     letter-spacing: -0.02em;
     color: #fff;
   }
-  .sovereignty__title em { font-style: italic; color: #6EDFC8; }
-  .sovereignty__desc { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.65); margin-top: 20px; }
-  .sovereignty__pillars {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .sovereignty__pillar {
+  .revive-household__title em { font-style: italic; color: #6EDFC8; }
+  .revive-household__desc { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.65); margin-top: 20px; }
+  .revive-household__pillars { display: flex; flex-direction: column; gap: 24px; }
+  .revive-household__pillar {
     padding: 24px 28px;
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 12px;
     background: rgba(255,255,255,0.04);
   }
-  .sovereignty__pillar-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .sovereignty__pillar-desc {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.55);
-  }
+  .revive-household__pillar-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .revive-household__pillar-desc { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.55); }
   @media (max-width: 900px) {
-    .sovereignty__grid { grid-template-columns: 1fr; gap: 48px; }
+    .revive-household__grid { grid-template-columns: 1fr; gap: 48px; }
   }
 
-  /* ── CTA strip ────────────────────────────────────── */
+  /* CTA strip */
   .revive-cta {
     padding: 80px 0;
     text-align: center;
@@ -170,6 +182,9 @@
   }
   .revive-cta .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
   .revive-cta p { font-size: 16px; color: var(--color-text-secondary); margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .revive-cta__legal { margin-top: 40px; display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; font-size: 14px; font-weight: 500; }
+  .revive-cta__legal a { color: var(--color-text-secondary); transition: color 0.2s; }
+  .revive-cta__legal a:hover { color: var(--color-accent); }
 </style>
 </head>
 <body>
@@ -179,163 +194,220 @@
 <!-- HERO -->
 <section class="revive-hero">
   <div class="container">
-    <span class="label">Application 01 &middot; Phytochemistry &amp; Metabolic Telemetry</span>
-    <h1 class="heading-hero revive-hero__title">Aevia <em>Revive.</em></h1>
+    <span class="label">Application 01 &middot; Nutrition Intelligence</span>
+    <h1 class="heading-hero" style="font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto;">Aevia <em style="font-style: italic; color: var(--color-accent);">Revive.</em></h1>
     <p class="revive-hero__sub">
-      A comprehensive on-device analytics engine for cellular nutrition, metabolic timing, and environmental stressors. Pure data. Total visibility. Zero prescriptions.
+      A precision nutrition companion that maps everything you eat to its complete molecular profile. Meals, smoothies, and packaged foods are logged with intent and analyzed in full depth, with all data stored entirely on your device.
     </p>
     <div class="revive-hero__badges">
-      <span class="badge">Vision-Powered Telemetry</span>
-      <span class="badge">Bioactive Profiling</span>
-      <span class="badge">Circadian Metabolism</span>
-      <span class="badge">Exposome Monitoring</span>
+      <span class="badge">Plate Builder</span>
+      <span class="badge">Food Label Entry</span>
+      <span class="badge">Smoothie Builder</span>
+      <span class="badge">Phyto Spectrum</span>
+      <span class="badge">FDA Daily Values</span>
+      <span class="badge">Fasting Timer</span>
+      <span class="badge">Household Profiles</span>
       <span class="badge">On-Device Data</span>
     </div>
   </div>
   <div class="revive-hero__media">
-    <div style="text-align: center; border-radius: var(--radius-2xl); overflow: hidden; background: var(--color-surface-alt); padding: 80px 24px; border: 1px solid var(--color-border-light);">
-      <img src="https://assets.aevialab.com/Website/icon.jpeg" alt="Aevia Revive App Icon" style="width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 12px 32px rgba(0,0,0,0.08); margin-bottom: 24px;">
-      <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 8px; color: var(--color-text);">Aevia Revive</h2>
-      <p style="color: var(--color-text-secondary); font-size: 15px;">Downloads for iPhone and iPad coming soon.</p>
+    <div class="revive-hero__icon-wrap">
+      <img src="https://assets.aevialab.com/Website/icon.jpeg" alt="Aevia Revive" class="revive-hero__icon">
+      <div class="revive-hero__icon-name">Aevia Revive</div>
+      <p class="revive-hero__download">Download links for iPhone and iPad coming soon.</p>
     </div>
   </div>
 </section>
 
-<!-- FEATURE 01 — Vision-Powered Telemetry -->
+<!-- 01 — Dashboard -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">01 — Vision-Powered Telemetry</span>
-        <h2 class="feature__title">Photograph your plate. <em>Decode its biology.</em></h2>
+        <span class="feature__num">01 &middot; Dashboard</span>
+        <h2 class="feature__title">Your full intake picture, <em>every time you open the app.</em></h2>
         <p class="feature__desc">
-          Aevia Revive eliminates manual entry. Simply photograph your raw ingredients or a prepared meal and the app's visual AI engine estimates portion sizes and weights with precision. That data is instantly cross-referenced with the Canadian Nutrient File — the country's authoritative dietary database — delivering real-time macro and micronutrient readouts calibrated to your actual inputs.
+          The Dashboard is where Aevia Revive begins. Opening the app surfaces your current day in a single view: total calories consumed, dietary fiber, hydration, sugars, and the number of logged entries, all updated the moment you record a new meal or smoothie. A live fasting counter tracks the elapsed time since your last logged intake. Below the summary, a full month grid displays your logging history as a navigable calendar. Tap any date to open that day's complete nutrient breakdown, including every food logged, the macronutrient split, and the full micronutrient readout. A quick-access button pair at the bottom launches a new meal record or the Smoothie Builder without navigating away from home.
         </p>
         <ul class="feature__bullets">
-          <li>AI portion estimation from a single photo — no scales required.</li>
-          <li>Canadian Nutrient File as the accuracy benchmark for all nutrient data.</li>
-          <li>Immediate readouts for macros, micros, and caloric density.</li>
-          <li>Functions purely as a factual calculator — no dietary directives.</li>
+          <li>Daily summary of calories, fiber, hydration, sugars, and meal count, updated in real time.</li>
+          <li>Live fasting counter tied to your most recent logged intake.</li>
+          <li>Month calendar grid with entry indicators — tap any date to review its complete nutrient profile.</li>
+          <li>Direct access to meal recording and the Smoothie Builder from the home screen.</li>
         </ul>
       </div>
       <div class="feature__media">
         <div class="media-placeholder">
-          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="media-placeholder__label">Screen · Vision Telemetry UI</span>
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span class="media-placeholder__label">Screen &middot; Dashboard</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURE 02 — Bioactive Profiling -->
+<!-- 02 — Meal Records -->
 <section class="feature feature--alt">
   <div class="container">
     <div class="feature__grid feature__grid--reverse">
       <div class="feature__content">
-        <span class="feature__num">02 — Bioactive Profiling</span>
-        <h2 class="feature__title">Beyond calories. Into <em>molecular intelligence.</em></h2>
+        <span class="feature__num">02 &middot; Meal Records</span>
+        <h2 class="feature__title">Three ways to record <em>what you actually ate.</em></h2>
         <p class="feature__desc">
-          Where conventional nutrition apps stop at macros, Aevia Revive maps your food to a proprietary bioactive compound database. Logging an ingredient reveals its precise molecular profile — illustrating, for example, how the anthocyanins in a given berry modulate oxidative stress pathways, or how sulforaphane from cruciferous vegetables activates Nrf2-mediated antioxidant defenses.
+          Aevia Revive offers three distinct recording modes designed to fit every real-world eating scenario. Plate mode presents a visual ingredient catalog organized into Bases and Grains, Vegetables, Fruits, Proteins, Plant-Based and Phyto-Proteins, Fats and Toppings, and Drinks. Select each component and enter the gram weight for your portion; nutrient estimates are generated immediately from the curated reference database. Food Label mode accepts the numbers directly from any packaged product's nutrition facts panel. Enter the printed label serving and your actual portion in grams or millilitres, and every field — calories, fat, saturated fat, carbohydrates, fibre, sugars, protein, cholesterol, and the full mineral and vitamin list — is scaled precisely to what you consumed. This makes it the right tool for nutrition bars, fortified foods, and anything with a printed label. Photo mode logs a timestamped snapshot to your calendar for quick visual reference; these entries appear on the calendar but do not contribute to nutrient or phyto totals. Saved and recent meals surface at the top of every session for fast relogging.
         </p>
         <ul class="feature__bullets">
-          <li>Proprietary database of phytochemicals, polyphenols, and bioactive metabolites.</li>
-          <li>Real-time readout of daily phytochemical saturation by compound class.</li>
-          <li>Pathway mapping: see which cellular mechanisms each bioactive influences.</li>
-          <li>Objective data only — no supplement recommendations pushed.</li>
+          <li>Plate mode: select whole ingredients by gram weight from a categorized visual library with immediate nutrient output.</li>
+          <li>Food Label mode: enter the nutrition facts panel of any packaged food or nutrition bar, scaled precisely to your actual portion.</li>
+          <li>Photo mode: a timestamped snapshot that logs to your calendar without affecting nutrient totals.</li>
+          <li>Saved and recent meals surface at the top of every session.</li>
         </ul>
       </div>
       <div class="feature__media">
         <div class="media-placeholder">
-          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <span class="media-placeholder__label">Screen · Bioactive Profiling UI</span>
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span class="media-placeholder__label">Screen &middot; Meal Records</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURE 03 — Metabolic Timing -->
+<!-- 03 — Smoothie Builder -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">03 — Metabolic Timing</span>
-        <h2 class="feature__title">Visualize your cellular <em>metabolic state.</em></h2>
+        <span class="feature__num">03 &middot; Smoothie Builder</span>
+        <h2 class="feature__title">Pick fresh ingredients. <em>We compute the cellular profile.</em></h2>
         <p class="feature__desc">
-          The app's user-controlled insight toggles track the biological timing of your meals and fasting windows. By visualising your cellular states — from insulin baseline through glycogen depletion, fat oxidation, and into autophagy — and aligning meal times with your local circadian rhythm, Aevia Revive frames daily fasting as metabolic conditioning rather than restriction.
+          The Smoothie Builder is a dedicated environment inside Aevia Revive built specifically for whole, fresh ingredients. A searchable library spans hundreds of fruits, vegetables, seeds, and functional foods, each photographed and tagged with its complete phyto-class composition. Two layered filter systems let you navigate with genuine intention. The first layer uses health-context filters: Antioxidant Boost, Skin Support, Cellular Defense, Oxalate, Phytic Acid, Dietary Nitrates, and Goitrogens. These surface or suppress ingredients based on the considerations most relevant to your goals. The second layer is the phyto-class color sidebar, which groups every ingredient by its dominant polyphenol family across thirteen categories: Anthocyanins, Lycopene, Carotenoids, Quercetin and Flavonols, Glucosinolates, Chlorophyll and Polyphenols, Organosulfur Compounds, Curcuminoids, Omega-3 and Lignans, Ellagitannins, Catechins and Flavanols, Beta-Glucans, and Probiotic Cultures. Select your ingredients, set your portions, and the app computes the complete molecular profile of everything in the glass.
         </p>
         <ul class="feature__bullets">
-          <li>Real-time metabolic state timeline: insulin, fat-oxidation, autophagy windows.</li>
-          <li>Circadian alignment engine calibrated to your time zone and sunrise/sunset.</li>
-          <li>Opt-in alerts — e.g., a reminder to stop eating three hours before sleep.</li>
-          <li>All alerts are user-defined and based entirely on your inputted schedule.</li>
+          <li>Searchable library of hundreds of fresh ingredients, each with a complete phyto-class profile attached.</li>
+          <li>Health-context filters: Antioxidant Boost, Skin Support, Cellular Defense, Oxalate, Phytic Acid, Dietary Nitrates, and Goitrogens.</li>
+          <li>Color-coded phyto-class sidebar spanning thirteen distinct polyphenol families for intentional ingredient selection.</li>
+          <li>Complete molecular profile computed the moment you assemble a blend.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l1 7H7L8 2z"/><path d="M7 9c0 5 1 9 5 11 4-2 5-6 5-11"/></svg>
+          <span class="media-placeholder__label">Screen &middot; Smoothie Builder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — Nutrient Intelligence -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">04 &middot; Nutrient Intelligence</span>
+        <h2 class="feature__title">Macros, micros, and the <em>full phyto spectrum.</em></h2>
+        <p class="feature__desc">
+          After logging, Aevia Revive generates a comprehensive nutrient portrait for any time window you choose — Today, Week, Month, Year, or a custom range. The macronutrient view presents caloric intake as a percentage of energy from protein, fat, carbohydrates, and fiber. Every tracked micronutrient is then listed alongside its measured quantity and its percentage of the FDA Daily Value: sodium, potassium, magnesium, calcium, iron, zinc, Vitamin C, Vitamin A, Vitamin K, folate, and more. Nutrient Priorities are filtered by sex and organized into four tiers — Critical Priorities, Secondary Health and Metabolic Support, General Wellness and Cardiovascular Balancing, and Items to Monitor and Limit — giving you a structured view of where your current intake stands relative to established reference targets. The Phyto Spectrum maps your eating pattern across five color families: Red for lycopene and ellagitannins, Orange and Yellow for carotenoids and flavonols, Green for glucosinolates and chlorophyll, Blue and Purple for anthocyanins, and White and Tan for organosulfurs, catechins, beta-glucans, and minerals. Coverage of all five families in a single window is tracked as a polyphenol diversity benchmark.
+        </p>
+        <ul class="feature__bullets">
+          <li>Macronutrient split as a percentage of energy across any selected time window.</li>
+          <li>Complete micronutrient readout with FDA Daily Value percentages for every tracked mineral and vitamin.</li>
+          <li>Nutrient Priorities by sex, organized into four tiers from critical deficits to items worth monitoring.</li>
+          <li>Phyto Spectrum analysis across five polyphenol color families with a full-coverage diversity benchmark.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l5 3"/></svg>
+          <span class="media-placeholder__label">Screen &middot; Nutrients</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — Patterns & Export -->
+<section class="feature">
+  <div class="container">
+    <div class="feature__grid">
+      <div class="feature__content">
+        <span class="feature__num">05 &middot; Patterns &amp; Export</span>
+        <h2 class="feature__title">What your data reveals <em>across any time window.</em></h2>
+        <p class="feature__desc">
+          The Patterns view computes plain-language observations from your recorded intake for any selected period. It surfaces facts like the proportion of your total Vitamin C intake concentrated in a single ingredient, the ratio of potassium to sodium in the window, how many of the five phyto-class color families appeared in your diet, and where each micronutrient sits relative to its FDA Daily Value. An Energy vs Quality chart overlays raw caloric intake against a nutrient-density score per calorie, making visible whether rising energy reflects whole-food nutrition or increased volume without proportionate micronutrient gains. The Intake Map visualizes everything you ate as a proportional treemap — tile size represents gram weight, and color follows your active phyto class or food category filter. Every observation is presented alongside its source reference, whether USDA, FDA, NIH ODS, or published scientific literature. When you are ready to share findings with a registered dietitian or physician, the Export function generates a structured PDF containing full macro and micro totals with FDA Daily Value percentages, the phyto-color spectrum breakdown, your most-consumed foods, and a 14-day daily intake summary.
+        </p>
+        <ul class="feature__bullets">
+          <li>Source-referenced pattern observations across Today, Week, Month, Year, or any custom range.</li>
+          <li>Energy vs Quality chart: raw caloric intake plotted against nutrient density per calorie over time.</li>
+          <li>Intake Map treemap: your diet visualized by gram weight, color-coded by phyto class or food category.</li>
+          <li>PDF export with macro and micro totals, phyto spectrum, top foods, and a 14-day breakdown, ready for a clinical or dietary conversation.</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="media-placeholder">
+          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span class="media-placeholder__label">Screen &middot; Patterns</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 — Aevia Chronos & Circadia -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">06 &middot; Aevia Chronos &amp; Aevia Circadia</span>
+        <h2 class="feature__title">Fasting windows and sleep reminders, <em>built directly in.</em></h2>
+        <p class="feature__desc">
+          Two notification systems are integrated into Aevia Revive under the Notifications tab. Aevia Chronos is a fasting timer that begins counting from your last logged meal. Set a target window — 12, 14, 16, or 18 hours, or a fully custom duration — and Aevia Chronos sends a notification when the target is reached. A single tap marks your last meal or resets the timer at any point. The app includes a visible health notice within this feature: intermittent fasting is not appropriate for everyone, and the timer reflects only the elapsed time since your last logged intake, not a medical assessment of any kind. Aevia Circadia is a sleep-aligned alert that sends a configurable reminder three hours before your set bedtime, giving you a consistent cue to close your eating window in time for an uninterrupted overnight fast.
+        </p>
+        <ul class="feature__bullets">
+          <li>Aevia Chronos: fasting timer counting from your last logged intake, with preset windows of 12, 14, 16, or 18 hours plus a fully adjustable custom duration.</li>
+          <li>Single-tap controls to mark your last meal or reset the timer at any point.</li>
+          <li>Aevia Circadia: a configurable reminder sent three hours before your intended bedtime.</li>
+          <li>An in-app health notice clearly states that the timer reflects logged intake data only and is not medical guidance.</li>
         </ul>
       </div>
       <div class="feature__media">
         <div class="media-placeholder">
           <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-          <span class="media-placeholder__label">Screen · Metabolic Timing UI</span>
+          <span class="media-placeholder__label">Screen &middot; Aevia Chronos</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURE 04 — Exposome & Hydration -->
-<section class="feature feature--alt">
+<!-- HOUSEHOLD PROFILES (dark) -->
+<section class="revive-household">
   <div class="container">
-    <div class="feature__grid feature__grid--reverse">
-      <div class="feature__content">
-        <span class="feature__num">04 — Exposome &amp; Hydration</span>
-        <h2 class="feature__title">Monitor what surrounds you — <em>inside and out.</em></h2>
-        <p class="feature__desc">
-          Cellular health does not exist in isolation. Aevia Revive tracks both your internal electrolyte gradient and the external environmental stressors your body is navigating. Sodium, potassium, and magnesium inputs provide factual updates on cellular conductivity and hydration status. Simultaneously, real-time UV index and air quality data from your city context environmental oxidative load — and opt-in alerts allow you to adapt your protocol accordingly.
-        </p>
-        <ul class="feature__bullets">
-          <li>Electrolyte tracking: sodium, potassium, magnesium — cellular conductivity readout.</li>
-          <li>Live environmental data: UV index and air quality index by location.</li>
-          <li>Opt-in oxidative stress alerts tied to environmental thresholds.</li>
-          <li>Suggested protocol adjustments (e.g. antioxidant dosage) are fully user-controlled.</li>
-        </ul>
-      </div>
-      <div class="feature__media">
-        <div class="media-placeholder">
-          <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M2 12h20"/></svg>
-          <span class="media-placeholder__label">Screen · Exposome &amp; Hydration UI</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURE 05 — Data Sovereignty -->
-<section class="sovereignty">
-  <div class="container">
-    <div class="sovereignty__grid">
+    <div class="revive-household__grid">
       <div>
-        <span class="label">05 — Absolute Data Sovereignty</span>
-        <h2 class="sovereignty__title">Your biology stays <em>on your device.</em></h2>
-        <p class="sovereignty__desc">
-          Aevia Revive operates strictly as a wellness and telemetry tool. All photographic records, nutritional logs, metabolic timelines, and bioactive readouts are stored entirely on your local device. No health data is transmitted to external servers. Your biological information remains completely private and under your absolute control — by architectural design, not policy promise.
+        <span class="label">07 &middot; Household Profiles</span>
+        <h2 class="revive-household__title">Track nutrition for <em>everyone in your life.</em></h2>
+        <p class="revive-household__desc">
+          The primary account holder can add individual profiles for any member of the household. Children, parents, a partner, or even a pet — any subject whose nutrition matters to you can have their own dedicated profile with a completely isolated logging history, nutrient timeline, Phyto Spectrum, and Patterns view. Switching between profiles takes a single tap from the sidebar. No records are shared or averaged across profiles. Every profile gains access to the same full suite of analysis tools available to the primary account, including Dashboard, Nutrients, Patterns, and PDF export.
         </p>
       </div>
-      <div class="sovereignty__pillars">
-        <div class="sovereignty__pillar">
-          <div class="sovereignty__pillar-title">Local-First Architecture</div>
-          <div class="sovereignty__pillar-desc">All data processing and storage occurs on-device. No cloud sync, no remote health databases.</div>
+      <div class="revive-household__pillars">
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">Individual Data Environments</div>
+          <div class="revive-household__pillar-desc">Each profile carries its own completely isolated logs, nutrient history, phyto analysis, and pattern findings. Nothing is shared or merged across profiles.</div>
         </div>
-        <div class="sovereignty__pillar">
-          <div class="sovereignty__pillar-title">No Personal Health Transmission</div>
-          <div class="sovereignty__pillar-desc">Photographic records, meal logs, fasting windows, and bioactive data never leave your device.</div>
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">Flexible Household Roster</div>
+          <div class="revive-household__pillar-desc">Add profiles for children, parents, a partner, or a pet. Any member of the household whose nutrition you want to track can be added as a dedicated profile.</div>
         </div>
-        <div class="sovereignty__pillar">
-          <div class="sovereignty__pillar-title">Pure Analytics Engine</div>
-          <div class="sovereignty__pillar-desc">Aevia Revive provides data — it does not prescribe, diagnose, or make medical recommendations.</div>
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">Single-Tap Profile Switching</div>
+          <div class="revive-household__pillar-desc">The active profile is always visible in the sidebar. Switch instantly at the start of any logging session without navigating away from your current screen.</div>
         </div>
-        <div class="sovereignty__pillar">
-          <div class="sovereignty__pillar-title">Opt-In Everything</div>
-          <div class="sovereignty__pillar-desc">Alerts, location access, and environmental monitoring require explicit user activation and can be disabled at any time.</div>
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">Full Analysis Per Profile</div>
+          <div class="revive-household__pillar-desc">Dashboard, Patterns, Nutrients, Phyto Spectrum, and PDF export are available for every profile you create, not only the primary account.</div>
         </div>
       </div>
     </div>
@@ -347,12 +419,11 @@
   <div class="container">
     <span class="label">Now Available</span>
     <h2 class="heading-lg">Aevia Revive is live.</h2>
-    <p>Aevia Revive is now in production. Download links for iPhone and iPad will be provided here shortly.</p>
-    
-    <div style="margin-top: 40px; display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; font-size: 14px; font-weight: 500;">
-      <a href="/apps/aevia-revive/support" style="color: var(--color-text-secondary); transition: color 0.2s;">Support &amp; FAQ</a>
-      <a href="/apps/aevia-revive/privacy-policy" style="color: var(--color-text-secondary); transition: color 0.2s;">Privacy Policy</a>
-      <a href="/apps/aevia-revive/terms-of-use" style="color: var(--color-text-secondary); transition: color 0.2s;">Terms of Use</a>
+    <p>Download links for iPhone and iPad will be published here shortly. All nutrition data remains on your device by architectural design, not policy promise.</p>
+    <div class="revive-cta__legal">
+      <a href="/apps/aevia-revive/support">Support &amp; FAQ</a>
+      <a href="/apps/aevia-revive/privacy-policy">Privacy Policy</a>
+      <a href="/apps/aevia-revive/terms-of-use">Terms of Use</a>
     </div>
   </div>
 </section>
