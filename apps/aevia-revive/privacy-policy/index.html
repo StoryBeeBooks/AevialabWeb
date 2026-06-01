@@ -18,7 +18,7 @@
 <div class="container--narrow">
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Aevia Revive &mdash; West Solution Consulting Corp.<br>Effective Date: May 10, 2026 &nbsp;|&nbsp; Last Updated: May 10, 2026</p>
+<p class="subtitle">Aevia Revive &mdash; West Solution Consulting Corp.<br>Effective Date: May 10, 2026 &nbsp;|&nbsp; Last Updated: June 1, 2026</p>
 
 <div class="highlight">
   <strong>Privacy-first, on-device architecture.</strong> Our fundamental principle is that your health and nutrition data belongs to you. The vast majority of the data you generate within the App never leaves your device or your personal iCloud account.
@@ -40,6 +40,7 @@
 <p>To provide core functionality, the App communicates with the internet in highly restricted ways:</p>
 <ul>
   <li><strong>Authentication (Sign in with Apple):</strong> We use Sign in with Apple for anonymous authentication. The App securely sends your Apple identity token to our server (hosted on Supabase) via a single verification endpoint (<code>verify-siwa</code>) to create a secure, stable user identifier (an anonymous string). We do not collect your name or email.</li>
+  <li><strong>Anonymous Barcode &amp; NPN Lookups:</strong> When a user utilizes our optional scanners, the App queries the public Open Food Facts database (for foods) or Health Canada's Licensed Natural Health Products Database (for Canadian supplements). These requests are completely anonymous. They transmit zero user identifiers, zero account details, and zero location data. The results are parsed and stored locally on the device.</li>
   <li><strong>CloudKit Sync (Optional):</strong> If you enable iCloud backup for your device, iOS may securely encrypt and back up your App data (via SwiftData / CloudKit) to your personal Apple iCloud account. This data is managed directly by Apple, is encrypted end-to-end where supported by Apple, and is intrinsically inaccessible to West Solution Consulting Corp.</li>
   <li><strong>Subscriptions (StoreKit):</strong> We use Apple's native StoreKit to verify your household seat subscriptions on-device. Payment processing is handled entirely by Apple. We do not have access to your billing information or credit card details.</li>
 </ul>
@@ -78,8 +79,8 @@
 
 <h2>5. Security Practices</h2>
 <p>We have implemented aggressive security practices:</p>
-<ul>
-  <li><strong>Zero-Egress Architecture:</strong> Beyond the SIWA authentication ping, the App operates entirely offline.</li>
+<ul> and anonymous database lookups (for barcodes/NPNs), the App operates entirely offline.</li>
+  <li><strong>Strict Third-Party API Policy:</strong> We only utilize strictly necessary, anonymous third-party public APIs. We stripped out all invasive or trackingA authentication ping, the App operates entirely offline.</li>
   <li><strong>No Third-Party APIs:</strong> We stripped out all third-party APIs (including external AI/vision APIs) during the development of version 1.0 to ensure deterministic, contained execution.</li>
   <li><strong>Secure Key Storage:</strong> Authentication tokens are stored in the iOS secure enclave (Keychain).</li>
 </ul>
