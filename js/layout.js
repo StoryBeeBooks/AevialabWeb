@@ -34,6 +34,25 @@
       }
     });
 
+    // Language switch: set Chinese (简体) link to mirrored /zh path
+    function setupLangLink(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var p = window.location.pathname || '/';
+      var target;
+      if (p.indexOf('/zh') === 0) {
+        // Already in Chinese site — link back to English
+        target = p.replace('/zh', '') || '/';
+      } else {
+        // Prefix with /zh to point at translated mirror
+        target = '/zh' + (p === '/' ? '/' : p);
+      }
+      el.setAttribute('href', target);
+    }
+
+    setupLangLink('lang-zh');
+    setupLangLink('mobile-lang-zh');
+
     // Initialize scroll-driven inset effect after footer is injected
     initSectionInset();
   });
