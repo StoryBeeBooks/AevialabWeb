@@ -1,18 +1,72 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
+<!DOCTYPE html><html lang="zh-Hans"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>政策 — Aevia Lab</title>
+<meta name="description" content="Aevia Lab网站政策的完整集合：隐私、条款、免责声明、Cookie、可访问性。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  .policy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .policy-card { display: block; background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); padding: 28px; transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); }
+  .policy-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .policy-card__title { font-size: 17px; font-weight: 600; color: var(--color-text); margin-bottom: 8px; }
+  .policy-card__desc { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); }
+  .policy-card__cta { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--color-accent); }
+  @media (max-width: 700px) { .policy-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
+
 <div id="header-placeholder"></div>
-<main class="container--narrow">
-  <h1>政策</h1>
-  <p>在此可以找到我们的隐私政策、Cookies 政策和其他法律文件。</p>
+
+<main class="legal">
+<div class="container--narrow">
+
+<h1>政策</h1>
+<p class="subtitle">管理您使用aevialab.com的所有政策。</p>
+
+<div class="policy-grid" style="margin-top: 32px;">
+  <a href="/privacy-policy" class="policy-card">
+    <div class="policy-card__title">隐私政策</div>
+    <p class="policy-card__desc">我们如何收集、使用和保护Aevia Lab网站访问者的信息。</p>
+    <span class="policy-card__cta">阅读 →</span>
+  </a>
+  <a href="/terms-of-service" class="policy-card">
+    <div class="policy-card__title">服务条款</div>
+    <p class="policy-card__desc">管理您访问和使用Aevia Lab网站的协议。</p>
+    <span class="policy-card__cta">阅读 →</span>
+  </a>
+  <a href="/zh/disclaimer" class="policy-card">
+    <div class="policy-card__title">监管与科学免责声明</div>
+    <p class="policy-card__desc">仅限教育用途。非医疗建议、诊断、治疗或处方。</p>
+    <span class="policy-card__cta">阅读 →</span>
+  </a>
+  <a href="/zh/cookies-policy" class="policy-card">
+    <div class="policy-card__title">Cookies 政策</div>
+    <p class="policy-card__desc">我们设置的Cookie、它们的作用以及如何管理它们。</p>
+    <span class="policy-card__cta">阅读 →</span>
+  </a>
+  <a href="/zh/accessibility" class="policy-card">
+    <div class="policy-card__title">无障碍声明</div>
+    <p class="policy-card__desc">我们致力于让Aevia Lab网站对所有人都可用的承诺。</p>
+    <span class="policy-card__cta">阅读 →</span>
+  </a>
+  <a href="/zh/faq" class="policy-card">
+    <div class="policy-card__title">常见问题解答</div>
+    <p class="policy-card__desc">关于Aevia Lab、我们发布的科学内容以及应用程序的常见问题。</p>
+    <span class="policy-card__cta">阅读 →</span>
+  </a>
+</div>
+
+<p style="margin-top: 36px;">每个Aevia Lab应用程序都有其自己的产品级政策，可从应用程序本身访问。</p>
+
+</div>
 </main>
+
 <div id="footer-placeholder"></div>
 <script src="/js/layout.js"></script>
-</body>
-</html>
+
+
+</body></html>

@@ -1,18 +1,193 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
+<!DOCTYPE html><html lang="zh-Hans"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>科学 — Aevia Lab</title>
+<meta name="description" content="Aevia Lab背后的机制：营养基因组学、部分表观遗传重编程、自噬、氧化调节和线粒体生物合成详解。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  .science-hero { padding: 160px 0 80px; text-align: center; background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%); }
+  .science-hero .label { display: block; margin-bottom: 16px; }
+  .science-hero .heading-xl { max-width: 820px; margin: 0 auto 20px; }
+  .science-hero .text-lg { max-width: 680px; margin: 0 auto; }
+  .pillar-section { padding: 100px 0; border-top: 1px solid var(--color-border-light); }
+  .pillar-section--alt { background: var(--color-surface-alt); border-top-color: transparent; }
+  .pillar-anchor { scroll-margin-top: 100px; }
+  .pillar-grid { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; }
+  .pillar-grid .label { display: block; margin-bottom: 12px; }
+  .pillar-grid h2 { font-size: clamp(28px, 3.2vw, 40px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.15; }
+  .pillar-grid p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin-top: 16px; }
+  .pillar-grid ul { margin-top: 16px; padding-left: 20px; color: var(--color-text-secondary); }
+  .pillar-grid li { font-size: 16px; line-height: 1.7; margin-bottom: 8px; }
+  .pillar-grid li strong { color: var(--color-text); font-weight: 600; }
+  @media (max-width: 900px) { .pillar-grid { grid-template-columns: 1fr; gap: 24px; } }
+  .term-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+  .term { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 24px; }
+  .term__name { font-size: 15px; font-weight: 600; color: var(--color-accent); letter-spacing: 0.02em; }
+  .term__def { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-top: 8px; }
+  @media (max-width: 700px) { .term-list { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
+
 <div id="header-placeholder"></div>
-<main class="container--narrow">
-  <h1>科学</h1>
-  <p>我们将营养化学与表观遗传学相结合，研究如何通过特定植物化合物和代谢干预调节基因表达与细胞功能。</p>
-</main>
+
+<section class="science-hero">
+  <div class="container">
+    <span class="label">科学</span>
+    <h1 class="heading-xl">分子语言 <em>健康寿命。</em></h1>
+    <p class="text-lg">基于同行评审的营养基因组学、生物老年学及计算生物学的生物机制工作概述。</p>
+    <div style="max-width: 1080px; margin: 64px auto 0;">
+      <video autoplay="" muted="" loop="" playsinline="" style="width:100%;border-radius:8px;display:block;">
+        <source src="https://assets.aevialab.com/Website/Videos/Particle_Dna_1920x1080.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-section--alt pillar-anchor" id="phytochemicals">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">基础</span>
+        <h2>植物化学物 &amp; <em>植物营养素。</em></h2>
+      </div>
+      <div>
+        <p>在深入探讨细胞机制之前，理解饮食与生物优化之间的主要桥梁——植物化学物至关重要。植物化学物（或称植物营养素）是植物为抵御害虫、病毒和真菌等环境威胁而产生的生物活性天然化合物。人们摄入后，这些防御分子通过调节细胞通路、充当内源性抗氧化触发剂、减轻系统性炎症以及显著降低癌症、神经退行性疾病和心脏病等慢性衰老相关疾病的风险，为人类带来深远的健康益处。</p>
+        <p>与宏量营养素（脂肪、蛋白质、碳水化合物）和必需微量营养素（维生素、矿物质）不同，植物化学物并非短期生存所严格“必需”，但它们对长期健康寿命和最佳生理表现至关重要。</p>
+        <ul>
+          <li><strong>来源与特征。</strong> 它们大量存在于水果、蔬菜、全谷物、坚果、种子和豆类中。除健康益处外，它们还赋予植物鲜艳的色彩、香气和独特风味（例如番茄的深红色、羽衣甘蓝的苦味）。</li>
+          <li><strong>主要类型。</strong> 自然界中存在超过10,000种不同类型。关键类别包括 <strong>多酚</strong> （绿茶和黑巧克力中的类黄酮、葡萄中的白藜芦醇）， <strong>类胡萝卜素</strong> （番茄中的番茄红素、胡萝卜中的β-胡萝卜素）， <strong>硫代葡萄糖苷</strong> （存在于西兰花等十字花科蔬菜中），以及 <strong>植物甾醇</strong>.</li>
+          <li><strong>健康益处。</strong> 在细胞层面，植物化学物对抗自由基（充当抗氧化剂/毒物兴奋效应应激源），显著增强免疫功能，调节激素代谢，并发挥抗增殖作用，减缓或阻止癌细胞生长。</li>
+          <li><strong>饮食建议。</strong> 由于不同类别的植物化学物作用于不同的细胞通路，营养学家一致建议食用“彩虹”般的植物性食物，以确保广泛摄入这些保护性化合物。</li>
+        </ul>
+        <div class="references" style="margin-top: 32px; border-top: 1px solid var(--color-border-light); padding-top: 24px;">
+          <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 12px;">精选参考文献</p>
+          <ol style="padding-left: 18px; margin: 0;">
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Liu RH. 饮食中水果和蔬菜的健康促进成分。 <em>Adv Nutr</em>. 2013;4(3):384S-392S. doi:10.3945/an.112.003517</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">D'Archivio M, Filesi C, Di Benedetto R, Gargiulo R, Giovannini C, Masella R. 多酚、膳食来源和生物利用度。 <em>Ann Ist Super Sanita</em>. 2007;43(4):348-361.</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Zhang YJ, Gan RY, Li S, et al. Antioxidant Phytochemicals for the Prevention and Treatment of Chronic Diseases. <em>Molecules</em>. 2015;20(12):21138-21156. doi:10.3390/molecules201219753</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-anchor" id="autophagy">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">支柱01</span>
+        <h2>自噬与衰老细胞清除 <em>清除。</em></h2>
+      </div>
+      <div>
+        <p>自噬是细胞内在的回收程序。当身体进入特定的代谢状态——尤其是定时禁食和热量限制——时，自噬通过营养感应途径（包括mTOR抑制和AMPK激活）上调。细胞识别错误折叠的蛋白质、功能失调的细胞器和衰老成分，将其包裹进自噬体，并分解为氨基酸构建块以供再利用。</p>
+        <p>衰老（"僵尸"）细胞的积累是生物衰老的核心驱动因素之一。这些细胞停止分裂但抵抗凋亡，分泌促炎混合物（衰老相关分泌表型），损害邻近组织。衰老细胞清除植物化学物质——包括非瑟酮、槲皮素和特定类黄酮——选择性地触发衰老细胞凋亡而不伤害健康细胞。</p>
+        <ul>
+          <li><strong>机制。</strong> mTOR抑制 → ULK1激活 → 自噬体形成 → 溶酶体降解。</li>
+          <li><strong>触发因素。</strong> 禁食窗口 &gt; 14小时、多酚摄入、运动诱导的代谢应激。</li>
+          <li><strong>终点。</strong> 减少衰老细胞负荷、降低炎症衰老标志物、恢复组织稳态。</li>
+        </ul>
+        <div class="references" style="margin-top: 32px; border-top: 1px solid var(--color-border-light); padding-top: 24px;">
+          <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 12px;">精选参考文献</p>
+          <ol style="padding-left: 18px; margin: 0;">
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Mizushima N, Komatsu M. Autophagy: renovation of cells and tissues. <em>Cell</em>. 2011;147(4):728–741. doi:10.1016/j.cell.2011.10.026</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Levine B, Kroemer G. Autophagy in the pathogenesis of disease. <em>Cell</em>. 2008;132(1):27–42. doi:10.1016/j.cell.2007.12.018</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Xu M, Pirtskhalava T, Farr JN, et al. Senolytics improve physical function and increase lifespan in old age. <em>Nat Med</em>. 2018;24(8):1246–1256. doi:10.1038/s41591-018-0092-9</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Yousefzadeh MJ, Zhu Y, McGowan SJ, et al. Fisetin is a senotherapeutic that extends health and lifespan. <em>EBioMedicine</em>. 2018;36:18–28. doi:10.1016/j.ebiom.2018.09.015</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-section--alt pillar-anchor" id="oxidative">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">支柱 02</span>
+        <h2>氧化应激 <em>调节。</em></h2>
+      </div>
+      <div>
+        <p>活性氧（ROS）是线粒体呼吸不可避免的副产物。在生理水平上，它们作为信号分子；过量时，它们氧化脂质膜、断裂DNA并加速端粒磨损。慢性氧化负荷是"炎症衰老"——大多数年龄相关疾病背后的低度系统性炎症——的主要机制。</p>
+        <p>身体的内源性抗氧化系统（谷胱甘肽、超氧化物歧化酶、过氧化氢酶）本身由基因表达级联调控，最显著的是Nrf2/Keap1通路。高密度植物多酚——来自十字花科蔬菜的萝卜硫素、来自绿茶的EGCG、来自浆果的花青素——并非作为直接自由基清除剂，而是作为 <em>激素激活剂</em> 训练身体上调自身的抗氧化防御。</p>
+        <ul>
+          <li><strong>通路。</strong> 多酚摄入 → Nrf2核转位 → 细胞保护酶转录。</li>
+          <li><strong>靶点。</strong> 脂质过氧化、线粒体DNA损伤、端粒缩短速率。</li>
+          <li><strong>终点。</strong> 降低hsCRP、IL-6和8-OHdG；维持端粒长度。</li>
+        </ul>
+        <div class="references" style="margin-top: 32px; border-top: 1px solid var(--color-border-light); padding-top: 24px;">
+          <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 12px;">精选参考文献</p>
+          <ol style="padding-left: 18px; margin: 0;">
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Sies H, Berndt C, Jones DP. 氧化应激. <em>Annu Rev Biochem</em>. 2017;86:715–748. doi:10.1146/annurev-biochem-061516-045037</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Itoh K, Wakabayashi N, Katoh Y, et al. Keap1通过Nrf2抑制抗氧化反应元件的核激活. <em>Genes Dev</em>. 1999;13(1):76–86. doi:10.1101/gad.13.1.76</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Fahey JW, Zhang Y, Talalay P. 西兰花芽：一种异常丰富的酶诱导剂来源，可抵御化学致癌物. <em>Proc Natl Acad Sci USA</em>. 1997;94(19):10367–10372. doi:10.1073/pnas.94.19.10367</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Manach C, Scalbert A, Morand C, Rémésy C, Jiménez L. 多酚：食物来源与生物利用度. <em>Am J Clin Nutr</em>. 2004;79(5):727–747. doi:10.1093/ajcn/79.5.727</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-anchor" id="mitochondria">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">支柱 03</span>
+        <h2>线粒体 <em>Output.</em></h2>
+      </div>
+      <div>
+        <p>线粒体产生ATP，为体内每个活跃过程提供能量。随着年龄增长，线粒体密度和效率下降——每个细胞中线粒体减少，线粒体DNA突变增多，以及受损细胞器堆积，而线粒体自噬无法清除。其下游效应是大多数人体验到的能量崩溃，即“感觉变老”。</p>
+        <p>线粒体生物合成可通过代谢应激（运动、寒冷、禁食）和特定营养催化剂来刺激。最近研究最多的例子是尿石素A——一种后生元，由肠道细菌代谢石榴、核桃和某些浆果中的鞣花单宁产生。临床试验已证明，尿石素A能选择性触发线粒体自噬，并改善老年人的肌肉线粒体功能。</p>
+        <ul>
+          <li><strong>通路。</strong> AMPK → PGC-1α → 线粒体生物合成转录程序。</li>
+          <li><strong>催化剂。</strong> 尿石素A、NAD+前体（NMN、NR）、辅酶Q10、PQQ。</li>
+          <li><strong>终点。</strong> 更高VO₂max、改善肌肉耐力、恢复细胞ATP。</li>
+        </ul>
+        <div class="references" style="margin-top: 32px; border-top: 1px solid var(--color-border-light); padding-top: 24px;">
+          <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 12px;">精选参考文献</p>
+          <ol style="padding-left: 18px; margin: 0;">
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Jornayvaz FR, Shulman GI. 线粒体生物合成的调控. <em>Essays Biochem</em>. 2010;47:69–84. doi:10.1042/bse0470069</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Ryu D, Mouchiroud L, Andreux PA, et al. 尿石素A诱导线粒体自噬并延长 <em>C. elegans</em> 寿命，同时增强啮齿动物肌肉功能。 <em>Nat Med</em>. 2016;22(8):879–888. doi:10.1038/nm.4132</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">Singh A, D'Amico D, Andreux PA, 等. 尿石素A改善中年人肌肉力量、运动表现以及线粒体健康生物标志物的随机试验。 <em>Cell Rep Med</em>. 2022;3(5):100633. doi:10.1016/j.xcrm.2022.100633</li>
+            <li style="font-size: 13px; line-height: 1.65; color: var(--color-text-tertiary); margin-bottom: 8px;">López-Lluch G, Navas P. 热量限制作为抗衰老干预手段。 <em>J Physiol</em>. 2016;594(8):2043–2060. doi:10.1113/JP270543</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillar-section pillar-section--alt">
+  <div class="container">
+    <div class="pillar-grid">
+      <div>
+        <span class="label">参考文献</span>
+        <h2>实用术语表。</h2>
+      </div>
+      <div>
+        <div class="term-list">
+          <div class="term"><div class="term__name">营养基因组学</div><div class="term__def">双向研究：营养物质如何影响基因表达，以及遗传变异如何改变营养应答。</div></div>
+          <div class="term"><div class="term__name">表观遗传重编程</div><div class="term__def">重置与年龄相关的DNA化学标记（甲基化、组蛋白修饰），以恢复更年轻的基因表达谱。</div></div>
+          <div class="term"><div class="term__name">细胞衰老</div><div class="term__def">永久退出细胞周期但抵抗凋亡的细胞，分泌炎症因子损害周围组织。</div></div>
+          <div class="term"><div class="term__name">山中因子</div><div class="term__def">一组四种转录因子（Oct4、Sox2、Klf4、c-Myc），可将细胞重置为多能、年轻状态。</div></div>
+          <div class="term"><div class="term__name">SIRT1</div><div class="term__def">一种依赖于NAD+的去乙酰化酶，调控DNA修复、代谢和长寿相关基因表达。</div></div>
+          <div class="term"><div class="term__name">AMPK</div><div class="term__def">由低ATP激活的细胞能量感受器，驱动自噬、线粒体生物合成和代谢灵活性。</div></div>
+          <div class="term"><div class="term__name">尿石素A</div><div class="term__def">膳食鞣花单宁的后生代谢产物，触发线粒体自噬并改善线粒体功能。</div></div>
+          <div class="term"><div class="term__name">炎症衰老</div><div class="term__def">随年龄发展而出现的慢性低度全身性炎症，是多数年龄相关疾病的基础。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
 <script src="/js/layout.js"></script>
-</body>
-</html>
+
+
+</body></html>

@@ -1,3 +1,20 @@
+/* ── Language helper (shared) ──
+   The Simplified Chinese mirror of the site lives under the /zh/ prefix.
+   This detects the active language from the URL and computes the matching
+   URL in the opposite language for the toggle. */
+var AEVIA_LANG = (function () {
+  var path = window.location.pathname;
+  var isZh = /^\/zh(\/|$)/.test(path);
+  function other(p) {
+    if (isZh) {
+      var stripped = p.replace(/^\/zh(?=\/|$)/, '');
+      return stripped === '' ? '/' : stripped;
+    }
+    return '/zh' + (p === '/' ? '/' : p);
+  }
+  return { isZh: isZh, otherUrl: other(path) };
+})();
+
 (function () {
   'use strict';
 
@@ -7,8 +24,9 @@
 
   var base = document.documentElement.getAttribute('data-base') || '';
 
-  var headerFile = '/components/header.html';
-  var footerFile = '/components/footer.html';
+  var suffix = AEVIA_LANG.isZh ? '.zh' : '';
+  var headerFile = '/components/header' + suffix + '.html';
+  var footerFile = '/components/footer' + suffix + '.html';
 
   function inject(el, path) {
     if (!el) return Promise.resolve();
@@ -29,33 +47,63 @@
       if (!href) return;
       if (href === '/' && path === '/') {
         a.classList.add('active');
-      } else if (href !== '/' && href.indexOf('#') === -1 && path.indexOf(href) === 0) {
+      } else if (href === '/zh/' && path === '/zh/') {
+        a.classList.add('active');
+      } else if (href !== '/' && href !== '/zh/' && href.indexOf('#') === -1 && path.indexOf(href) === 0) {
         a.classList.add('active');
       }
     });
 
-    // Language switch: set Chinese (简体) link to mirrored /zh path
-    function setupLangLink(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      var p = window.location.pathname || '/';
-      var target;
-      if (p.indexOf('/zh') === 0) {
-        // Already in Chinese site — link back to English
-        target = p.replace('/zh', '') || '/';
-      } else {
-        // Prefix with /zh to point at translated mirror
-        target = '/zh' + (p === '/' ? '/' : p);
-      }
-      el.setAttribute('href', target);
-    }
-
-    setupLangLink('lang-zh');
-    setupLangLink('mobile-lang-zh');
+    injectLangToggle();
 
     // Initialize scroll-driven inset effect after footer is injected
     initSectionInset();
   });
+
+  /* ── Language toggle (EN / 中文) ──
+     Injected after the header loads. Hidden on pages that opt out via
+     <html data-no-translate> (the site-wide Privacy Policy & Terms of
+     Service, which remain English-only). The visitor's last explicit
+     choice is stored in localStorage; no automatic redirect is performed. */
+  function injectLangToggle() {
+    if (document.documentElement.hasAttribute('data-no-translate')) return;
+
+    var targetUrl = AEVIA_LANG.otherUrl;
+    var aria = AEVIA_LANG.isZh ? 'Switch to English' : '切换为中文 / Switch to Chinese';
+    var toLang = AEVIA_LANG.isZh ? 'en' : 'zh';
+
+    function remember() {
+      try { localStorage.setItem('aevialab_lang', toLang); } catch (e) {}
+    }
+
+    var navInner = document.querySelector('.nav__inner');
+    if (navInner && !document.getElementById('lang-toggle')) {
+      var a = document.createElement('a');
+      a.id = 'lang-toggle';
+      a.className = 'nav__lang';
+      a.href = targetUrl;
+      a.setAttribute('aria-label', aria);
+      a.setAttribute('lang', AEVIA_LANG.isZh ? 'en' : 'zh-Hans');
+      a.textContent = AEVIA_LANG.isZh ? 'EN' : '中文';
+      a.addEventListener('click', remember);
+      var toggleBtn = navInner.querySelector('.nav__mobile-toggle');
+      navInner.insertBefore(a, toggleBtn || null);
+    }
+
+    var mobile = document.querySelector('.nav__mobile-menu');
+    var mobileClose = mobile && mobile.querySelector('.nav__mobile-close');
+    if (mobile && !document.getElementById('lang-toggle-mobile')) {
+      var m = document.createElement('a');
+      m.id = 'lang-toggle-mobile';
+      m.className = 'nav__mobile-lang';
+      m.href = targetUrl;
+      m.setAttribute('aria-label', aria);
+      m.setAttribute('lang', AEVIA_LANG.isZh ? 'en' : 'zh-Hans');
+      m.textContent = AEVIA_LANG.isZh ? 'English' : '中文';
+      m.addEventListener('click', remember);
+      mobile.appendChild(m);
+    }
+  }
 })();
 
 /* ── Scroll-driven section inset effect ──
@@ -200,21 +248,32 @@
   function init() {
     if (!shouldShow()) return;
 
+    var isZh = window.AEVIA_LANG ? AEVIA_LANG.isZh : /^\/zh(\/|$)/.test(window.location.pathname);
+    var cookiesHref = isZh ? '/zh/cookies-policy' : '/cookies-policy';
+
     var bar = document.createElement('div');
     bar.className = 'cookie-bar';
     bar.setAttribute('role', 'region');
-    bar.setAttribute('aria-label', 'Cookie consent');
+    bar.setAttribute('aria-label', isZh ? 'Cookie 同意' : 'Cookie consent');
+
+    var text = isZh
+      ? '我们使用 Cookie 来了解网站的使用情况。点击<strong>全部接受</strong>，即表示您' +
+        '同意我们依据<a href="' + cookiesHref + '" class="cookie-bar__link">Cookie 政策</a>使用分析类 Cookie。' +
+        '严格必要的 Cookie 始终处于启用状态。'
+      : 'We use cookies to understand how our site is used. By clicking ' +
+        '<strong>Accept All</strong>, you consent to our use of analytics cookies ' +
+        'in accordance with our <a href="' + cookiesHref + '" class="cookie-bar__link">Cookies Policy</a>. ' +
+        'Strictly necessary cookies are always active.';
+
+    var necessaryLabel = isZh ? '仅必要' : 'Necessary Only';
+    var acceptLabel = isZh ? '全部接受' : 'Accept All';
+
     bar.innerHTML =
       '<div class="cookie-bar__inner">' +
-        '<p class="cookie-bar__text">' +
-          'We use cookies to understand how our site is used. By clicking ' +
-          '<strong>Accept All</strong>, you consent to our use of analytics cookies ' +
-          'in accordance with our <a href="/cookies-policy" class="cookie-bar__link">Cookies Policy</a>. ' +
-          'Strictly necessary cookies are always active.' +
-        '</p>' +
+        '<p class="cookie-bar__text">' + text + '</p>' +
         '<div class="cookie-bar__actions">' +
-          '<button class="cookie-bar__btn cookie-bar__btn--secondary" id="wsc-cookie-necessary">Necessary Only</button>' +
-          '<button class="cookie-bar__btn cookie-bar__btn--primary"   id="wsc-cookie-accept">Accept All</button>' +
+          '<button class="cookie-bar__btn cookie-bar__btn--secondary" id="wsc-cookie-necessary">' + necessaryLabel + '</button>' +
+          '<button class="cookie-bar__btn cookie-bar__btn--primary"   id="wsc-cookie-accept">' + acceptLabel + '</button>' +
         '</div>' +
       '</div>';
 

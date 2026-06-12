@@ -1,18 +1,109 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
+<!DOCTYPE html><html lang="zh-Hans"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>隐私政策 — Aevia Revive</title>
+<meta name="description" content="Aevia Revive的隐私政策，由West Solution Consulting Corp.开发。了解您的数据如何存储、保护和管理。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
 <div id="header-placeholder"></div>
-<main class="container--narrow">
-  <h1>隐私政策</h1>
-  <p>我们的隐私做法请参阅原文页面。Aevia Revive 将核心健康数据保存在您的设备或您的 Apple iCloud 中。我们不访问或备份您的个人健康数据。</p>
+
+<main class="legal">
+<div class="container--narrow">
+
+<h1>隐私政策</h1>
+<p class="subtitle">Aevia Revive — West Solution Consulting Corp.<br>生效日期：2026年5月10日 &nbsp;|&nbsp; 最后更新：2026年6月1日</p>
+
+<div class="highlight">
+  <strong>隐私优先，设备端架构。</strong> 我们的基本原则是您的健康和营养数据属于您自己。您在 App 内生成的大部分数据绝不会离开您的设备或您的个人 iCloud 账户。
+</div>
+
+<h2>1. 我们收集的信息</h2>
+
+<h3>1.1 仅存储在您设备上的数据</h3>
+<p>您在 App 内输入或生成的大部分数据绝不会离开您的设备或您的个人 iCloud 账户。这包括：</p>
+<ul>
+  <li><strong>用户档案：</strong> 您家庭成员的名字、头像颜色和自定义档案照片。</li>
+  <li><strong>营养记录：</strong> 任何餐食记录、果昔记录、禁食计时器、体重输入或饮食模式。</li>
+  <li><strong>照片：</strong> 您拍摄或导入并附加到餐食记录中的图像。</li>
+  <li><strong>健康目标与偏好：</strong> 您的个人目标、禁食时间表和界面偏好。</li>
+  <li><strong>本地生成的洞察：</strong> 所有趋势、洞察和警告（如过敏原检测或 FDA 每日摄入量比较）均在您的设备上使用捆绑的离线数据集完全计算。Aevia Revive 不使用基于云的大型语言模型 (LLM)，也不会将您的记录发送到外部服务器进行处理。</li>
+</ul>
+
+<h3>1.2 通过云服务处理的数据</h3>
+<p>为了提供核心功能，App 以高度受限的方式与互联网通信：</p>
+<ul>
+  <li><strong>身份验证（通过 Apple 登录）：</strong> 我们使用“通过 Apple 登录”进行匿名身份验证。App 通过单个验证端点（<code>verify-siwa</code>) 将您的 Apple 身份令牌安全发送到我们的服务器（托管在 Supabase 上），以创建一个安全、稳定的用户标识符（匿名字符串）。我们不会收集您的姓名或电子邮件。</li>
+  <li><strong>匿名条形码与 NPN 查询：</strong> 当用户使用我们的可选扫描仪时，App 会查询公共 Open Food Facts 数据库（针对食物）或加拿大卫生部的许可天然健康产品数据库（针对加拿大补充剂）。这些请求完全匿名。它们不传输任何用户标识符、任何账户详情和任何位置数据。结果在设备上解析并本地存储。</li>
+  <li><strong>CloudKit 同步（可选）：</strong> 如果您为设备启用了 iCloud 备份，iOS 可能通过 SwiftData / CloudKit 安全地加密并备份您的 App 数据到您的个人 Apple iCloud 账户。此数据由 Apple 直接管理，在 Apple 支持的情况下端到端加密，并且 West Solution Consulting Corp. 实质上无法访问。</li>
+  <li><strong>订阅（StoreKit）：</strong> 我们使用 Apple 的原生 StoreKit 在设备上验证您的家庭席位订阅。支付处理完全由 Apple 处理。我们无法访问您的账单信息或信用卡详情。</li>
+</ul>
+
+<h2>2. 我们如何使用信息</h2>
+<p>由于我们无法访问您的健康和营养日志，我们不会将您的数据用于广告、分析或模型训练。</p>
+<p>我们处理的极少量身份验证数据（您的匿名Apple标识符）仅用于：</p>
+<ul>
+  <li>验证您的设备。</li>
+  <li>确保您本地的App环境安全。</li>
+  <li>处理从App内发起的账户删除请求。</li>
+</ul>
+
+<h2>3. 我们如何共享信息</h2>
+<p><strong>我们不会出售、出租或交易您的个人或健康数据。</strong> 我们也不使用第三方分析SDK、广告追踪器或外部行为监控工具。</p>
+<p>我们仅在以下情况下披露您的匿名身份验证标识符：</p>
+<ul>
+  <li>向我们的服务提供商（例如Supabase）披露，他们提供身份验证所需的安全基础设施。这些提供商严格遵守禁止二次使用的数据处理协议。</li>
+  <li>法律要求时，例如遵守传票或类似法律程序。</li>
+</ul>
+
+<h2>4. 您的选择与权利</h2>
+<p>您对Aevia Revive内生成的数据拥有完全控制权：</p>
+<ul>
+  <li><strong>本地删除：</strong> 您可以直接在App内删除任何单个日志或照片。</li>
+  <li><strong>完全账户删除：</strong> 您可以直接从App的设置面板删除整个账户（<strong>设置 &gt; 账户 &gt; 删除账户</strong>）。执行此操作将：
+    <ol style="margin-top: 8px;">
+      <li>清除您本地的设备数据库（SwiftData）。</li>
+      <li>向Apple发送撤销请求，以断开“通过Apple登录”的连接。</li>
+      <li>清除您个人CloudKit容器中的数据。</li>
+    </ol>
+    <p style="margin-top: 8px; font-size: 14px; color: var(--color-text-tertiary);"><em>注意：一旦执行此操作，您的数据将被不可逆地销毁，我们无法恢复。</em></p>
+  </li>
+  <li><strong>系统权限：</strong> 您可以随时通过iOS设置撤销App对相机或照片库的访问权限。</li>
+</ul>
+
+<h2>5. 安全实践</h2>
+<p>我们实施了严格的安全实践：</p>
+<ul> 以及匿名数据库查询（用于条形码/NPN），该App完全离线运行。
+  <li><strong>严格的第三方API政策：</strong> 我们仅使用严格必要且匿名的第三方公共API。我们移除了所有侵入性或追踪性身份验证ping，该应用完全离线运行。</li>
+  <li><strong>无第三方API：</strong> 我们在1.0版本开发过程中移除了所有第三方API（包括外部AI/视觉API），以确保确定性和封闭式执行。</li>
+  <li><strong>安全密钥存储：</strong> 身份验证令牌存储在iOS安全隔区（钥匙串）中。</li>
+</ul>
+
+<h2>6. 儿童隐私</h2>
+<p>Aevia Revive不适用于13岁以下儿童。我们不会故意收集儿童的个人信息。如果您是家长或监护人，并认为您的孩子向我们提供了个人信息，您可以使用应用内的账户删除机制销毁本地数据。</p>
+
+<h2>7. 医疗免责声明</h2>
+<p>Aevia Revive是一款教育和组织工具，而非医疗设备。该应用提供的数据、汇总和见解是基于公共数据库（如USDA FDC和Health Canada CNF）的参考估算，不应被视为医疗诊断或治疗建议。在改变饮食或做出医疗决定前，请务必咨询合格的医疗保健提供者。</p>
+
+<h2>8. 本隐私政策的变更</h2>
+<p>我们可能会不时更新本隐私政策。如果进行重大更改，我们将通过更新本文档顶部的“最后更新”日期或在应用内发布通知来告知您。</p>
+
+<h2>9. 联系我们</h2>
+<p>如果您对本隐私政策或我们的数据实践有任何疑问、疑虑或请求，请通过以下方式联系我们：</p>
+<ul>
+  <li><strong>公司：</strong> West Solution Consulting Corp.</li>
+  <li><strong>电子邮件：</strong> <a href="mailto:support@wtheory.com">support@wtheory.com</a></li>
+</ul>
+
+</div>
 </main>
+
 <div id="footer-placeholder"></div>
 <script src="/js/layout.js"></script>
-</body>
-</html>
+
+
+</body></html>

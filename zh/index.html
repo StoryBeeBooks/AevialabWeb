@@ -1,14 +1,175 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
+<!DOCTYPE html><html lang="zh-Hans"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aevia Lab — 解码基因组与饮食的交互</title>
-<meta name="description" content="Aevia Lab 将营养基因组学研究转化为可执行的细胞优化方案。表观遗传调控、自噬、线粒体输出与精准植物化学，用于后寿命时代的健康策略。">
+<title>Aevia Lab — 解码基因组–食物界面</title>
+<meta name="description" content="Aevia Lab 将营养基因组学研究转化为可操作的细胞优化方案。针对后寿命时代的表观遗传调节、自噬、线粒体输出和精准植物化学。">
+<meta name="theme-color" content="#0E7A68">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  /* Hero */
+  .hero {
+    padding: 180px 0 60px;
+    text-align: center;
+    background: var(--color-bg);
+  }
+  .hero .label { display: block; margin-bottom: 28px; color: var(--color-text-tertiary); }
+  .hero__title { max-width: 1080px; margin: 0 auto; }
+  .hero__sub {
+    max-width: 620px;
+    margin: 24px auto 0;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+  }
+  .hero__media {
+    max-width: 1180px;
+    margin: 96px auto 0;
+    padding: 0 clamp(24px, 5vw, 80px);
+  }
+
+  .hero__meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 980px;
+    margin: 96px auto 0;
+    padding: 36px clamp(24px, 5vw, 60px);
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .hero__meta > div { text-align: center; }
+  .hero__meta-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .hero__meta-value {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+  }
+  @media (max-width: 760px) {
+    .hero { padding: 140px 0 40px; }
+    .hero__meta { grid-template-columns: repeat(2, 1fr); gap: 24px 0; padding: 28px 16px; }
+  }
+
+  /* Story sections */
+  .story { gap: 96px; align-items: center; }
+  .story__content { gap: 24px; }
+  .story__content .label { color: var(--color-text-tertiary); }
+  @media (max-width: 900px) { .story { gap: 48px; } }
+
+  /* Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--color-border-light);
+    border-left: 1px solid var(--color-border-light);
+    margin-top: 16px;
+  }
+  .pillar {
+    background: transparent;
+    border: 0;
+    border-right: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+    border-radius: 0;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: background var(--transition-fast);
+  }
+  .pillar:hover { background: var(--color-surface); transform: none; box-shadow: none; }
+  .pillar__num {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+  }
+  .pillar__title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    color: var(--color-text);
+  }
+  .pillar__title em { font-style: italic; color: var(--color-accent); }
+  .pillar__desc { font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); }
+  @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
+
+  /* Modalities */
+  .modality-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 56px;
+  }
+  .modality {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 36px 28px 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .modality:last-child { border-right: 0; }
+  .modality__num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .modality__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  .modality__desc { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); }
+  @media (max-width: 900px) {
+    .modality-grid { grid-template-columns: 1fr 1fr; }
+    .modality { padding: 28px; border-bottom: 1px solid var(--color-border-light); }
+    .modality:nth-child(2n) { border-right: 0; }
+  }
+  @media (max-width: 520px) {
+    .modality-grid { grid-template-columns: 1fr; }
+    .modality { border-right: 0; }
+  }
+
+  /* Manifesto */
+  .manifesto {
+    background: var(--color-text);
+    color: #fff;
+    padding: 140px 0;
+    text-align: center;
+  }
+  .manifesto .label { color: rgba(255,255,255,0.45); display: block; margin-bottom: 32px; }
+  .manifesto p {
+    font-family: var(--font-serif);
+    max-width: 880px;
+    margin: 0 auto;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.18;
+    font-weight: 400;
+    letter-spacing: -0.018em;
+    color: rgba(255,255,255,0.92);
+  }
+  .manifesto p em { font-style: italic; color: #fff; }
+  .manifesto .btn--primary { background: #fff; color: var(--color-text); }
+  .manifesto .btn--primary:hover { background: var(--color-accent); color: #fff; }
+</style>
 </head>
 <body>
 
@@ -19,46 +180,205 @@
   <div class="container">
     <h1 class="heading-hero hero__title">年龄是表观遗传的。</h1>
     <p class="hero__sub">
-      运用计算生物学与精准营养，解读复杂生物体的分子语言。
+      利用计算生物学和精准营养学来解码复杂生物的分子语言。
     </p>
 
     <div class="hero__meta">
       <div><span class="hero__meta-label">领域</span><span class="hero__meta-value">营养基因组学</span></div>
-      <div><span class="hero__meta-label">视角</span><span class="hero__meta-value">表观遗传学</span></div>
-      <div><span class="hero__meta-label">目标</span><span class="hero__meta-value">线粒体</span></div>
-      <div><span class="hero__meta-label">方法</span><span class="hero__meta-value">清除衰老细胞</span></div>
+      <div><span class="hero__meta-label">视角</span><span class="hero__meta-value">表观遗传</span></div>
+      <div><span class="hero__meta-label">靶点</span><span class="hero__meta-value">线粒体</span></div>
+      <div><span class="hero__meta-label">方法</span><span class="hero__meta-value">衰老细胞清除</span></div>
     </div>
   </div>
 
   <div class="hero__media">
-    <video autoplay muted loop playsinline style="width:100%;border-radius:8px;display:block;">
+    <video autoplay="" muted="" loop="" playsinline="" style="width:100%;border-radius:8px;display:block;">
       <source src="https://assets.aevialab.com/Website/Index%20page%20farm%20couple.mp4" type="video/mp4">
     </video>
   </div>
 </section>
 
-<!-- 简化版正文节选，保持风格与信息 -->
+<!-- STORY 01 -->
 <section class="section" id="genome-food">
   <div class="container">
     <div class="story">
       <div class="story__content">
         <span class="label">01 — 基因组 × 食物</span>
-        <h2 class="heading-lg">解读基因组与食物的<em>接口</em></h2>
+        <h2 class="heading-lg">解码基因组–食物 <em>界面。</em></h2>
         <p class="text-base">
-          我们不再把营养仅视为热力学方程：卡路里输入，能量输出。食物是一套复杂的生物编码。营养基因组学研究基因组与营养环境如何相互塑造。
+          历史上，人类营养学被视为一个热力学方程：热量摄入，能量输出。如今，我们了解到我们所消费的食物是一种复杂的生物代码。营养基因组学是研究人类基因组与营养环境如何相互塑造的双向科学。
         </p>
         <p class="text-base">
-          你每天摄入的生物活性分子充当化学信号，直接影响基因表达、甲基化模式，并调控与健康寿命相关的通路。
+          每一天，您摄入的生物活性分子都作为化学信号直接与您的DNA通信——决定基因表达、影响甲基化，并调节健康寿命和衰老背后的通路。
+        </p>
+        <p class="text-base">
+          Aevia Lab综合了数十年的基因组研究，以描绘特定植物化学物质——以精确比例——如何调节基因表达、保护端粒完整性，并减轻细胞衰老的分子损伤。
         </p>
       </div>
       <div class="story__media">
-        <img src="https://assets.aevialab.com/Website/pictures/woman-living-healthy-life.jpg" alt="健康生活的女性" style="width:100%;border-radius:8px;display:block;">
+        <img src="https://assets.aevialab.com/Website/pictures/woman-living-healthy-life.jpg" alt="过着健康生活的女性" style="width:100%;border-radius:8px;display:block;">
       </div>
     </div>
   </div>
 </section>
 
+<!-- STORY 02 -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="story story--reverse">
+      <div class="story__content">
+        <span class="label">02 — 后寿命时代</span>
+        <h2 class="heading-lg">从寿命到 <em>细胞再生。</em></h2>
+        <p class="text-base">
+          生物技术行业已经跨越了一个关键门槛。随着近期FDA批准首批利用部分表观遗传重编程的人类临床试验，科学共识已发生根本性转变。目标不再是延长寿命——而是实现功能性细胞再生。
+        </p>
+        <p class="text-base">
+          尽管临床基因疗法通过病毒载体针对严重病理，但长寿科学的更广阔前沿聚焦于非侵入性干预。当今领先的生物老年学研究证实，膳食生物活性物质和代谢时机是现有最安全、最强大的表观遗传调节因子之一。
+        </p>
+        <p class="text-base">
+          通过策略性地操控生物输入，科学家可以激活SIRT1长寿基因，刺激AMPK能量通路，并自然地促使身体修复自身DNA。
+        </p>
+      </div>
+      <div class="story__media">
+        <img src="https://assets.aevialab.com/Website/pictures/people-using-foam-roller-exercise-practice-fitness.jpg" alt="使用泡沫轴锻炼的人们" style="width:100%;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section" style="padding: 120px 0;">
+  <div class="container">
+    <blockquote class="quote-block">
+      <p class="quote-block__text">"你的DNA是硬件。你吃的食物——以及你何时吃——是决定今天你的细胞运行哪些程序的软件。"</p>
+
+    </blockquote>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="section section--alt" id="pillars" style="padding: 120px 0;">
+  <div class="container">
+    <div class="section__header" style="text-align: left; max-width: 880px; margin: 0 0 64px;">
+      <span class="label">优化的架构</span>
+      <h2 class="heading-xl">三大支柱 <em>细胞活力。</em></h2>
+      <p class="text-lg" style="margin-top: 20px; max-width: 640px;">Aevia Lab的研究专注于将复杂的细胞机制转化为通过健康生活方式可执行的生物学见解——围绕对非侵入性干预最响应的三个系统进行组织。</p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar">
+        <span class="pillar__num">支柱01</span>
+        <h3 class="pillar__title">自噬与衰老细胞 <em>清除。</em></h3>
+        <p class="pillar__desc">当身体进入特定的代谢状态（如定时禁食）时，会触发自噬——细胞内部的回收程序。这一过程会分解受损蛋白质和衰老的“僵尸”细胞，将细胞废物转化为新的构建原料。</p>
+      </article>
+
+      <article class="pillar">
+        <span class="pillar__num">支柱 02</span>
+        <h3 class="pillar__title">氧化应激 <em>调节。</em></h3>
+        <p class="pillar__desc">不稳定的自由基会降解细胞膜并加速端粒缩短。我们分析高密度植物多酚和抗氧化剂如何系统性地中和这种氧化负荷，从而预防慢性炎症性衰老。</p>
+      </article>
+
+      <article class="pillar">
+        <span class="pillar__num">支柱 03</span>
+        <h3 class="pillar__title">线粒体 <em>输出。</em></h3>
+        <p class="pillar__desc">线粒体是人类生物学的能量工厂。我们探索营养催化剂（如鞣花单宁转化为尿石素A）如何增强线粒体生物合成，将细胞能量生产恢复至年轻水平。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BREAK -->
+<section style="padding: 120px 0;">
+  <div class="container">
+    <video autoplay="" muted="" loop="" playsinline="" style="width:100%;border-radius:8px;display:block;">
+      <source src="https://assets.aevialab.com/Website/pictures/Farmer_Vegetables_1920x1080.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- MODALITIES -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section__header" style="text-align: left; max-width: 880px; margin: 0 0 32px;">
+      <span class="label">系统生物学方法</span>
+      <h2 class="heading-xl">四种模式。一个 <em>整合框架。</em></h2>
+      <p class="text-lg" style="margin-top: 20px; max-width: 640px;">真正的精准健康无法孤立存在。它需要对人类生物学采取系统性、多层次的方法。</p>
+    </div>
+
+    <div class="modality-grid">
+      <div class="modality">
+        <span class="modality__num">01</span>
+        <h3 class="modality__title">营养遥测</h3>
+        <p class="modality__desc">将复杂的植物化学物质映射到特定生物靶点，确保关键生物材料的精确摄入。</p>
+      </div>
+      <div class="modality">
+        <span class="modality__num">02</span>
+        <h3 class="modality__title">生物活性转化</h3>
+        <p class="modality__desc">解码有机化合物的分子价值，以理解其确切的表观遗传影响。</p>
+      </div>
+      <div class="modality">
+        <span class="modality__num">03</span>
+        <h3 class="modality__title">昼夜节律代谢</h3>
+        <p class="modality__desc">将代谢状态与自然生物节律对齐，以最大化基因表达和组织修复。</p>
+      </div>
+      <div class="modality">
+        <span class="modality__num">04</span>
+        <h3 class="modality__title">靶向干预</h3>
+        <p class="modality__desc">识别优化缺口，探索支持全身细胞功能的高生物利用度化合物。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     APPLICATIONS — DO NOT MODIFY (preserved per request)
+     ============================================================ -->
+<section class="section" id="solutions" style="padding-bottom: 0;">
+  <div class="container">
+    <div class="section__header">
+      <span class="label">应用</span>
+      <h2 class="heading-xl">将研究转化为日常实践。</h2>
+      <p class="text-lg" style="margin-top: 16px;">Aevia Lab 不断扩展的工具套件，将营养基因组学洞察转化为可测量的细胞结果。初始应用正在积极开发中。</p>
+    </div>
+  </div>
+
+  <div class="solution-banners">
+    <a href="/zh/apps/aevia-revive" class="solution-banner">
+      <div class="solution-banner__img" style="position:absolute; inset:0; background-image:url('https://assets.aevialab.com/Website/pictures/rejuvenate.jpg'); background-size:cover; background-position:center;"></div>
+      <div class="solution-banner__overlay" style="background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.05) 100%);"></div>
+      <div class="solution-banner__content" style="align-items: flex-start; text-align: left; max-width: 100%; width: 100%; padding-left: clamp(48px, 6vw, 96px);">
+        <span class="solution-banner__label">应用 01 · 植物化学与代谢遥测</span>
+        <h3 class="solution-banner__title">Aevia Revive</h3>
+        <p class="solution-banner__desc">一款全面的设备端分析引擎，用于细胞营养、代谢时机和环境压力管理——并确保绝对数据主权。</p>
+        <span class="solution-banner__cta">探索应用</span>
+      </div>
+    </a>
+
+    <a href="/zh/apps/aevia-revive" class="solution-banner">
+      <div class="solution-banner__img" style="position:absolute; inset:0; background-image:url('https://assets.aevialab.com/Website/pictures/revive.jpg'); background-size:cover; background-position:center;"></div>
+      <div class="solution-banner__overlay" style="background: linear-gradient(270deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 50%, rgba(0,0,0,0.05) 100%);"></div>
+      <div class="solution-banner__content" style="align-items: flex-end; text-align: right; max-width: 100%; width: 100%; padding-right: clamp(48px, 6vw, 96px);">
+        <span class="solution-banner__label">应用 02 · 生活方式规划</span>
+        <h3 class="solution-banner__title">Aevia Rejuvenate</h3>
+        <p class="solution-banner__desc">一个结构化的生活方式规划平台，整合运动日程安排、锻炼计划以及基于营养基因组学的营养方案，旨在实现长期细胞健康。</p>
+      </div>
+    </a>
+
+    <a href="/zh/apps/aevia-revive" class="solution-banner">
+      <div class="solution-banner__img" style="position:absolute; inset:0; background-image:url('https://assets.aevialab.com/Website/pictures/Dieticians.jpg'); background-size:cover; background-position:center;"></div>
+      <div class="solution-banner__overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.60) 100%);"></div>
+      <div class="solution-banner__content">
+        <span class="solution-banner__label">应用 03 · 引导式护理整合</span>
+        <h3 class="solution-banner__title">Aevia Core</h3>
+        <p class="solution-banner__desc">一个集中的健康智能中心，将您的生物特征和营养数据与个性化策略相连接——与加拿大各地的注册营养师合作。</p>
+      </div>
+    </a>
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
+
 <script src="/js/layout.js"></script>
-</body>
-</html>
+
+
+</body></html>

@@ -1,0 +1,21 @@
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/zh/" class="nav__logo">Aevia&nbsp;Lab</a>
+    <ul class="nav__links">
+      <li><a href="/zh/science">科学</a></li>
+      <li><a href="/zh/apps">应用</a></li>
+    </ul>
+    <button class="nav__mobile-toggle" aria-label="打开菜单" onclick="document.getElementById('mobile-menu').classList.add('is-open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-menu" id="mobile-menu" onclick="if(event.target===this)this.classList.remove('is-open')">
+  <button class="nav__mobile-close" aria-label="关闭菜单" onclick="document.getElementById('mobile-menu').classList.remove('is-open')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  <a href="/zh/">首页</a>
+  <a href="/zh/science">科学</a>
+  <a href="/zh/apps">应用</a>
+  <a href="/zh/faq">常见问题解答</a>
+</div>

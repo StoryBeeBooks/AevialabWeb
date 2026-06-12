@@ -1,21 +1,190 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
+<!DOCTYPE html><html lang="zh-Hans"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>应用 — Aevia Lab</title>
+<meta name="description" content="Aevia Lab应用套件。营养遥测、昼夜节律代谢及定向干预工具——目前处于研究预览阶段。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  .apps-hero { padding: 160px 0 60px; text-align: center; background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%); }
+  .apps-hero .label { display: block; margin-bottom: 16px; }
+  .apps-hero .heading-xl { max-width: 820px; margin: 0 auto 20px; }
+  .apps-hero .text-lg { max-width: 680px; margin: 0 auto; }
+
+  /* Modalities (copied from index) */
+  .modality-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 56px;
+  }
+  .modality {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 36px 28px 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .modality__num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .modality__title { font-size: 16px; font-weight: 500; color: var(--color-text); }
+  .modality__desc { font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); }
+  @media (max-width: 900px) {
+    .modality-grid { grid-template-columns: 1fr 1fr; }
+    .modality { padding: 28px; border-bottom: 1px solid var(--color-border-light); }
+    .modality:nth-child(2n) { border-right: 0; }
+  }
+  @media (max-width: 520px) {
+    .modality-grid { grid-template-columns: 1fr; }
+    .modality { border-right: 0; }
+  }
+
+  .apps-video { padding: 96px 0 40px; }
+
+  /* App card */
+  .apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 44px 0 100px; }
+  @media (max-width: 1000px) { .apps-grid { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; } }
+  .app-card {
+    display: flex; flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  }
+  .app-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .app-card__cover { height: 220px; position: relative; overflow: hidden; }
+  .app-card__cover svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .app-card__body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+  .app-card__label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px; }
+  .app-card__title { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .app-card__desc { font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); flex: 1; }
+  .app-card__status {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 24px; font-size: 13px; font-weight: 500;
+    color: var(--color-text-tertiary);
+  }
+  .app-card__status::before {
+    content: ''; display: inline-block;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--color-accent);
+  }
+</style>
 </head>
 <body>
+
 <div id="header-placeholder"></div>
-<main class="container--narrow">
-  <h1>应用</h1>
-  <p>探索我们的应用系列，将营养基因组学的研究转化为可执行的日常工具与分析。</p>
-  <ul>
-    <li><a href="/zh/apps/aevia-revive">Aevia Revive</a></li>
-  </ul>
-</main>
+
+<section class="apps-hero">
+  <div class="container">
+    <span class="label">应用</span>
+    <h1 class="heading-xl">一套细胞优化工具包。</h1>
+    <p class="text-lg">一套不断扩展的Aevia Lab工具，将营养基因组学洞察转化为可测量的细胞结果。每个应用都对应我们四种研究模式中的一种或多种。</p>
+  </div>
+</section>
+
+<!-- MODALITIES -->
+<section class="section" style="padding-top: 0; padding-bottom: 0;">
+  <div class="container">
+    <div class="modality-grid">
+      <div class="modality">
+        <span class="modality__num">01</span>
+        <h3 class="modality__title">营养遥测</h3>
+        <p class="modality__desc">将复杂的植物化学物质映射到特定生物靶点，确保关键生物材料的精确摄入。</p>
+      </div>
+      <div class="modality">
+        <span class="modality__num">02</span>
+        <h3 class="modality__title">生物活性转化</h3>
+        <p class="modality__desc">解码有机化合物的分子价值，以理解其确切的表观遗传影响。</p>
+      </div>
+      <div class="modality">
+        <span class="modality__num">03</span>
+        <h3 class="modality__title">昼夜节律代谢</h3>
+        <p class="modality__desc">将代谢状态与自然生物节律对齐，以最大化基因表达和组织修复。</p>
+      </div>
+      <div class="modality">
+        <span class="modality__num">04</span>
+        <h3 class="modality__title">靶向干预</h3>
+        <p class="modality__desc">识别优化缺口，探索支持全身细胞功能的高生物利用度化合物。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="apps-video">
+  <div class="container">
+    <video autoplay="" muted="" loop="" playsinline="" style="width:100%;border-radius:8px;display:block;">
+      <source src="https://assets.aevialab.com/Website/Videos/apps.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="section" id="solutions" style="padding-top: 20px; padding-bottom: 0;">
+  <div class="container">
+    <div class="section__header">
+      <span class="label">应用</span>
+      <h2 class="heading-xl">将研究转化为日常实践。</h2>
+      <p class="text-lg" style="margin-top: 16px;">一套不断扩展的Aevia Lab工具，将营养基因组学洞察转化为可测量的细胞结果。我们的前三个应用目前正在积极开发中。</p>
+    </div>
+  </div>
+</section>
+
+<!-- APP CARDS -->
+<section>
+  <div class="container">
+    <div class="apps-grid">
+
+      <a href="/zh/apps/aevia-revive" class="app-card">
+        <div class="app-card__cover" style="background-image:url('https://assets.aevialab.com/Website/pictures/rejuvenate.jpg'); background-size:cover; background-position:center;">
+        </div>
+        <div class="app-card__body">
+          <span class="app-card__label">应用01 · 植物化学与代谢遥测</span>
+          <h3 class="app-card__title">Aevia Revive</h3>
+          <p class="app-card__desc">一款全面的设备端分析引擎，用于细胞营养、代谢时机和环境压力。基于视觉的餐食记录、生物活性成分分析、昼夜节律追踪和环境暴露监测——完全掌握数据主权。</p>
+          <span class="app-card__status">开发中</span>
+        </div>
+      </a>
+
+      <article class="app-card">
+        <div class="app-card__cover" style="background-image:url('https://assets.aevialab.com/Website/pictures/revive.jpg'); background-size:cover; background-position:center;">
+        </div>
+        <div class="app-card__body">
+          <span class="app-card__label">应用02 · 生活方式规划</span>
+          <h3 class="app-card__title">Aevia Rejuvenate</h3>
+          <p class="app-card__desc">一个结构化的生活方式规划平台，通过整合运动安排、锻炼计划和基于营养基因组学的营养方案，帮助用户建立更健康的日常习惯，从而达成长期健康目标。</p>
+          <span class="app-card__status">开发中</span>
+        </div>
+      </article>
+
+      <article class="app-card">
+        <div class="app-card__cover" style="background-image:url('https://assets.aevialab.com/Website/pictures/Dieticians.jpg'); background-size:cover; background-position:center;">
+        </div>
+        <div class="app-card__body">
+          <span class="app-card__label">应用03 · 指导式护理整合</span>
+          <h3 class="app-card__title">Aevia Core</h3>
+          <p class="app-card__desc">一个集中的健康情报中心，连接用户的生物特征、营养日志和生活方式数据，与加拿大各地的本地注册营养师合作，生成个性化策略。</p>
+          <span class="app-card__status">开发中</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
 <script src="/js/layout.js"></script>
-</body>
-</html>
+
+
+</body></html>

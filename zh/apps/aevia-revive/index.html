@@ -1,19 +1,413 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
+<!DOCTYPE html><html lang="zh-Hans"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aevia Revive — 应用</title>
+<title>Aevia Revive — Aevia Lab</title>
+<meta name="description" content="Aevia Revive 是一款专为 iPhone 和 iPad 设计的精准营养伴侣。记录餐食、制作果昔、追踪 FDA 每日摄入量，并探索您的完整植物营养素谱系——一切尽在您的设备上。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  /* Hero */
+  .revive-hero {
+    padding: 160px 0 0;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%);
+  }
+  .revive-hero .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
+  .revive-hero__sub {
+    max-width: 640px;
+    margin: 24px auto 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+  .revive-hero__badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 36px auto 0;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+  }
+  .badge::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+  .revive-hero__media {
+    max-width: 1180px;
+    margin: 72px auto 0;
+    padding: 0 clamp(24px, 5vw, 80px);
+  }
+  .revive-hero__icon-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+  }
+  .revive-hero__icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+    margin-bottom: 24px;
+  }
+  .revive-hero__icon-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .app-store-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 28px;
+    background-color: var(--color-text);
+    color: #fff;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .app-store-button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  /* Feature sections */
+  .feature { padding: 100px 0; }
+  .feature--alt { background: var(--color-surface-alt); }
+  .feature__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .feature__grid--reverse { direction: rtl; }
+  .feature__grid--reverse > * { direction: ltr; }
+  .feature__content { display: flex; flex-direction: column; gap: 20px; }
+  .feature__num {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+  .feature__title {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  .feature__title em { font-style: italic; color: var(--color-accent); }
+  .feature__desc { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); }
+  .feature__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .feature__bullets li {
+    display: flex;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+  }
+  .feature__bullets li::before {
+    content: '→';
+    color: var(--color-accent);
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+  @media (max-width: 900px) {
+    .feature__grid { grid-template-columns: 1fr; gap: 40px; }
+    .feature__grid--reverse { direction: ltr; }
+  }
+
+  /* Household dark section */
+  .revive-household {
+    background: var(--color-text);
+    color: #fff;
+    padding: 120px 0;
+  }
+  .revive-household .label { color: rgba(255,255,255,0.4); display: block; margin-bottom: 16px; }
+  .revive-household__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .revive-household__title {
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 3.4vw, 44px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .revive-household__title em { font-style: italic; color: #6EDFC8; }
+  .revive-household__desc { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.65); margin-top: 20px; }
+  .revive-household__pillars { display: flex; flex-direction: column; gap: 24px; }
+  .revive-household__pillar {
+    padding: 24px 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+  }
+  .revive-household__pillar-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .revive-household__pillar-desc { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.55); }
+  @media (max-width: 900px) {
+    .revive-household__grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* Legal links (inside household dark section) */
+  .revive-household__legal { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; }
+  .revive-household__legal a { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+  .revive-household__legal a:hover { color: rgba(255,255,255,0.85); }
+</style>
 </head>
 <body>
+
 <div id="header-placeholder"></div>
-<main class="container--narrow">
-  <h1>Aevia Revive</h1>
-  <p>Aevia Revive 是一款专注隐私、本地优先的 iOS 应用，用于日志记录、营养分析和代谢时间管理，以帮助用户基于细胞级别优化其饮食与生活方式。</p>
-  <p><a href="/zh/apps/aevia-revive/terms-of-use">使用条款</a> · <a href="/zh/apps/aevia-revive/privacy-policy">隐私政策</a> · <a href="/zh/apps/aevia-revive/support">支持</a></p>
-</main>
+
+<!-- HERO -->
+<section class="revive-hero">
+  <div class="container">
+    <span class="label">应用01 · 营养智能</span>
+    <h1 class="heading-hero" style="font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto;">Aevia <em style="font-style: italic; color: var(--color-accent);">Revive。</em></h1>
+    <p class="revive-hero__sub">
+      一款精准营养伴侣，将您摄入的每一种食物映射到其完整的分子图谱。餐食、冰沙和包装食品均可有意图地记录并进行深度分析，所有数据完全存储在您的设备上。
+    </p>
+    <div class="revive-hero__badges">
+      <span class="badge">餐盘构建器</span>
+      <span class="badge">食品标签输入</span>
+      <span class="badge">冰沙构建器</span>
+      <span class="badge">植物光谱</span>
+      <span class="badge">FDA每日摄入量</span>
+      <span class="badge">禁食计时器</span>
+      <span class="badge">家庭档案</span>
+      <span class="badge">设备端数据</span>
+    </div>
+  </div>
+  <div class="revive-hero__media">
+    <div class="revive-hero__icon-wrap">
+      <img src="https://assets.aevialab.com/Website/icon.jpeg" alt="Aevia Revive" class="revive-hero__icon">
+      <div class="revive-hero__icon-name">Aevia Revive</div>
+      <a href="http://apps.apple.com/app/id6768459175" class="app-store-button" target="_blank" rel="noopener noreferrer">
+        在App Store下载
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 — Dashboard -->
+<section class="feature">
+  <div class="container">
+    <div class="feature__grid">
+      <div class="feature__content">
+        <span class="feature__num">01 · 仪表盘</span>
+        <h2 class="feature__title">您的完整摄入概览， <em>每次打开应用时呈现。</em></h2>
+        <p class="feature__desc">
+          仪表盘是Aevia Revive的起点。打开应用后，您可以在一个视图中看到当天的情况：总热量摄入、膳食纤维、水分、糖分以及已记录条目数，所有内容在您记录新餐食或冰沙时即时更新。一个实时禁食计时器会追踪自上次记录摄入以来经过的时间。在摘要下方，一个完整月份网格以可导航日历形式显示您的记录历史。点击任意日期可打开当天的完整营养素分解，包括每项记录的食物、宏量营养素分布和微量营养素详情。底部的快速操作按钮对可启动新餐食记录或冰沙构建器，无需离开主页。
+        </p>
+        <ul class="feature__bullets">
+          <li>每日热量、纤维、水分、糖分和餐食次数的实时更新摘要。</li>
+          <li>与您最近一次记录摄入相关联的实时禁食计时器。</li>
+          <li>带有条目指示的月历网格 — 点击任意日期查看其完整营养概况。</li>
+          <li>从主屏幕直接访问餐食记录和Smoothie Builder。</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <video src="https://assets.aevialab.com/Website/Videos/Ipad%20Preview1.mp4" autoplay="" loop="" muted="" playsinline="" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); display: block;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — Meal Records -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">02 · 餐食记录</span>
+        <h2 class="feature__title">三种记录方式 <em>你实际吃了什么。</em></h2>
+        <p class="feature__desc">
+          Aevia Revive提供三种不同的记录模式，旨在适应每一种现实世界的饮食场景。Plate模式呈现一个可视化食材目录，按基底与谷物、蔬菜、水果、蛋白质、植物基与植物蛋白、脂肪与配料以及饮品分类。选择每个组分并输入您份量的克数；营养估算值立即从精选参考数据库中生成。Food Label模式直接接受任何包装产品营养标签上的数字。输入打印的标签份量和您实际摄入的克数或毫升数，每个字段——热量、脂肪、饱和脂肪、碳水化合物、纤维、糖、蛋白质、胆固醇以及完整的矿物质和维生素列表——都会精确缩放至您实际摄入的量。这使得它成为营养棒、强化食品以及任何带有打印标签的产品的理想工具。Photo模式记录一张带时间戳的快照到您的日历，以便快速视觉参考；这些条目显示在日历上，但不计入营养或植物化合物总量。已保存和最近的餐食会在每次会话的顶部显示，方便快速重新记录。
+        </p>
+        <ul class="feature__bullets">
+          <li>Plate模式：从分类可视化库中按克重选择完整食材，立即获得营养输出。</li>
+          <li>Food Label模式：输入任何包装食品或营养棒的营养成分表，精确缩放至您的实际份量。</li>
+          <li>Photo模式：一张带时间戳的快照，记录到日历中，不影响营养总量。</li>
+          <li>已保存和最近的餐食显示在每次会话顶部。</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <video src="https://assets.aevialab.com/Website/Videos/Ipad%20Preview3.mp4" autoplay="" loop="" muted="" playsinline="" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); display: block;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — Smoothie Builder -->
+<section class="feature">
+  <div class="container">
+    <div class="feature__grid">
+      <div class="feature__content">
+        <span class="feature__num">03 · Smoothie Builder</span>
+        <h2 class="feature__title">挑选新鲜食材。 <em>我们计算细胞层面的成分概况。</em></h2>
+        <p class="feature__desc">
+          Smoothie Builder是Aevia Revive内部的一个专用环境，专为完整的新鲜食材而设计。一个可搜索的库涵盖数百种水果、蔬菜、种子和功能性食品，每种都配有照片并标注了完整的植物化合物类别组成。两个层次化的筛选系统让您能够带着明确意图进行导航。第一层使用健康背景过滤器：Antioxidant Boost、Skin Support、Cellular Defense、Oxalate、Phytic Acid、Dietary Nitrates和Goitrogens。这些过滤器根据与您的目标最相关的考虑因素，显示或隐藏食材。第二层是植物化合物类别颜色侧边栏，它将每种食材按其主要多酚家族分入十三个类别：花青素、番茄红素、类胡萝卜素、槲皮素和黄酮醇、硫代葡萄糖苷、叶绿素和多酚、有机硫化合物、姜黄素类、Omega-3和木脂素、鞣花单宁、儿茶素和黄烷醇、β-葡聚糖以及益生菌培养物。选择您的食材，设定份量，应用程序就会计算出杯中所有成分的完整分子概况。
+        </p>
+        <ul class="feature__bullets">
+          <li>可搜索的库，包含数百种新鲜食材，每种都附有完整的植物化合物类别概况。</li>
+          <li>健康背景过滤器：Antioxidant Boost、Skin Support、Cellular Defense、Oxalate、Phytic Acid、Dietary Nitrates和Goitrogens。</li>
+          <li>颜色编码的植物化合物类别侧边栏，涵盖十三种不同的多酚家族，用于有意图的食材选择。</li>
+          <li>混合完成后立即计算出完整的分子概况。</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <video src="https://assets.aevialab.com/Website/Videos/Ipad%20Preview2.mp4" autoplay="" loop="" muted="" playsinline="" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); display: block;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — Nutrient Intelligence -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">04 · 营养智能</span>
+        <h2 class="feature__title">宏量营养素、微量营养素以及 <em>完整的植物化合物光谱。</em></h2>
+        <p class="feature__desc">
+          记录后，Aevia Revive会为您选择的任何时间窗口生成全面的营养画像——今天、本周、本月、今年或自定义范围。宏量营养素视图将卡路里摄入量显示为来自蛋白质、脂肪、碳水化合物和纤维的能量百分比。然后列出每种追踪到的微量营养素及其测量值，以及其占FDA Daily Value的百分比：钠、钾、镁、钙、铁、锌、维生素C、维生素A、维生素K、叶酸等。Nutrient Priorities按性别筛选，并分为四个层级——Critical Priorities、Secondary Health and Metabolic Support、General Wellness and Cardiovascular Balancing、以及Items to Monitor and Limit——让您对当前摄入量与既定参考目标之间的关系有一个结构化的视图。Phyto Spectrum将您的饮食模式映射到五个颜色家族：红色代表番茄红素和鞣花单宁，橙色和黄色代表类胡萝卜素和黄酮醇，绿色代表硫代葡萄糖苷和叶绿素，蓝色和紫色代表花青素，白色和棕褐色代表有机硫化合物、儿茶素、β-葡聚糖和矿物质。在一个窗口中覆盖所有五个家族，被追踪为多酚多样性基准。
+        </p>
+        <ul class="feature__bullets">
+          <li>宏量营养素按能量百分比拆分，适用于任何选定的时间窗口。</li>
+          <li>完整的微量营养素读数，包含每种追踪到的矿物质和维生素的FDA Daily Value百分比。</li>
+          <li>按性别划分的Nutrient Priorities，分为四个层级，从关键缺乏到值得监测的项目。</li>
+          <li>跨越五个多酚颜色家族的Phyto Spectrum分析，带有全覆盖多样性基准。</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <img src="https://assets.aevialab.com/Website/pictures/Screenshot%202026-05-18%20at%204.57.11%E2%80%AFPM%20(1).png" alt="营养素智能分析" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); display: block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — Patterns & Export -->
+<section class="feature">
+  <div class="container">
+    <div class="feature__grid">
+      <div class="feature__content">
+        <span class="feature__num">05 · 模式与导出</span>
+        <h2 class="feature__title">你的数据揭示了什么 <em>跨越任何时间窗口。</em></h2>
+        <p class="feature__desc">
+          模式视图根据您所选时间段内的记录摄入量，生成通俗易懂的观察结果。它会揭示诸如：总维生素C摄入量中集中在单一食材的比例、该时间段内钾与钠的比率、五种植物化合物颜色家族中有多少种出现在您的饮食中、以及每种微量营养素相对于其FDA Daily Value的位置。Energy vs Quality图表将原始卡路里摄入量与每卡营养密度评分叠加，清晰显示能量上升是源于全食物营养，还是体积增加而微量营养素未成比例增长。Intake Map将您所吃的一切可视化为比例树状图——图块大小代表克重，颜色跟随您当前的植物化合物类别或食物类别过滤器。每个观察结果都附带其来源参考，无论是USDA、FDA、NIH ODS还是已发表的科学文献。当您准备与注册营养师或医生分享发现时，Export功能会生成一个结构化的PDF，包含完整的宏量和微量营养素总量及FDA Daily Value百分比、植物化合物颜色光谱分解、您最常吃的食物以及14天每日摄入总结。
+        </p>
+        <ul class="feature__bullets">
+          <li>跨今日、本周、本月、本年或任意自定义时间范围的源参考模式观察。</li>
+          <li>能量与质量对比图：随时间变化的原始卡路里摄入量与每卡路里营养密度对比图。</li>
+          <li>摄入量地图矩形树图：按克重可视化您的饮食，通过植物化学分类或食物类别进行颜色编码。</li>
+          <li>PDF导出功能包含宏量和微量营养素总量、植物化学光谱、主要食物及14天细分数据，可直接用于临床或饮食讨论。</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <img src="https://assets.aevialab.com/Website/pictures/Screenshot%202026-05-18%20at%204.57.43%E2%80%AFPM%20(1).png" alt="模式与导出" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); display: block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 — Aevia Chronos & Circadia -->
+<section class="feature feature--alt">
+  <div class="container">
+    <div class="feature__grid feature__grid--reverse">
+      <div class="feature__content">
+        <span class="feature__num">06 · Aevia Chronos 与 Aevia Circadia</span>
+        <h2 class="feature__title">禁食窗口与睡眠提醒， <em>直接内置其中。</em></h2>
+        <p class="feature__desc">
+          Aevia Revive 的通知标签页下集成了两套通知系统。Aevia Chronos 是一个禁食计时器，从您记录的最后一次进食开始计时。设置目标窗口（12、14、16或18小时，或完全自定义时长），当达到目标时，Aevia Chronos 会发送通知。轻点一次即可标记您的最后一餐，或随时重置计时器。该功能内包含明显的健康提示：间歇性禁食并非适合所有人，计时器仅反映自上次记录摄入以来的经过时间，而非任何形式的医学评估。Aevia Circadia 是一个与睡眠相关的提醒，会在您设定的就寝时间前三小时发送可配置的提醒，为您提供一致的提示，以便及时关闭进食窗口，实现不间断的夜间禁食。
+        </p>
+        <ul class="feature__bullets">
+          <li>Aevia Chronos：从您上次记录的摄入开始计时的禁食计时器，提供12、14、16或18小时的预设窗口，外加完全可调节的自定义时长。</li>
+          <li>单次点击控制，可随时标记您的最后一餐或重置计时器。</li>
+          <li>Aevia Circadia：在您预定就寝时间前三小时发送的可配置提醒。</li>
+          <li>应用内健康提示明确说明，计时器仅反映记录的摄入数据，并非医疗指导。</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <img src="https://assets.aevialab.com/Website/pictures/Screenshot%202026-05-18%20at%207.18.46%E2%80%AFPM.png" alt="Aevia Chronos 与 Circadia" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); display: block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOUSEHOLD PROFILES (dark) -->
+<section class="revive-household">
+  <div class="container">
+    <div class="revive-household__grid">
+      <div>
+        <span class="label">07 · 家庭档案</span>
+        <h2 class="revive-household__title">追踪营养， <em>为您生活中的每个人。</em></h2>
+        <p class="revive-household__desc">
+          主账户持有人可以为家庭中的任何成员添加个人档案。孩子、父母、伴侣，甚至宠物——任何您关心其营养状况的对象，都可以拥有专属档案，包含完全独立的记录历史、营养素时间线、植物化学光谱和模式视图。在档案之间切换只需从侧边栏轻点一次。不同档案之间的记录不会共享或平均。每个档案均可使用主账户可用的全套分析工具，包括仪表盘、营养素、模式和PDF导出。
+        </p>
+        <div class="revive-household__legal">
+          <a href="/zh/apps/aevia-revive/support">支持与常见问题</a>
+          <a href="/zh/apps/aevia-revive/privacy-policy">隐私政策</a>
+          <a href="/zh/apps/aevia-revive/terms-of-use">使用条款</a>
+        </div>
+      </div>
+      <div class="revive-household__pillars">
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">独立数据环境</div>
+          <div class="revive-household__pillar-desc">每个档案拥有完全独立的记录、营养素历史、植物化学分析和模式发现结果。档案之间不共享或合并任何数据。</div>
+        </div>
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">灵活的家庭成员名单</div>
+          <div class="revive-household__pillar-desc">为儿童、父母、伴侣或宠物添加档案。您想要追踪营养状况的任何家庭成员都可以添加为专属档案。</div>
+        </div>
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">一键切换档案</div>
+          <div class="revive-household__pillar-desc">当前激活的档案始终显示在侧边栏中。在任何记录会话开始时即可即时切换，无需离开当前屏幕。</div>
+        </div>
+        <div class="revive-household__pillar">
+          <div class="revive-household__pillar-title">每个档案的完整分析</div>
+          <div class="revive-household__pillar-desc">仪表盘、模式、营养素、植物化学光谱和PDF导出功能适用于您创建的每个档案，而不仅仅是主账户。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-placeholder"></div>
 <script src="/js/layout.js"></script>
-</body>
-</html>
+
+
+</body></html>

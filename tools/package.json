@@ -1,0 +1,9 @@
+{
+  "name": "aevialab-i18n-tools",
+  "private": true,
+  "type": "module",
+  "description": "Build-time tooling to generate the Simplified Chinese (zh-Hans) mirror of the site via the OpenRouter API.",
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}
