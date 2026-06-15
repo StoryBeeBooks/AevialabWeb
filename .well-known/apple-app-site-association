@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["U6PSQ4STQQ.com.aevialab.pup.partner"],
+        "components": [
+          { "/": "/apps/aevia-pup-partner/join", "comment": "Partner invite deep link" }
+        ]
+      },
+      {
+        "appIDs": ["U6PSQ4STQQ.com.aevialab.pup"],
+        "components": [
+          { "/": "/apps/aevia-pup/*", "comment": "Reserved for future owner deep links" }
+        ]
+      }
+    ]
+  }
+}
