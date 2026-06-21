@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Aevia Pup Partner</title>
-<meta name="description" content="Privacy Policy for Aevia Pup Partner: Caregivers.">
+<meta name="description" content="Privacy Policy for Aevia Pup Partner: Caregivers, developed by West Solution Consulting Corp. Learn how your caregiver data is protected with zero-knowledge encryption.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -18,11 +18,167 @@
 <div class="container--narrow">
 
 <h1>Privacy Policy</h1>
-<p class="subtitle">Aevia Pup Partner &mdash; West Solution Consulting Corp.</p>
+<p class="subtitle">Aevia Pup Partner &mdash; West Solution Consulting Corp.<br>Effective Date: May 10, 2026 &nbsp;|&nbsp; Last Updated: June 16, 2026</p>
 
-<div style="padding: 60px 0; text-align: center;">
-  <p style="font-size: 18px; color: var(--color-text-secondary);">Content coming soon.</p>
+<div class="highlight">
+  <strong>Zero-knowledge, local-first paradigm.</strong> West Solution Consulting Corp. is dedicated to protecting the privacy and security of individuals who act as trusted contributors and caregivers for companion animals. The Partner App is engineered under a zero-knowledge, local-first paradigm. Our primary objective is to facilitate the secure, end-to-end encrypted transit of your caregiving logs to the dog's owner without allowing the Company, hosting providers, or unauthorized third parties any physical or digital mechanism to inspect or read your submissions.
 </div>
+
+<p>This Privacy Policy describes our rigorous standards regarding the collection, processing, transmission, and deletion of data when you utilize the mobile application <strong>Aevia Pup Partner: Caregivers</strong> (the "Partner App") and its associated routing infrastructure (collectively, the "Service").</p>
+
+<p>Designed specifically as a secondary, ephemeral companion to Aevia Pup: Dog Care &amp; Diary (the "Main App"), the Partner App is engineered to facilitate secure, end-to-end encrypted communication without allowing unauthorized access to your submissions.</p>
+
+<h2>1. The Local-First Data Processing Model</h2>
+
+<p>To clarify our technical practices, we categorize the information processed by the Partner App into three distinct, secure boundaries: <strong>Local Sandboxed Storage</strong>, <strong>Private Cloud Configuration</strong>, and <strong>Encrypted Transit Payloads</strong>.</p>
+
+<div style="background: var(--color-bg-secondary); padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 14px; line-height: 1.6; overflow-x: auto;">
+┌────────────────────────────────────────────────────────┐<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARTNER APP DATA MODEL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+├────────────────────────────────────────────────────────┤<br>
+│&nbsp;&nbsp;1. LOCAL SANDBOXED STORAGE (Device Enclave)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Secure iOS Keychain: Symmetric AES keys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- SwiftData cache: Queued submissions (Walk, Meal)&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Local session identifiers &amp; Display Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+├────────────────────────────────────────────────────────┤<br>
+│&nbsp;&nbsp;2. PRIVATE CLOUD CONFIGURATION (iCloud Container)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Caregiver app settings &amp; UI configurations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Managed by Apple; inaccessible to the Company&nbsp;&nbsp;&nbsp;│<br>
+├────────────────────────────────────────────────────────┤<br>
+│&nbsp;&nbsp;3. ENCRYPTED TRANSIT PAYLOADS (Supabase Gateway)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AES-256-GCM ciphertexts (Unreadable by Company)&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Hashed invite keys (SHA-256)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Non-identifying routing metadata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+└────────────────────────────────────────────────────────┘
+</div>
+
+<h3>1.1 Local Sandboxed Storage (Your Device)</h3>
+
+<p>The data you enter or generate within the Partner App is stored on your physical iOS or iPadOS device using secure sandbox protocols. This data includes:</p>
+
+<ul>
+  <li><strong>The Claim Cache (SwiftData):</strong> Local representations of the dog profiles you are authorized to log for (dog names, breed slugs, and approved scopes), stored under <code>ClaimedDog</code>.</li>
+  <li><strong>The Offline Queue:</strong> Your unsynced walk logs, meal inputs, and vet care observations, cached locally in <code>PendingSubmission</code> until an active internet connection is detected.</li>
+  <li><strong>Cryptographic Keys:</strong> The 256-bit symmetric AES decryption keys required to communicate with the Main App are stored directly in your physical device's hardware-backed iOS Keychain.</li>
+</ul>
+
+<h3>1.2 Private Cloud Configuration (Apple iCloud)</h3>
+
+<ul>
+  <li><strong>iCloud Container Isolation:</strong> If you enable iCloud sync in the Partner App onboarding or settings, the application mirrors your local settings and caregiver dashboard configuration to your personal Apple iCloud account via the <code>iCloud.com.aevialab.pup.partner</code> container.</li>
+  <li><strong>No Company Visibility:</strong> This sync pathway is managed exclusively by Apple Inc. The Company holds no certificates, credentials, or keys to access your personal iCloud space.</li>
+</ul>
+
+<h3>1.3 Encrypted Transit Payloads (Our Server Conduit)</h3>
+
+<p>To deliver your logs to the Owner, the Partner App transmits data to our intermediate routing database (hosted on Supabase) via service-role Edge Functions. This processing is strictly limited to:</p>
+
+<ul>
+  <li><strong>Hashed Authentication Tokens:</strong> The secret invitation token is never stored in its raw form on our servers. The Partner App hashes the token on-device using SHA-256 before transmission. We compare this to the <code>partner_invites.token_hash</code> column to validate your session.</li>
+  <li><strong>Ciphertext Payloads:</strong> Your actual log entries (the plaintext JSON containing details of walks, meals, or medications) are encrypted on-device. The server receives and holds only a base64-encoded string representing the nonce || ciphertext || tag construct.</li>
+  <li><strong>Skeletal Routing Metadata:</strong> To ensure your logs are enqueued for the correct Owner and validated against your invite boundaries, we process the following raw, unencrypted database columns:
+    <ul style="margin-top: 8px;">
+      <li><code>dog_id</code> (UUID corresponding to the profile)</li>
+      <li><code>dog_name</code> (unencrypted, used for UI display in the owner's inbox)</li>
+      <li><code>category</code> (restricted check constraint: walk, meal, or vet to prevent out-of-scope uploads)</li>
+      <li><code>client_event_id</code> (a client-generated UUID used to enforce database uniqueness and prevent duplicate submission replays during network retries)</li>
+      <li><code>contributor_display_name</code> (your preferred name, visible to the Owner)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>2. Mathematical Proof of Zero-Knowledge Security</h2>
+
+<p>We have architected the transit conduit to be mathematically secure against Company-level surveillance or third-party database breaches.</p>
+
+<div style="background: var(--color-bg-secondary); padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 14px; line-height: 1.6; overflow-x: auto;">
+┌────────────────────────────────────────────────────────┐<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ZERO-KNOWLEDGE TRANSIT PATHWAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+├────────────────────────────────────────────────────────┤<br>
+│&nbsp;&nbsp;1. Invite Link Generated:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://aevialab.com/.../join?token=abc#key=XYZ&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* `#key` is client-side only (never sent to web)&nbsp;&nbsp;&nbsp;│<br>
+├────────────────────────────────────────────────────────┤<br>
+│&nbsp;&nbsp;2. Caregiver Device:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Extracts symmetric key (XYZ) from URL fragment&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Stores key in secure iOS Keychain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+├────────────────────────────────────────────────────────┤<br>
+│&nbsp;&nbsp;3. Encrypted Upload:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Payload JSON --&gt; AES-256-GCM (Key XYZ)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Server stores ONLY unreadable ciphertext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+└────────────────────────────────────────────────────────┘
+</div>
+
+<h3>2.1 The URL Fragment Standard (RFC 3986)</h3>
+
+<p>When an Owner shares an access link with you, the link structure isolates the encryption key:</p>
+
+<p style="background: var(--color-bg-secondary); padding: 12px; border-radius: 4px; font-family: monospace; font-size: 13px; overflow-x: auto; margin: 16px 0;">
+https://aevialab.com/apps/aevia-pup-partner/join?token=[token_hash]&amp;scope=walks,meals#key=[32-byte_AES_key]
+</p>
+
+<p>Under standard internet specifications (RFC 3986), the character <code>#</code> denotes a document fragment. Web browsers, network routers, and hosting servers do not transmit the fragment portion of a URL over TLS requests. Consequently, the AES decryption key is parsed locally by the Partner App directly from the operating system's URL parser and never reaches our web servers.</p>
+
+<h3>2.2 Complete Absence of Decryption Capabilities</h3>
+
+<p>Because the Company does not possess the symmetric AES keys, we cannot read the contents of the database table <code>partner_inbox</code>. Any breach of our cloud databases will expose only unreadable binary blobs and non-identifying metadata.</p>
+
+<h2>3. Sign In with Apple (SIWA) and Contributor Identity</h2>
+
+<p>To prevent spam, secure data transmission, and provide the Owner with a clear audit trail of who performed caregiving tasks, the Partner App mandates Sign in with Apple (SIWA).</p>
+
+<ul>
+  <li><strong>Identifier Collection:</strong> We collect your anonymous Apple unique identifier (<code>apple_user_id</code> subject string) when you link your session.</li>
+  <li><strong>Full Name Retrieval &amp; Display Name Override:</strong> During your initial SIWA registration, Apple transmits your full name as registered on your Apple ID. We save this value to populate <code>partner_invites.contributor_display_name</code>. Because Apple only transmits this name once ever, we provide direct settings within the Partner App allowing you to edit, customize, or replace this display name at any time. Updates are synced to our servers to ensure the Owner sees your preferred name on their dashboard.</li>
+</ul>
+
+<h2>4. Caregiver Account and Data Purge (App Store Guideline 5.1.1)</h2>
+
+<p>In compliance with App Store Guideline 5.1.1(v) regarding caregiver data autonomy, we offer an absolute, permanent, self-serve account deletion mechanism.</p>
+
+<h3>4.1 Deletion Sequence and Lifecycles</h3>
+
+<p>When you tap <strong>Delete Account &amp; Data</strong> within the Partner App settings:</p>
+
+<ol>
+  <li><strong>Server Purge Request (<code>partner-account-delete</code>):</strong> The app transmits your anonymous Apple ID subject string to our server.</li>
+  <li><strong>Server-Side Demolition:</strong> Our database immediately:
+    <ul style="margin-top: 8px;">
+      <li>Locates all <code>partner_invites</code> rows linked to your caregiver subject.</li>
+      <li>Clears your linked Apple subject (<code>contributor_apple_sub = null</code>).</li>
+      <li>Flags your historical entries as revoked (<code>contributor_revoked = true</code>) and sets the timestamp (<code>contributor_revoked_at = now()</code>).</li>
+      <li>Permanently deletes any pending, unapproved encrypted logs associated with your invitations from the <code>partner_inbox</code> table.</li>
+    </ul>
+  </li>
+  <li><strong>Local Sandboxed Demolition:</strong> The Partner App wipes all active Keychain records containing the symmetric keys, empties the local SwiftData databases, and signs you out.</li>
+</ol>
+
+<p style="margin-top: 16px; font-size: 14px; color: var(--color-text-tertiary);"><em>Note: Once completed, your credentials, keys, and pending logs are permanently and irrecoverably destroyed.</em></p>
+
+<h2>5. Analytics and Tracking Exclusions</h2>
+
+<ul>
+  <li><strong>No Behavioral SDKs:</strong> We do not compile third-party commercial marketing trackers, advertising SDKs (such as Facebook SDK or Google AdMob), or behavioral analysis suites inside the Partner App.</li>
+  <li><strong>Anonymous Session Analytics:</strong> We may collect non-identifying technical session telemetry (such as screen load counts and system crash reports) through our custom <code>track-session</code> endpoint. You can opt out of this logging at any time inside the app's settings panel.</li>
+</ul>
+
+<h2>6. Information Sharing, Disclosures, and Legal Compliances</h2>
+
+<p><strong>We do not sell, rent, trade, or distribute your caregiver identifiers or submission metadata.</strong> We may disclose the unencrypted routing metadata in our tables only:</p>
+
+<ul>
+  <li><strong>To Trusted Hosting Providers:</strong> Our database operations are executed within secure partitions of Supabase. These infrastructure partners are bound by strict data processing agreements that prohibit secondary use of data.</li>
+  <li><strong>As Mandated by Law:</strong> We may disclose basic database metadata to legal authorities if compelled to do so by a legally binding subpoena, warrant, or court order in the jurisdiction where we operate.</li>
+</ul>
+
+<h2>7. Contact Us</h2>
+
+<p>If you have questions, security inquiries, or data-handling requests regarding this Caregiver Privacy Policy, please contact our privacy officer at:</p>
+
+<ul>
+  <li><strong>Company:</strong> West Solution Consulting Corp.</li>
+  <li><strong>Email:</strong> <a href="mailto:support@wtheory.com">support@wtheory.com</a></li>
+</ul>
 
 </div>
 </main>
