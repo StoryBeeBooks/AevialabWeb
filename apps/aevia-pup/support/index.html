@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support &amp; FAQ — Aevia Pup</title>
-<meta name="description" content="Support and frequently asked questions for Aevia Pup: Dog Care & Diary.">
+<meta name="description" content="Support and frequently asked questions for Aevia Pup: Dog Care & Diary. Get help with health tracking, caregiver access, data privacy, and account management.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -19,12 +19,149 @@
 
 <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 8px;">Aevia Pup — Support &amp; FAQ</h1>
 <p class="subtitle" style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: 32px;">
-  Need help with Aevia Pup? Content coming soon.
+  Need help with Aevia Pup? You're in the right place. If your question isn't answered below, please reach out at <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>.
 </p>
 
-<div style="padding: 60px 0; text-align: center;">
-  <p style="font-size: 18px; color: var(--color-text-secondary);">Content coming soon.</p>
+<div class="faq-toc">
+  <h3>Sections</h3>
+  <ul>
+    <li><a href="#account">Account &amp; Data Privacy</a></li>
+    <li><a href="#tracking">Health Tracking &amp; Logging</a></li>
+    <li><a href="#caregivers">Caregiver Access &amp; Invitations</a></li>
+    <li><a href="#syncing">Device Syncing &amp; iCloud</a></li>
+    <li><a href="#reports">Reports &amp; Exports</a></li>
+    <li><a href="#contact">Contact Support</a></li>
+  </ul>
 </div>
+
+<!-- SECTION 1 -->
+<h2 class="faq-section-heading" id="account">Account &amp; Data Privacy</h2>
+
+<div class="faq-item"><details><summary>Where is my dog's data stored?</summary><div class="faq-answer">
+<p>Aevia Pup uses a local-first architecture. Your dog's profiles, health logs, weight records, and photographs are stored in an encrypted database on your iPhone or iPad. If you have iCloud enabled, data syncs to your personal Apple CloudKit container. West Solution Consulting Corp. does not have access to your dog's health data.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Does the app send data to external servers?</summary><div class="faq-answer">
+<p>Caregiver logs submitted through Aevia Pup Partner route through our secure transit system before arriving in your review queue. These logs are encrypted on the caregiver's device before transmission. We cannot decrypt or read the contents. Once you approve or reject an entry, it is either added to your local database or permanently deleted from our servers.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>How do I delete my account?</summary><div class="faq-answer">
+<p>Navigate to <strong>Settings &gt; Account &gt; Delete Account</strong>. This action will revoke your Sign in with Apple credential, wipe all local dog profiles and logs from your device, and remove any data stored in your personal iCloud container. The deletion is permanent and cannot be reversed.</p>
+</div></details></div>
+
+
+<!-- SECTION 2 -->
+<h2 class="faq-section-heading" id="tracking">Health Tracking &amp; Logging</h2>
+
+<div class="faq-item"><details><summary>How does the metabolic calculation work?</summary><div class="faq-answer">
+<p>The app calculates your dog's Resting Energy Requirement (RER) using the formula RER = 70 × (Weight in kg)^0.75, then applies adjustment coefficients for life stage (puppy, adult, senior), activity level (sedentary to working), neutered status, and breed-specific metabolic factors from our database of 82 breeds. This produces a Maintenance Energy Requirement (MER) specific to your dog.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What is the stool consistency scale?</summary><div class="faq-answer">
+<p>The app uses a 1–7 Bristol-inspired scale for logging stool consistency. Scores range from 1 (hard, dry pellets) to 7 (liquid diarrhea). This standardized scale allows you and your veterinarian to track digestive health objectively over time and correlate changes with dietary modifications or medication.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Can I track multiple dogs?</summary><div class="faq-answer">
+<p>Yes. You can create separate profiles for each dog in your household. Each profile maintains its own isolated timeline, health logs, weight records, and caregiver access permissions. Switching between dogs is a single tap from the sidebar.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Does Aevia Pup provide veterinary advice?</summary><div class="faq-answer">
+<p><strong>No.</strong> Aevia Pup is a record-keeping and documentation tool. All metabolic calculations, symptom tracking, and pattern observations are provided for informational purposes only. They are not medical diagnoses or treatment recommendations. Always consult your veterinarian before making decisions about your dog's health, diet, or medication.</p>
+</div></details></div>
+
+<!-- SECTION 3 -->
+<h2 class="faq-section-heading" id="caregivers">Caregiver Access &amp; Invitations</h2>
+
+<div class="faq-item"><details><summary>How do I invite a caregiver?</summary><div class="faq-answer">
+<p>Navigate to your dog's profile and select <strong>Manage Caregivers</strong>. Choose the permissions you want to grant (walks only, meals only, vet care, or full access), then tap <strong>Generate Invitation</strong>. The app creates a secure Universal Link that you can share via text message, email, or AirDrop. The caregiver opens the link, downloads Aevia Pup Partner, and signs in with their Apple ID to begin logging.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Why are invitation links so long?</summary><div class="faq-answer">
+<p>The invitation link contains an authorization token and a cryptographic key appended as a URL fragment (the portion after the # symbol). This fragment is processed client-side by the operating system and is never transmitted to web servers, ensuring the encryption key is shared directly between your device and your caregiver's device without our servers having access to it.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>How do I revoke a caregiver's access?</summary><div class="faq-answer">
+<p>Navigate to your dog's profile, select <strong>Manage Caregivers</strong>, locate the active invitation, and tap <strong>Revoke</strong>. This immediately flags the authorization token as invalid. Future log submissions from that caregiver will be rejected. Any pending entries in your review queue from that caregiver will be removed from our transit system.</p>
+</div></details></div>
+
+
+<div class="faq-item"><details><summary>Can caregivers see my personal information?</summary><div class="faq-answer">
+<p>No. Caregivers using Aevia Pup Partner see only the dogs they are authorized to care for and only the logging functions you grant them permission to use. They cannot access your personal account information, billing details, other dogs in your household, or any data outside their assigned scope.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What happens to caregiver logs after I review them?</summary><div class="faq-answer">
+<p>When a caregiver submits a log, it enters your secure review queue. If you approve the entry, it is added to your dog's local timeline and removed from our transit servers. If you reject it, the entry is permanently deleted from our servers without being added to your timeline. Approved entries become part of your local database and sync to your iCloud container if enabled.</p>
+</div></details></div>
+
+<!-- SECTION 4 -->
+<h2 class="faq-section-heading" id="syncing">Device Syncing &amp; iCloud</h2>
+
+<div class="faq-item"><details><summary>How does syncing between iPhone and iPad work?</summary><div class="faq-answer">
+<p>The app uses Apple's SwiftData framework with CloudKit integration. When you log an entry on your iPhone, it saves to your local database and syncs to your personal iCloud container. Your iPad, logged into the same Apple ID, retrieves the update from iCloud and applies it to its local database. This process is managed entirely by Apple's infrastructure.</p>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Why aren't my changes syncing immediately?</summary><div class="faq-answer">
+<p>Sync timing is controlled by iOS and depends on network conditions, battery status, and system load. To troubleshoot sync delays:</p>
+<ul>
+  <li>Confirm both devices are connected to Wi-Fi or cellular data and logged into the same Apple ID.</li>
+  <li>Check that iCloud is enabled for Aevia Pup under <strong>iOS Settings &gt; [Your Name] &gt; iCloud &gt; Saved to iCloud &gt; Aevia Pup</strong>.</li>
+  <li>Disable Low Power Mode, as iOS may suspend background sync to conserve battery.</li>
+  <li>Restart the app on both devices to prompt a sync cycle.</li>
+</ul>
+</div></details></div>
+
+<div class="faq-item"><details><summary>What happens if I disable iCloud?</summary><div class="faq-answer">
+<p>If you disable iCloud for Aevia Pup, data will remain stored locally on each device but will no longer sync between them. Changes made on your iPhone will not appear on your iPad and vice versa. Each device will maintain its own independent database. Re-enabling iCloud will resume syncing, but conflicting entries may require manual reconciliation.</p>
+</div></details></div>
+
+<!-- SECTION 5 -->
+<h2 class="faq-section-heading" id="reports">Reports &amp; Exports</h2>
+
+<div class="faq-item"><details><summary>How do I export a report for my veterinarian?</summary><div class="faq-answer">
+<p>Navigate to your dog's profile and select <strong>Export Report</strong>. Choose the date range you want to include. The app generates a structured PDF containing meal logs, weight trends, stool consistency patterns, symptom timelines, and medication records. You can share this PDF via email, AirDrop, or any file-sharing method supported by iOS.</p>
+</div></details></div>
+
+
+<div class="faq-item"><details><summary>What information is included in the PDF report?</summary><div class="faq-answer">
+<p>The PDF report includes the following sections:</p>
+<ul>
+  <li>Daily caloric intake plotted against your dog's calculated metabolic requirements.</li>
+  <li>Stool consistency trends with a timeline showing correlations to dietary changes.</li>
+  <li>Weight trajectory over the selected period.</li>
+  <li>Symptom logs with severity scores and timestamps.</li>
+  <li>Medication administration records showing who administered each dose and when.</li>
+  <li>A summary of observations logged by all caregivers in your network.</li>
+</ul>
+</div></details></div>
+
+<div class="faq-item"><details><summary>Can I customize what appears in the report?</summary><div class="faq-answer">
+<p>The report format is standardized to ensure clinical consistency. You can select the date range to include, but the content sections are fixed. This ensures veterinarians receive reports in a predictable, professional format regardless of which pet owner is using the app.</p>
+</div></details></div>
+
+<!-- CONTACT -->
+<h2 class="faq-section-heading" id="contact">Contact Support</h2>
+
+<div style="padding: 28px 32px; background: var(--color-surface-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); margin-bottom: 40px;">
+  <p style="font-size: 15px; line-height: 1.65; color: var(--color-text-secondary); margin-bottom: 16px;">
+    Still stuck? Have a feature request or a bug to report? We want to hear from you.
+  </p>
+  <p style="font-size: 15px; color: var(--color-text); font-weight: 500; margin-bottom: 16px;">
+    Email: <a href="mailto:support@wtheory.com" style="color: var(--color-accent);">support@wtheory.com</a>
+  </p>
+  <p style="font-size: 13px; line-height: 1.6; color: var(--color-text-tertiary); margin-bottom: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">When emailing support, please include:</p>
+  <ul style="font-size: 14px; line-height: 1.7; color: var(--color-text-secondary); padding-left: 20px; margin: 8px 0 0;">
+    <li>The device you are using (for example, iPhone 15 Pro or iPad Air).</li>
+    <li>Your current iOS or iPadOS version.</li>
+    <li>A brief description of the issue or question.</li>
+  </ul>
+  <p style="font-size: 13px; color: var(--color-text-tertiary); margin-top: 16px; margin-bottom: 0; font-style: italic;">
+    Please do not include sensitive health information or personal diagnostic data in your support emails.
+  </p>
+</div>
+
+<p style="font-size: 13px; color: var(--color-text-tertiary); margin-bottom: 0;">
+  <em>West Solution Consulting Corp.</em>
+</p>
 
 </div>
 </main>
