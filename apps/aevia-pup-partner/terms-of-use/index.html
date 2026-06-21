@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Use — Aevia Pup Partner</title>
-<meta name="description" content="Terms of Use for Aevia Pup Partner: Caregivers.">
+<meta name="description" content="Terms of Use for Aevia Pup Partner: Caregivers, developed by West Solution Consulting Corp. Read the legal terms governing your use as a caregiver.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -18,11 +18,140 @@
 <div class="container--narrow">
 
 <h1>Terms of Use</h1>
-<p class="subtitle">Aevia Pup Partner &mdash; West Solution Consulting Corp.</p>
+<p class="subtitle">Aevia Pup Partner &mdash; West Solution Consulting Corp.<br>Effective Date: May 10, 2026 &nbsp;|&nbsp; Last Updated: June 16, 2026</p>
 
-<div style="padding: 60px 0; text-align: center;">
-  <p style="font-size: 18px; color: var(--color-text-secondary);">Content coming soon.</p>
+<div class="highlight">
+  Welcome to the Aevia Pup Partner: Caregivers application. These Terms of Use ("Terms") constitute a legally binding agreement between you ("Caregiver," "Contributor," "you," or "your") and West Solution Consulting Corp. ("Company," "we," "us," or "our"), governing your download, installation, access to, and use of the mobile application Aevia Pup Partner: Caregivers (the "Partner App") and any associated services, data-routing channels, or software utilities (collectively, the "Service").
 </div>
+
+<p>By downloading, installing, accessing, or using the Partner App, you signify that you have read, understood, and agree to be bound by these Terms in their entirety. If you do not agree to these Terms, you are strictly prohibited from accessing or using the Partner App and must immediately uninstall and erase all copies of the software from your devices.</p>
+
+<h2>1. Nature of the Partner App and Relationship of Parties</h2>
+
+<p><strong>1.1 Scope of Utility</strong></p>
+<p>The Partner App is a decentralized utility that allows an invited caregiver (such as a dog walker, pet-sitter, family member, or veterinary assistant) to input specific health, lifestyle, and behavioral events (e.g., walks, meals, symptom observations, or medical administrations) for a dog, and securely route that data to the dog's legal owner or primary custodian (the "Owner") who utilizes the primary application, Aevia Pup: Dog Care &amp; Diary (the "Main App").</p>
+
+<p><strong>1.2 Absolute Discretion of the Owner</strong></p>
+<p>You explicitly acknowledge and agree that:</p>
+<ul>
+  <li><strong>At-Will Access:</strong> Your access to any dog's profile, tracking logs, and diary entry capabilities is completely determined by the Owner.</li>
+  <li><strong>Instant Revocation:</strong> The Owner retains the unilateral right to suspend, alter, restrict, or permanently revoke your logging permissions at any second, with or without notice, by invalidating the digital invitation token on our servers.</li>
+  <li><strong>No Property Rights:</strong> You possess no property rights, expectation of continuity, or beneficial interest in any data, profile, key, or configuration associated with any dog record within the Service.</li>
+</ul>
+
+<p><strong>1.3 Independent Status &amp; Strict No-Agency Clause</strong></p>
+<p><strong>THE COMPANY IS NOT A PARTY TO, AND RESPONSIBLE FOR, THE RELATIONSHIP BETWEEN YOU AND THE DOG OWNER.</strong></p>
+<ul>
+  <li><strong>No Employment or Agency:</strong> Your use of the Partner App does not create an employment relationship, agency, partnership, joint venture, franchise, or representative relationship of any kind between you and West Solution Consulting Corp. You are not an employee, contractor, agent, or representative of the Company.</li>
+  <li><strong>No Endorsement or Vet Care Warranty:</strong> We do not recommend, vet, background-check, employ, or endorse any Caregiver using the Service. We make no representations or warranties regarding your competence, safety, or caregiving performance to the Owner, nor do we warrant the Owner's solvency, safety, or performance to you. Any service agreement, compensation, or dispute between you and the Owner is strictly inter-party and independent of the Company.</li>
+</ul>
+
+<h2>2. Standard of Care and Absolute Data Integrity Liability</h2>
+
+<p><strong>2.1 Accuracy of Caregiver Logs</strong></p>
+<p>As a Caregiver, you are the sole author and custodian of the entries you record via the Partner App. You represent and warrant that:</p>
+<ul>
+  <li>Every submission you record—including walk durations, stool metrics, physical symptom reports, food weights, and veterinary drug administrations—is accurate, truthful, recorded in good faith, and free from misleading omissions.</li>
+  <li>You will not falsely log activities that were not performed, nor omit critical health events (such as symptoms or refusal of food) that could impact the clinical evaluation or survival of the animal.</li>
+</ul>
+
+<p><strong>2.2 System Latency and No Reliance</strong></p>
+<p>You acknowledge that the Partner App operates over public cellular, wireless, and decentralized networks.</p>
+<ul>
+  <li><strong>Delayed Submissions:</strong> Data may be delayed, cached, or queued locally in your SwiftData offline queue (<code>PendingSubmission</code>) due to poor connectivity or system-level battery management.</li>
+  <li><strong>No Medical Reliance:</strong> You shall not rely on the Partner App to transmit time-critical, emergency, or life-saving information to the Owner. If an animal under your care requires immediate medical attention, physical rescue, or urgent therapeutic intervention, you must contact the Owner and emergency veterinary services directly via telephone or in-person. Do not rely on digital logging transit.</li>
+</ul>
+
+<h2>3. Cryptographic Keys and Device-Level Custody</h2>
+
+<p><strong>3.1 Encryption Key Confidentiality</strong></p>
+<p>To maintain zero-knowledge privacy, the Service utilizes end-to-end symmetric encryption (AES-256-GCM).</p>
+<ul>
+  <li><strong>The Shared Secret Key:</strong> When you claim an Owner's invitation, your device extracts a 32-byte symmetric cryptographic key from the URL fragment (<code>#key=...</code>) of the Universal Link. This key is stored securely in your physical device's Secure Enclave/Keychain.</li>
+  <li><strong>Your Duty to Protect:</strong> You are solely responsible for preventing unauthorized physical or digital access to your device. You shall not extract, copy, share, leak, export, or transmit this symmetric key, nor attempt to use it to decrypt or access data outside the authorized runtime environment of the Partner App.</li>
+  <li><strong>Notification of Compromise:</strong> You must immediately notify the Owner if your physical device is lost, stolen, or compromised, so they can immediately revoke your invitation token and render your local encryption key useless.</li>
+</ul>
+
+<h2>4. Platform Compliance and Caregiver Account Deletion (App Store Guideline 5.1.1)</h2>
+
+<p>In strict compliance with Apple App Store Guideline 5.1.1(v) regarding user data deletion and account autonomy:</p>
+<ul>
+  <li><strong>Self-Serve Account Deletion:</strong> You may permanently delete your Caregiver profile and local data at any time under <strong>Settings &gt; Account &gt; Delete Account &amp; Data</strong> within the Partner App.</li>
+  <li><strong>The Cascade Wipe Command:</strong> Initiating this deletion instantly executes a server call to <code>partner-account-delete</code>, which permanently unlinks your anonymous Apple ID subject string (<code>contributor_apple_sub</code>) from all active <code>partner_invites</code>, flags your active invites as revoked, and purges all pending unreviewed encrypted ciphertexts from our database (<code>partner_inbox</code>).</li>
+  <li><strong>Local Purge:</strong> The Partner App will simultaneously wipe your local database cache (<code>ClaimedDog</code> and <code>PendingSubmission</code>) and erase all secure symmetric keys from your device's Keychain.</li>
+  <li><strong>Irreversible Execution:</strong> This operation is complete and irreversible. We keep no backup archives of your configuration or keys.</li>
+</ul>
+
+<h2>5. Prohibited Conduct and System Abuse</h2>
+
+<p>You agree that you will not, under any circumstances:</p>
+<ul>
+  <li>Spoof, manipulate, or artificially generate transaction keys, UUIDs, or client event identifiers (<code>client_event_id</code>) to bypass deduplication or scope restrictions.</li>
+  <li>Attempt to post payload types that fall outside your assigned invitation scope (e.g., attempting to POST a <code>vet_visit</code> payload when your invitation is strictly limited to the <code>walks</code> scope).</li>
+  <li>Intercept, reverse-engineer, decompile, decrypt, or disassemble any portion of the cryptography modules (CryptoKit wrappers) or edge routing protocols utilized by the Service.</li>
+  <li>Use the Service to upload, transmit, or route toxic, illegal, harassing, or defamatory text, notes, or media.</li>
+</ul>
+
+<h2>6. Disclaimer of Warranties</h2>
+
+<p>THE PARTNER APP IS PROVIDED "AS-IS" AND "AS-AVAILABLE," WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND.</p>
+
+<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WEST SOLUTION CONSULTING CORP. EXPRESSLY DISCLAIMS ALL WARRANTIES, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING BUT NOT LIMITED TO:</p>
+<ul>
+  <li>THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND SYSTEM COMPATIBILITY.</li>
+  <li>ANY WARRANTY THAT THE SERVICE WILL TRANSMIT YOUR ENTRIES IN REAL-TIME, UNINTERRUPTED, OR SECURE FROM TRANSMISSION LOSS.</li>
+  <li>ANY WARRANTY REGARDING THE ACCURACY, SOUNDNESS, SAFETY, OR STABILITY OF THE UNDERLYING ROUTING CONDUIT (SUPABASE), DATABASE SCHEMAS, OR PHYSICAL PUSH NOTIFICATION SYSTEMS.</li>
+</ul>
+
+<h2>7. Limitation of Liability</h2>
+
+<p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WEST SOLUTION CONSULTING CORP., ITS DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR:</p>
+
+<p><strong>7.1 Exclusions of Specific Damages</strong></p>
+<p>ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOSS OF DATA, REVENUE, OR OPPORTUNITY, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE PARTNER APP.</p>
+
+<p><strong>7.2 Bodily Injury and Property Exclusions</strong></p>
+<p>ANY PHYSICAL INJURY, ILLNESS, DISEASE, ALLERGIC CRISIS, OR DEATH OF ANY ANIMAL AND/OR PERSON OCCURRING WHILE YOU ARE PROVIDING CAREGIVING SERVICES TO AN OWNER, EVEN IF ACCIDENTALLY OR PROXIMATELY RELATING TO LOG ENTRIES OR SYSTEM DELAYS GENERATED BY THE SERVICE.</p>
+
+<p><strong>7.3 Liability Cap</strong></p>
+<p>OUR ABSOLUTE MAXIMUM AGGREGATE LIABILITY FOR ALL CLAIMS OF ANY KIND ARISING OUT OF OR RELATING TO THESE TERMS OR THE PARTNER APP SHALL IN NO EVENT EXCEED FIFTY UNITED STATES DOLLARS ($50.00).</p>
+
+<h2>8. Indemnification</h2>
+
+<p>You agree to defend, indemnify, and hold harmless West Solution Consulting Corp., its directors, officers, employees, and agents from and against any and all claims, obligations, damages, losses, liabilities, costs, and expenses (including reasonable attorney's fees) arising directly or indirectly from:</p>
+<ol>
+  <li>Your performance or non-performance of your physical caregiving duties for any Dog Owner.</li>
+  <li>Any claims of animal neglect, malpractice, physical property damage, or veterinary malpractice asserted against you by an Owner or third party.</li>
+  <li>Your entry of inaccurate, fraudulent, misleading, or negligent data within the Partner App.</li>
+  <li>Your breach of any provision of these Terms or the cryptographic security integrity protocols.</li>
+  <li>Your violation of any third-party rights, including physical trespassing, animal ownership rights, or intellectual property rights.</li>
+</ol>
+
+<h2>9. Governing Law, Venue, and Mandatory Arbitration</h2>
+
+<p><strong>9.1 Governing Law</strong></p>
+<p>These Terms, and all disputes arising out of or relating to them, shall be governed by and construed in accordance with the laws of the jurisdiction in which West Solution Consulting Corp. is incorporated, without regard to conflict of law principles.</p>
+
+<p><strong>9.2 Mandatory Individual Arbitration</strong></p>
+<p>YOU AND THE COMPANY AGREE TO RESOLVE ANY AND ALL DISPUTES, CLAIMS, OR CONTROVERSIES ARISING OUT OF THESE TERMS OR THE SERVICE THROUGH BINDING, INDIVIDUAL ARBITRATION, INSTEAD OF RESOLVING DISPUTES IN COURT.</p>
+
+<p><strong>9.3 Class Action Waiver</strong></p>
+<p>YOU AND THE COMPANY AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS ACTION, COLLECTIVE ACTION, OR REPRESENTATIVE PROCEEDING.</p>
+
+<h2>10. Miscellaneous</h2>
+
+<p><strong>10.1 Severability</strong></p>
+<p>If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court or arbitrator of competent jurisdiction, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions of these Terms shall continue in full force and effect.</p>
+
+<p><strong>10.2 Entire Agreement</strong></p>
+<p>These Terms, together with our Privacy Policy, constitute the complete and integrated agreement between you and West Solution Consulting Corp. regarding your use of the Partner App, superseding all prior oral or written communications, agreements, or understandings.</p>
+
+<p><strong>10.3 Contact and Notices</strong></p>
+<p>For legal inquiries, notices, or support requests regarding the Partner App, please contact:</p>
+<ul>
+  <li><strong>Company:</strong> West Solution Consulting Corp.</li>
+  <li><strong>Email:</strong> <a href="mailto:support@wtheory.com">support@wtheory.com</a></li>
+</ul>
 
 </div>
 </main>
