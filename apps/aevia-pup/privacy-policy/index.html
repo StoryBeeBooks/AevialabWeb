@@ -21,171 +21,105 @@
 <p class="subtitle">Aevia Pup &mdash; West Solution Consulting Corp.<br>Effective Date: May 10, 2026 &nbsp;|&nbsp; Last Updated: June 16, 2026</p>
 
 <div class="highlight">
-  <strong>Privacy-by-design, local-first architecture.</strong> West Solution Consulting Corp. ("Company," "we," "our," or "us") is committed to protecting your privacy. We designed the Service under a "privacy-by-design" and "local-first" framework. Our core architecture ensures that your dog's wellness diaries, dietary records, and physical metrics remain exclusively under your control. We do not access, analyze, monetize, or harvest your private health records.
+  <strong>Privacy-first architecture.</strong> We are committed to protecting your privacy. Our service is designed with a "privacy-by-design" and "local-first" approach, ensuring that your dog's health records, dietary information, and activity data remain exclusively under your control. We do not access, analyze, monetize, or share your private information.
 </div>
 
-<p>This Privacy Policy describes our rigorous protocols regarding the collection, processing, transmission, and storage of information associated with our applications, specifically <strong>Aevia Pup: Dog Care &amp; Diary</strong> (the "Main App") and <strong>Aevia Pup Partner: Caregivers</strong> (the "Partner App"), collectively referred to as the "Service."</p>
+<p>This Privacy Policy explains how <strong>Aevia Pup: Dog Care &amp; Diary</strong> (the "Main App") and <strong>Aevia Pup Partner: Caregivers</strong> (the "Partner App"), collectively the "Service," collect, process, and protect your information.</p>
 
-<h2>1. Information We Collect and Process</h2>
+<h2>1. Information We Collect</h2>
 
-<p>To clarify our data practices, we categorize the information processed by the Service into three distinct boundaries: <strong>Local Storage</strong>, <strong>Private Cloud Storage</strong>, and <strong>Encrypted Transit Data</strong>.</p>
-
-<div style="background: var(--color-bg-secondary); padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 14px; line-height: 1.6; overflow-x: auto;">
-┌────────────────────────────────────────────────────────┐<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA BOUNDARIES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-├────────────────────────────────────────────────────────┤<br>
-│&nbsp;&nbsp;1. LOCAL STORAGE (On-Device Keychain &amp; SwiftData)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Meal, Water, and Vet Logs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Symptom trackers &amp; Stool records&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Local cryptographic AES-256 keys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-├────────────────────────────────────────────────────────┤<br>
-│&nbsp;&nbsp;2. PRIVATE CLOUD STORAGE (Apple CloudKit Container)&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Owner-controlled end-to-end encrypted backup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Company cannot access, view, or restore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-├────────────────────────────────────────────────────────┤<br>
-│&nbsp;&nbsp;3. ENCRYPTED TRANSIT DATA (Supabase Routing Gateway)&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Metadata: dog_id, client_event_id, timestamps&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Ciphertext: AES-256-GCM encrypted payloads&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Hashed Invite Tokens (SHA-256)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-└────────────────────────────────────────────────────────┘
-</div>
-
-<h3>1.1 Data Stored Exclusively On Your Device (Local Storage)</h3>
-<p>The vast majority of the data you enter or generate within the Main App or Partner App is stored locally using Apple's SwiftData framework. This data never leaves your physical device unless you explicitly enable cloud features. This includes:</p>
+<h3>1.1 Data Stored On Your Device</h3>
+<p>The majority of your data is stored locally on your device and never leaves it unless you explicitly enable cloud backup. This includes:</p>
 <ul>
-  <li><strong>Dog Profiles &amp; Physical Metrics:</strong> Names, breeds, sexes, birthdates, activity coefficients, and weight histories.</li>
-  <li><strong>Nutrition &amp; Hydration Logs:</strong> Daily food records, ingredient names, treat calorie entries, and water intake records.</li>
-  <li><strong>Clinical Health Records:</strong> Symptom logs, physical severity indicators, medication doses, and vaccination dates.</li>
-  <li><strong>Captures &amp; Images:</strong> Photos captured or imported to document physical symptoms or meals.</li>
-  <li><strong>Local Insight Computations:</strong> All algorithmic calorie target calculations (RER/MER) and food safety checks are executed entirely on-device using bundled, offline reference databases.</li>
+  <li><strong>Dog Profiles:</strong> Names, breeds, ages, weight histories, and activity levels</li>
+  <li><strong>Health &amp; Nutrition Logs:</strong> Meal records, water intake, symptoms, medications, and vet appointments</li>
+  <li><strong>Photos:</strong> Images you capture or import to document symptoms or meals</li>
+  <li><strong>Calculations:</strong> All calorie targets and food safety checks are computed on your device using offline databases</li>
 </ul>
 
-<h3>1.2 Data Backed Up via Your Private Cloud (Private Cloud Storage)</h3>
+<h3>1.2 Data Backed Up to Your iCloud</h3>
+<p>If you enable iCloud backup, your local data is securely synced to your personal Apple iCloud account. This backup is managed entirely by Apple using their encryption protocols. <strong>We cannot access, view, or restore your iCloud data.</strong></p>
+
+<h3>1.3 Data We Process for Caregiver Features</h3>
+<p>To enable secure caregiver collaboration, we process minimal authentication and routing information:</p>
 <ul>
-  <li><strong>CloudKit Synchronization:</strong> If you enable iCloud backup in the Main App or Partner App settings, iOS securely replicates your local SwiftData database to your personal Apple iCloud account via CloudKit.</li>
-  <li><strong>Company Access Limit:</strong> This synchronization pipeline is managed entirely by Apple Inc. Your data is encrypted in transit and at rest using Apple's security protocols. West Solution Consulting Corp. does not operate these servers and has no administrative ability to access, read, or restore this data.</li>
+  <li><strong>Anonymous Authentication:</strong> We use Sign in with Apple to create a secure, anonymous user identifier. We do not collect your name or email address.</li>
+  <li><strong>Encrypted Caregiver Logs:</strong> When caregivers submit activities, the data is encrypted on their device before transmission. We store only encrypted data that we cannot read or decrypt.</li>
+  <li><strong>Basic Routing Information:</strong> Limited metadata (such as dog profile IDs and timestamps) to ensure logs reach the correct owner.</li>
 </ul>
 
-<h3>1.3 Data Routed via Our Infrastructure (Encrypted Transit Data)</h3>
-<p>To coordinate authentication and caregiver collaboration, the Service communicates with our secure infrastructure (hosted on Supabase) using the following limited data points:</p>
+<h2>2. How Caregiver Sharing Works</h2>
+
+<p>The caregiver feature allows you to securely share limited access with dog walkers, pet sitters, or family members. Here's how we protect your privacy:</p>
+
 <ul>
-  <li><strong>Apple Sign-In Identifiers (SIWA):</strong> We utilize Sign in with Apple for secure, anonymous authentication. The App transmits your secure Apple identity token to our verification endpoint (<code>verify-siwa</code>) to validate your session and generate a stable, anonymous user identifier (the Apple subject string). We do not collect your real name or primary email address.</li>
-  <li><strong>Hashed Invitation Tokens:</strong> When an Owner generates a sharing invite, the raw, random 32-byte secret token is hashed on-device using SHA-256. Only the SHA-256 hash (<code>token_hash</code>) is stored on our servers.</li>
-  <li><strong>Caregiver Verification Metadata:</strong> When a Caregiver claims an invite, their anonymous Apple ID subject string (<code>contributor_apple_sub</code>) and their chosen display name (<code>contributor_display_name</code>) are saved to verify their subsequent data uploads.</li>
-  <li><strong>Encrypted Submissions (The Caregiver Inbox):</strong> When a Caregiver logs an activity, the payload is encrypted on-device. The resulting ciphertext (base64-encoded) is uploaded to our <code>partner_inbox</code> table alongside unencrypted routing metadata:
-    <ul style="margin-top: 8px;">
-      <li><code>dog_id</code> (to match the profile)</li>
-      <li><code>dog_name</code> (for owner interface display)</li>
-      <li><code>category</code> (one of: walk, meal, or vet, to enforce scope validation)</li>
-      <li><code>client_event_id</code> (a client-generated UUID used to prevent duplicate uploads)</li>
-      <li><code>created_at</code> &amp; <code>expires_at</code> (timestamps to manage queue cleanup)</li>
-    </ul>
-  </li>
-</ul>
-
-<h2>2. Cryptographic Architecture of Caregiver Collaboration</h2>
-
-<p>To ensure complete data privacy, the sharing mechanism between the Main App and the Partner App is designed as a <strong>zero-knowledge transit system</strong>.</p>
-
-<div style="background: var(--color-bg-secondary); padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 14px; line-height: 1.6; overflow-x: auto;">
-┌────────────────────────┐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌────────────────────────┐<br>
-│&nbsp;&nbsp;Caregiver App&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;Owner App&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;(Encrypts Payload)&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;(Decrypts Payload)&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-└──────────┬─────────────┘&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──────────▲─────────────┘<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│ (AES-256-GCM Ciphertext)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│ (Downloads Ciphertext)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;┌─────────────────────────────────────────────────────┴─┐<br>
-&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supabase Transit Gateway&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;* Stores only: SHA-256 Hashed Tokens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;* Stores only: Encrypted Base64 Payload&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;* Company possesses NO DECRYPTION KEYS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;└───────────────────────────────────────────────────────┘
-</div>
-
-<h3>2.1 Cryptographic Key Custody</h3>
-<ul>
-  <li><strong>Client-Side Key Generation:</strong> When an Owner creates a caregiver invitation, the Main App generates a high-entropy, 32-byte symmetric AES-256 key entirely on-device using secure system APIs (<code>SecRandomCopyBytes</code>).</li>
-  <li><strong>The URL Fragment Rule:</strong> This AES key is appended to the generated invite link as a URL fragment (<code>#key=base64url...</code>). Under internet protocol standard RFC 3986, URL fragments are processed strictly client-side by the operating system and are never sent to web servers or network routers.</li>
-  <li><strong>Zero Server Knowledge:</strong> We do not receive, store, or transmit the decryption key. Consequently, our servers hold only unreadable base64-encoded ciphertext. We cannot decrypt or read your caregiver's logs.</li>
-</ul>
-
-<h3>2.2 Data Transit and Automatic Erasure</h3>
-<ul>
-  <li><strong>Temporary Inbox Storage:</strong> Encrypted caregiver submissions are held in our secure intermediate database (<code>partner_inbox</code>) as an ephemeral queue.</li>
-  <li><strong>Owner-Initiated Erasure:</strong> When an Owner approves or rejects an inbox entry via the Pending Review panel, the corresponding database row is permanently deleted from our servers.</li>
-  <li><strong>Automatic TTL Purge:</strong> Any submission left unreviewed by an Owner is automatically swept and permanently deleted by our database maintenance scheduler (<code>pg_cron</code>) after seven (7) days.</li>
+  <li><strong>End-to-End Encryption:</strong> All caregiver submissions are encrypted on their device before being sent. We cannot read or decrypt this information.</li>
+  <li><strong>You Control Access:</strong> Only you can approve or reject caregiver entries. You can revoke access at any time.</li>
+  <li><strong>Automatic Deletion:</strong> Pending caregiver submissions are automatically deleted after 7 days if not reviewed.</li>
+  <li><strong>Zero-Knowledge System:</strong> Encryption keys are never sent to our servers, ensuring we have no way to access the content of caregiver logs.</li>
 </ul>
 
 <h2>3. How We Use Information</h2>
 
-<p>Because we do not have custody of your dog's health, nutrition, or physical logs, we cannot use your data for advertising, machine learning model training, or behavioral profiling.</p>
+<p><strong>We do not have access to your dog's health, nutrition, or activity data.</strong> Therefore, we cannot use your information for advertising, analytics, or any other commercial purposes.</p>
 
-<p>The minimal technical identifiers we process are used exclusively to:</p>
+<p>The minimal authentication data we process is used only to:</p>
 <ul>
-  <li><strong>Validate Sessions:</strong> Authenticate active devices and secure API access using anonymous Sign in with Apple signatures.</li>
-  <li><strong>Route Secure Payloads:</strong> Verify cryptographic tokens, enforce caregiver scopes, and route encrypted payloads to the correct Owner's review queue.</li>
-  <li><strong>Send Push Notifications:</strong> Trigger real-time Apple Push Notification service (APNs) alerts via database triggers when a new, encrypted caregiver log is submitted.</li>
-  <li><strong>Improve Platform Stability:</strong> Log anonymous session event metadata (if you have opted in) to detect technical crashes and app store performance anomalies.</li>
+  <li>Verify your identity using Sign in with Apple</li>
+  <li>Route encrypted caregiver submissions to your review queue</li>
+  <li>Send push notifications when caregivers submit new logs</li>
+  <li>Detect and resolve technical issues (if you opt in to crash reporting)</li>
 </ul>
 
-<h2>4. Information Sharing and Disclosures</h2>
+<h2>4. Information Sharing</h2>
 
-<p><strong>We do not sell, rent, trade, or monetize your personal or pet data.</strong> We do not integrate third-party advertising SDKs, behavioral trackers, or external profiling platforms.</p>
+<p><strong>We do not sell, rent, trade, or monetize your data.</strong> We do not use third-party advertising or tracking services.</p>
 
-<p>We may disclose the minimal, non-encrypted metadata in our database only:</p>
+<p>We may share limited technical information only:</p>
 <ul>
-  <li><strong>To Our Infrastructure Providers:</strong> We use trusted infrastructure providers (such as Supabase for database routing and Edge Functions) strictly to maintain the Service. These providers are bound by strict data processing agreements that prohibit them from using your data for any other purpose.</li>
-  <li><strong>As Required by Law:</strong> We may disclose metadata if required to do so by a valid legal subpoena, court order, or regulatory mandate, provided we are legally compelled to comply.</li>
+  <li><strong>With Service Providers:</strong> We use secure infrastructure providers (such as cloud hosting services) to operate the Service. These providers are contractually prohibited from using your data for any other purpose.</li>
+  <li><strong>When Required by Law:</strong> We may disclose information if required by a valid legal order, such as a subpoena or court order.</li>
 </ul>
 
-<h2>5. Your Rights and Data Erasure (App Store Guideline 5.1.1)</h2>
+<h2>5. Your Data Rights</h2>
 
-<p>You retain absolute, exclusive ownership and custody of your data. The Service provides direct, self-serve controls to export, modify, or permanently erase your data.</p>
+<p>You have complete control over your data:</p>
 
-<div style="background: var(--color-bg-secondary); padding: 24px; border-radius: 8px; margin: 24px 0; font-family: monospace; font-size: 14px; line-height: 1.6; overflow-x: auto;">
-┌────────────────────────────────────────────────────────┐<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN-APP DELETION SEQUENCE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-├────────────────────────────────────────────────────────┤<br>
-│&nbsp;&nbsp;1. Owner Device&nbsp;&nbsp;&nbsp;&nbsp;--&gt; Wipes local SwiftData database&nbsp;│<br>
-│&nbsp;&nbsp;2. Private iCloud&nbsp;&nbsp;--&gt; Purges CloudKit container&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;3. Supabase Cloud&nbsp;&nbsp;--&gt; Deletes Apple identifiers &amp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;invalidates invitation tokens&nbsp;&nbsp;│<br>
-└────────────────────────────────────────────────────────┘
-</div>
+<h3>5.1 Account Deletion</h3>
 
-<h3>5.1 Self-Serve Data Erasure</h3>
-
-<p>You can trigger a complete database wipe at any time from within the app's settings panel under <strong>Settings &gt; Account &gt; Delete Account</strong> (Main App) or <strong>Settings &gt; Account &gt; Delete Account &amp; Data</strong> (Partner App). Once triggered, the following events execute immediately:</p>
+<p>You can permanently delete your account and all associated data at any time from <strong>Settings &gt; Account &gt; Delete Account</strong>. This action will:</p>
 
 <ol>
-  <li><strong>Local SwiftData Wipe:</strong> Erases all local database records, dog profiles, weight histories, and caregiver caches on your physical device.</li>
-  <li><strong>Private Cloud Purge:</strong> Instructs your private Apple CloudKit container to delete all mirrored Aevia Pup data.</li>
-  <li><strong>Database Clearing:</strong> Instructs our servers to permanently delete your anonymous Apple user subject identifier, revoke all active caregiver invitation tokens, and delete any pending encrypted logs from our databases.</li>
+  <li>Erase all local data from your device</li>
+  <li>Delete your iCloud backup</li>
+  <li>Remove your authentication credentials from our servers</li>
+  <li>Revoke all active caregiver invitations</li>
+  <li>Delete any pending caregiver submissions</li>
 </ol>
 
-<p style="margin-top: 16px; font-size: 14px; color: var(--color-text-tertiary);"><em>Note: This deletion process is complete and irreversible. Because we do not hold copies of your decryption keys or maintain server-side backups, we cannot recover your data once deleted.</em></p>
+<p style="margin-top: 16px;"><em><strong>Important:</strong> This deletion is permanent and irreversible. We cannot recover your data once deleted.</em></p>
 
-<h2>6. Security Practices</h2>
+<h2>6. Security</h2>
 
-<p>We employ aggressive, industry-standard protocols to protect your data:</p>
+<p>We implement industry-standard security measures to protect your information:</p>
 <ul>
-  <li><strong>Secure Enclave Integration:</strong> All session tokens and cryptographic keys are stored in the secure iOS Keychain, protected by system-level hardware encryption.</li>
-  <li><strong>Minimal API Surface Area:</strong> We have stripped out all third-party tracking APIs to ensure deterministic execution and prevent unauthorized data leaks.</li>
-  <li><strong>Enforced Transport Security:</strong> All client-to-server communications are conducted exclusively over TLS (HTTPS) with pinned endpoints where applicable.</li>
+  <li><strong>Device Security:</strong> Authentication tokens and encryption keys are stored in the secure iOS Keychain</li>
+  <li><strong>Encrypted Communications:</strong> All data transmitted between your device and our servers uses TLS/HTTPS encryption</li>
+  <li><strong>No Third-Party Trackers:</strong> We do not use analytics, advertising, or tracking services that could compromise your privacy</li>
+  <li><strong>Minimal Data Collection:</strong> We only collect the minimum information necessary to provide the Service</li>
 </ul>
 
 <h2>7. Children's Privacy</h2>
 
-<p>The Service is not designed or intended for use by children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has input personal data locally on a device, you can use the in-app account deletion tool to erase the database.</p>
+<p>Our Service is not intended for children under 13. We do not knowingly collect information from children. If you believe your child has provided information through the app, you can delete it using the account deletion feature in Settings.</p>
 
-<h2>8. Changes to This Privacy Policy</h2>
+<h2>8. Changes to This Policy</h2>
 
-<p>We may update this Privacy Policy from time to time to reflect architectural updates or regulatory changes. If we make material modifications, we will update the "Last Updated" date at the top of this document or provide a notification within the App. Your continued use of the Service after changes are posted constitutes your acceptance of the updated Policy.</p>
+<p>We may update this Privacy Policy periodically to reflect changes to our practices or for legal reasons. If we make significant changes, we will notify you by updating the "Last Updated" date at the top of this page or through an in-app notification. Your continued use of the Service after changes are posted indicates your acceptance of the updated policy.</p>
 
 <h2>9. Contact Us</h2>
 
-<p>If you have questions, concerns, or requests regarding this Privacy Policy or our security protocols, please contact our privacy desk at:</p>
+<p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
 <ul>
   <li><strong>Company:</strong> West Solution Consulting Corp.</li>
   <li><strong>Email:</strong> <a href="mailto:support@wtheory.com">support@wtheory.com</a></li>
