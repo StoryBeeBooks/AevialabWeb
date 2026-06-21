@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aevia Pup Partner: Caregivers — Aevia Lab</title>
-<meta name="description" content="The secure co-parenting terminal for collaborative canine wellness tracking. Log walks, meals, medications, and symptoms for the dogs in your care network.">
+<meta name="description" content="Help pet owners provide better care. Log walks, meals, medications, and symptoms for the dogs in your care — all securely synced with the owner's app.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -18,38 +18,11 @@
   }
   .revive-hero .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
   .revive-hero__sub {
-    max-width: 640px;
+    max-width: 680px;
     margin: 24px auto 0;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--color-text-secondary);
-  }
-  .revive-hero__badges {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 36px auto 0;
-  }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 16px;
-    border: 1px solid var(--color-border-light);
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    background: var(--color-surface);
-  }
-  .badge::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--color-accent);
   }
   .revive-hero__media {
     max-width: 1180px;
@@ -61,31 +34,47 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 24px;
+    padding: 80px 24px 60px;
+  }
+  .revive-hero__apps {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .revive-hero__app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .revive-hero__icon {
     width: 120px;
     height: 120px;
     border-radius: 28px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.10);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .revive-hero__icon-name {
     font-family: var(--font-serif);
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 400;
     color: var(--color-text);
     margin-bottom: 8px;
     letter-spacing: -0.015em;
   }
+  .revive-hero__icon-subtitle {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 16px;
+  }
   .app-store-button {
     display: inline-block;
-    margin-top: 16px;
-    padding: 12px 28px;
+    padding: 11px 24px;
     background-color: var(--color-text);
     color: #fff;
-    border-radius: 12px;
-    font-size: 15px;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 500;
     text-decoration: none;
     transition: transform 0.2s, opacity 0.2s;
@@ -209,160 +198,180 @@
 <!-- HERO -->
 <section class="revive-hero">
   <div class="container">
-    <span class="label">Application &middot; Caregivers</span>
-    <h1 class="heading-hero" style="font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto;">Aevia Pup <em style="font-style: italic; color: var(--color-accent);">Partner.</em></h1>
+    <span class="label">For Dog Walkers, Sitters, and Family Helpers</span>
+    <h1 class="heading-hero" style="font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto;">Help pet owners <em style="font-style: italic; color: var(--color-accent);">provide better care.</em></h1>
     <p class="revive-hero__sub">
-      The secure co-parenting terminal for collaborative canine wellness tracking. Log walks, meals, medications, and symptoms for the dogs in your care network.
+      Log walks, meals, medications, and symptoms for the dogs in your care — all securely synced with the owner's app. Your observations help catch health issues early and prevent medication errors.
     </p>
-    <div class="revive-hero__badges">
-      <span class="badge">Dog Walkers</span>
-      <span class="badge">Pet Sitters</span>
-      <span class="badge">Family Helpers</span>
-      <span class="badge">Offline-First</span>
-      <span class="badge">Zero-Knowledge</span>
-      <span class="badge">Encrypted Transit</span>
-    </div>
   </div>
   <div class="revive-hero__media">
     <div class="revive-hero__icon-wrap">
-      <img src="https://assets.aevialab.com/Website/pictures/aevia_pup_partner_logo.jpeg" alt="Aevia Pup Partner" class="revive-hero__icon">
-      <div class="revive-hero__icon-name">Aevia Pup Partner</div>
-      <a href="https://apps.apple.com/us/app/aevia-pup-partner-caregivers/id6780707079" class="app-store-button" target="_blank" rel="noopener noreferrer">
-        Download on the App Store
-      </a>
+      <div class="revive-hero__apps">
+        <div class="revive-hero__app">
+          <img src="https://assets.aevialab.com/Website/pictures/aevia_pup_partner_logo.jpeg" alt="Aevia Pup Partner" class="revive-hero__icon">
+          <div class="revive-hero__icon-name">Aevia Pup Partner</div>
+          <div class="revive-hero__icon-subtitle">For Caregivers</div>
+          <a href="https://apps.apple.com/us/app/aevia-pup-partner-caregivers/id6780707079" class="app-store-button" target="_blank" rel="noopener noreferrer">
+            Download on App Store
+          </a>
+        </div>
+        <div class="revive-hero__app">
+          <img src="https://assets.aevialab.com/Website/pictures/Aevia_Pup_App_Logo.png" alt="Aevia Pup" class="revive-hero__icon">
+          <div class="revive-hero__icon-name">Aevia Pup</div>
+          <div class="revive-hero__icon-subtitle">For Dog Owners</div>
+          <a href="https://apps.apple.com/us/app/aevia-pup-dog-care-diary/id6772649122" class="app-store-button" target="_blank" rel="noopener noreferrer">
+            Download on App Store
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 01 — The Dog Walker -->
+<!-- 01 — Provide Better Service -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">01 &middot; Dog Walkers</span>
-        <h2 class="feature__title">Activity tracking <em>and digestive diagnostics.</em></h2>
+        <span class="feature__num">Benefit 01</span>
+        <h2 class="feature__title">Provide better service <em>with less effort.</em></h2>
         <p class="feature__desc">
-          Dog walkers log walk durations in real-time or post-facto, recording the exact time, duration, and pace of each outing. Using the integrated Bristol-inspired stool metric, walkers document stool consistency on a 1–7 scale (from hard, dry pellets to liquid diarrhea) and note physical anomalies such as foreign body ingestion or discoloration. These indices are transmitted immediately to the Owner's app, allowing continuous monitoring of digestive health and exercise consistency throughout the work week.
+          Stop texting updates, taking photos of food portions, or scribbling notes the owner might never see. Log everything directly in the app while you're on the walk or feeding the dog. The owner gets real-time updates without you needing to send messages or remember details hours later. Show professionalism that sets you apart.
         </p>
         <ul class="feature__bullets">
-          <li>Precise activity tracking with real-time or retroactive walk logging.</li>
-          <li>Integrated 1–7 Bristol stool consistency scale for digestive diagnostics.</li>
-          <li>Log physical anomalies, foreign body ingestion, and behavioral observations.</li>
-          <li>Instant transmission to Owner's review queue for timeline integration.</li>
+          <li>Log walks, meals, and bathroom breaks in seconds while you're actually doing them.</li>
+          <li>Owners see your updates instantly without waiting for your text message.</li>
+          <li>Stand out as a professional caregiver with detailed, reliable documentation.</li>
+          <li>Spend more time with the dog, less time writing update messages.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The owner invites you via a secure link. You sign in with your Apple ID, and you'll only see the dogs you're authorized to care for. Your logs sync instantly to the owner's timeline.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Dog Walker Interface Screenshot]</div>
+        <div class="feature__media-placeholder">[Quick logging interface]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 — The Professional Sitter -->
+<!-- 02 — Protect Yourself from Misunderstandings -->
 <section class="feature feature--alt">
   <div class="container">
     <div class="feature__grid feature__grid--reverse">
       <div class="feature__content">
-        <span class="feature__num">02 &middot; Pet Sitters</span>
-        <h2 class="feature__title">Nutrition tracking <em>and hydration auditing.</em></h2>
+        <span class="feature__num">Benefit 02</span>
+        <h2 class="feature__title">Protect yourself <em>from misunderstandings.</em></h2>
         <p class="feature__desc">
-          Professional sitters document exact food weights in grams and food categories (kibble, wet food, or treats), ensuring the dog's daily caloric targets are met. Hydration auditing allows sitters to log water intake in milliliters, helping Owners identify early indicators of metabolic changes, renal strain, or urinary tract issues. The app operates fully offline, allowing sitters in remote areas or high-density buildings with poor cell signal to continue logging without interruption. Entries cache locally and synchronize when connectivity is restored.
+          "Did you give him breakfast?" "How long was the walk?" "Was there anything unusual?" Stop defending yourself against forgotten instructions or unclear expectations. When everything you do is logged with timestamps, there's a clear record showing exactly what happened, when, and how. No more he-said-she-said situations.
         </p>
         <ul class="feature__bullets">
-          <li>Calculated meal tracking with exact food weights in grams.</li>
-          <li>Food category classification: kibble, wet food, and treats.</li>
-          <li>Hydration auditing with milliliter-precise water intake logging.</li>
-          <li>Offline resilience: cache entries locally and sync when connection returns.</li>
+          <li>Timestamped records prove exactly when you walked, fed, or medicated the dog.</li>
+          <li>Document unusual symptoms or behaviors the moment you notice them.</li>
+          <li>Show professionalism with complete, accurate care records.</li>
+          <li>Protect yourself from liability with clear documentation of what you did and observed.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: Every entry includes who logged it, exactly when, and all relevant details. The owner reviews and approves entries, creating an official record of care that protects both of you.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Pet Sitter Interface Screenshot]</div>
+        <div class="feature__media-placeholder">[Timestamped entry records]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 03 — The Family Helper -->
+<!-- 03 — Never Miss Important Health Signs -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">03 &middot; Family Helpers</span>
-        <h2 class="feature__title">Clinical compliance <em>and symptom monitoring.</em></h2>
+        <span class="feature__num">Benefit 03</span>
+        <h2 class="feature__title">Never miss <em>important health signs.</em></h2>
         <p class="feature__desc">
-          Family helpers and veterinary assistants record precise pharmaceutical interventions, logging the compound name, timing, and exact dosage in milligrams or milliliters. Prevent dangerous double-medication errors with synchronized dose logs visible across the entire household. Document physical symptoms—vomiting, coughing, lethargy, mobility issues—with standardized clinical severity scores (1 to 5), ensuring the Owner's timeline contains objective observations that can be shared with veterinarians during diagnostic consultations.
+          You're often the first person to notice something's wrong — soft stool, decreased appetite, unusual lethargy. But if you just mention it casually and the owner forgets, that early warning gets lost. Log what you observe in the moment, with clinical detail, so the owner and their vet have the information they need to act fast.
         </p>
         <ul class="feature__bullets">
-          <li>Medication administration logs with compound name, timing, and exact dosage.</li>
-          <li>Prevent double-medication errors with synchronized household visibility.</li>
-          <li>Symptom monitoring with standardized 1–5 clinical severity scores.</li>
-          <li>Objective observations for veterinary diagnostic consultations.</li>
+          <li>Record stool consistency on a 1-7 clinical scale the moment you see it.</li>
+          <li>Document behavioral changes like limping, coughing, or decreased energy.</li>
+          <li>Note exactly what and how much the dog ate or refused to eat.</li>
+          <li>Help catch serious health issues before they become emergencies.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The app includes standardized scales for stool quality (1-7) and symptom severity (1-5). Your clinical observations become part of the dog's permanent health timeline that veterinarians actually use.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Family Helper Interface Screenshot]</div>
+        <div class="feature__media-placeholder">[Health observation logging]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 04 — The Veterinary Reporting Loop -->
+<!-- 04 — Work Offline, Sync Later -->
 <section class="feature feature--alt">
   <div class="container">
     <div class="feature__grid feature__grid--reverse">
       <div class="feature__content">
-        <span class="feature__num">04 &middot; Clinical Integration</span>
-        <h2 class="feature__title">From caregiver input <em>to veterinary diagnosis.</em></h2>
+        <span class="feature__num">Benefit 04</span>
+        <h2 class="feature__title">Work offline, <em>sync later.</em></h2>
         <p class="feature__desc">
-          The Partner App completes a powerful reporting loop designed to support veterinary clinical evaluations. Caregivers across your distributed network log observations using the Partner App. These entries route securely to the Owner's review queue in Aevia Pup: Dog Care & Diary. The Owner audits and approves entries, integrating them into the dog's official timeline. During veterinary consultations, the Owner exports a structured PDF Clinical Report showing true caloric trajectories, digestive consistency trends correlated with dietary changes, and comprehensive symptom and treatment timelines.
+          Walking dogs in a park with spotty cell service? Caring for a dog in a rural area with no signal? The app works completely offline. Log everything you need during the walk or visit, and it'll automatically sync to the owner's app when you're back in range. Never lose data. Never wait for connectivity.
         </p>
         <ul class="feature__bullets">
-          <li>Decentralized observation: distributed caregivers log in real-time.</li>
-          <li>Owner audit and timeline integration via secure review queue.</li>
-          <li>Veterinary synthesis: export comprehensive PDF health reports.</li>
-          <li>Remove guesswork from therapeutic compliance reviews.</li>
+          <li>Log walks, meals, and observations with zero connectivity required.</li>
+          <li>All entries save locally and sync automatically when signal returns.</li>
+          <li>Never lose data or wait around for your phone to connect.</li>
+          <li>Perfect for remote boarding facilities, rural properties, or dense urban areas with poor signal.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The app caches all entries locally on your device. Once connectivity is restored, encrypted logs sync securely to the owner's review queue without any action from you.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Reporting Loop Diagram]</div>
+        <div class="feature__media-placeholder">[Offline mode illustration]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 05 — Getting Started -->
+<!-- 05 — Simple, Secure, Private -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">05 &middot; Getting Started</span>
-        <h2 class="feature__title">Join a care network <em>in three steps.</em></h2>
+        <span class="feature__num">Benefit 05</span>
+        <h2 class="feature__title">Simple, secure, <em>and totally private.</em></h2>
         <p class="feature__desc">
-          Getting started with Aevia Pup Partner is simple. Download the app from the App Store on your iOS or iPadOS 18.0+ device. Accept the secure Universal Link invitation sent by the dog's Owner (e.g., https://aevialab.com/apps/aevia-pup-partner/join?token=...#key=...). Complete Sign in with Apple and set your preferred display name so the Owner knows exactly who logged each observation. Access your personalized dashboard to view authorized dogs and start recording walks, meals, medications, and symptoms immediately.
+          You don't get access to the owner's personal information, billing details, other pets, or family data. You see only the dogs you're authorized to care for, and only the actions you're allowed to log. Sign in once with your Apple ID, accept the invitation link, and you're ready to work. No passwords to remember. No accounts to create.
         </p>
         <ul class="feature__bullets">
-          <li>Download the app: iOS and iPadOS 18.0+ compatible.</li>
-          <li>Accept the invite: open the secure Universal Link from the Owner.</li>
-          <li>Configure your identity: Sign in with Apple and set your display name.</li>
-          <li>Begin collaborative care: access authorized dogs and start logging.</li>
+          <li>Sign in once with Apple ID — no usernames, passwords, or account setup.</li>
+          <li>See only the dogs you're authorized to care for, nothing else.</li>
+          <li>Scope-restricted access: walkers log walks, sitters log meals, family logs everything.</li>
+          <li>Zero-knowledge encryption protects the data you're logging from everyone, including us.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The owner generates a secure invitation link with specific permissions (walks only, meals only, vet care, etc.). You download the app, accept the invite, and see only what you're authorized to see. All logs are encrypted on your device before being sent.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Getting Started Flow]</div>
+        <div class="feature__media-placeholder">[Security & privacy illustration]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECURITY & PRIVACY (dark) -->
+<!-- PRIVACY & SECURITY (dark) -->
 <section class="revive-household">
   <div class="container">
     <div class="revive-household__grid">
       <div>
-        <span class="label">Zero-Knowledge Cryptography</span>
-        <h2 class="revive-household__title">Collaborative care <em>without compromising security.</em></h2>
+        <span class="label">Built for Professional Caregivers</span>
+        <h2 class="revive-household__title">No setup hassles, <em>complete privacy.</em></h2>
         <p class="revive-household__desc">
-          Aevia Pup Partner is designed with advanced cryptographic separations to ensure collaborative care does not compromise household security. Caregivers sign in with their own Apple ID, keeping identities independent. All logs are encrypted on-device via AES-256-GCM, with symmetric keys shared directly via URL fragments that never touch our servers.
+          You don't need to create accounts, remember passwords, or share personal information. Sign in with Apple, accept the invite, and start logging. All data is encrypted before it leaves your device. We can't read it. The owner reviews and approves your entries. You focus on the dog.
         </p>
         <div class="revive-household__legal">
           <a href="/apps/aevia-pup-partner/support">Support &amp; FAQ</a>
@@ -372,20 +381,20 @@
       </div>
       <div class="revive-household__pillars">
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">No Shared Logins</div>
-          <div class="revive-household__pillar-desc">Caregivers sign in with their own Apple ID via Sign in with Apple, keeping identities independent of the Owner's account.</div>
+          <div class="revive-household__pillar-title">No Account Setup</div>
+          <div class="revive-household__pillar-desc">Sign in once with Apple ID. No usernames, passwords, or personal information required.</div>
         </div>
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">Zero-Knowledge Relay</div>
-          <div class="revive-household__pillar-desc">All caregiver logs are encrypted on-device via AES-256-GCM. The symmetric key is shared directly via URL fragment and never touches our servers.</div>
+          <div class="revive-household__pillar-title">See Only Your Dogs</div>
+          <div class="revive-household__pillar-desc">You only see the dogs you're authorized to care for. No access to owner's personal data, billing, or other pets.</div>
         </div>
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">Encrypted Transit Conduit</div>
-          <div class="revive-household__pillar-desc">We act purely as an encrypted transit conduit. We cannot read, decrypt, or analyze the observations you transmit.</div>
+          <div class="revive-household__pillar-title">Encrypted Logs</div>
+          <div class="revive-household__pillar-desc">Everything you log is encrypted on your device before transmission. We can't read the data passing through our servers.</div>
         </div>
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">At-Will Revocation</div>
-          <div class="revive-household__pillar-desc">Owners can instantly revoke access tokens, rendering future uploads unauthorized and wiping matching entries from transit databases.</div>
+          <div class="revive-household__pillar-title">Owner Review</div>
+          <div class="revive-household__pillar-desc">Owners review and approve your entries before they're added to the official timeline, ensuring accuracy and accountability.</div>
         </div>
       </div>
     </div>

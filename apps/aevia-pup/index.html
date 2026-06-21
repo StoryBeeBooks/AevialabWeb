@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aevia Pup: Dog Care & Diary — Aevia Lab</title>
-<meta name="description" content="The definitive chronological ledger for your dog's health, nutrition, and lifestyle. Collaborate with caregivers, track metabolic data, and provide your veterinarian with objective clinical records.">
+<meta name="description" content="Never miss a symptom. Never forget a dose. Always know what your dog ate. The complete care record your veterinarian wishes every pet owner had.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -18,38 +18,11 @@
   }
   .revive-hero .label { display: block; margin-bottom: 16px; color: var(--color-text-tertiary); }
   .revive-hero__sub {
-    max-width: 640px;
+    max-width: 680px;
     margin: 24px auto 0;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--color-text-secondary);
-  }
-  .revive-hero__badges {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 36px auto 0;
-  }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 16px;
-    border: 1px solid var(--color-border-light);
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    background: var(--color-surface);
-  }
-  .badge::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--color-accent);
   }
   .revive-hero__media {
     max-width: 1180px;
@@ -61,31 +34,47 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 24px;
+    padding: 80px 24px 60px;
+  }
+  .revive-hero__apps {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .revive-hero__app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .revive-hero__icon {
     width: 120px;
     height: 120px;
     border-radius: 28px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.10);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .revive-hero__icon-name {
     font-family: var(--font-serif);
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 400;
     color: var(--color-text);
     margin-bottom: 8px;
     letter-spacing: -0.015em;
   }
+  .revive-hero__icon-subtitle {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 16px;
+  }
   .app-store-button {
     display: inline-block;
-    margin-top: 16px;
-    padding: 12px 28px;
+    padding: 11px 24px;
     background-color: var(--color-text);
     color: #fff;
-    border-radius: 12px;
-    font-size: 15px;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 500;
     text-decoration: none;
     transition: transform 0.2s, opacity 0.2s;
@@ -209,160 +198,180 @@
 <!-- HERO -->
 <section class="revive-hero">
   <div class="container">
-    <span class="label">Application &middot; Dog Care & Diary</span>
-    <h1 class="heading-hero" style="font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto;">Aevia <em style="font-style: italic; color: var(--color-accent);">Pup.</em></h1>
+    <span class="label">Aevia Pup Ecosystem</span>
+    <h1 class="heading-hero" style="font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto;">Never miss a symptom. <em style="font-style: italic; color: var(--color-accent);">Never forget a dose.</em></h1>
     <p class="revive-hero__sub">
-      The definitive chronological ledger for your dog's health, nutrition, and lifestyle. Collaborate with caregivers, track metabolic data, and provide your veterinarian with objective clinical records.
+      The complete care record your veterinarian wishes every pet owner had. Track your dog's health with your entire care team — dog walkers, sitters, and family — all synchronized securely.
     </p>
-    <div class="revive-hero__badges">
-      <span class="badge">Metabolic Engine</span>
-      <span class="badge">Unified Timeline</span>
-      <span class="badge">Multi-Caregiver</span>
-      <span class="badge">Vet Reports</span>
-      <span class="badge">Zero-Knowledge</span>
-      <span class="badge">Local-First</span>
-    </div>
   </div>
   <div class="revive-hero__media">
     <div class="revive-hero__icon-wrap">
-      <img src="https://assets.aevialab.com/Website/pictures/Aevia_Pup_App_Logo.png" alt="Aevia Pup" class="revive-hero__icon">
-      <div class="revive-hero__icon-name">Aevia Pup</div>
-      <a href="https://apps.apple.com/us/app/aevia-pup-dog-care-diary/id6772649122" class="app-store-button" target="_blank" rel="noopener noreferrer">
-        Download on the App Store
-      </a>
+      <div class="revive-hero__apps">
+        <div class="revive-hero__app">
+          <img src="https://assets.aevialab.com/Website/pictures/Aevia_Pup_App_Logo.png" alt="Aevia Pup" class="revive-hero__icon">
+          <div class="revive-hero__icon-name">Aevia Pup</div>
+          <div class="revive-hero__icon-subtitle">For Dog Owners</div>
+          <a href="https://apps.apple.com/us/app/aevia-pup-dog-care-diary/id6772649122" class="app-store-button" target="_blank" rel="noopener noreferrer">
+            Download on App Store
+          </a>
+        </div>
+        <div class="revive-hero__app">
+          <img src="https://assets.aevialab.com/Website/pictures/aevia_pup_partner_logo.jpeg" alt="Aevia Pup Partner" class="revive-hero__icon">
+          <div class="revive-hero__icon-name">Aevia Pup Partner</div>
+          <div class="revive-hero__icon-subtitle">For Caregivers</div>
+          <a href="https://apps.apple.com/us/app/aevia-pup-partner-caregivers/id6780707079" class="app-store-button" target="_blank" rel="noopener noreferrer">
+            Download on App Store
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 01 — Dynamic Metabolic Calculations -->
+<!-- 01 — Catch Health Issues Early -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">01 &middot; Metabolic Intelligence</span>
-        <h2 class="feature__title">Precision nutrition <em>engineered for your dog.</em></h2>
+        <span class="feature__num">Benefit 01</span>
+        <h2 class="feature__title">Catch health issues <em>before they become emergencies.</em></h2>
         <p class="feature__desc">
-          Unlike generic pet apps that calculate caloric needs based on broad weight brackets, Aevia Pup features a precise metabolic engine built on veterinary science. The app computes your dog's Resting Energy Requirement (RER) using the formula RER = 70 × (Weight in kg)^0.75, then overlays adjusting coefficients for life stage, activity thresholds, and breed-specific multipliers from our curated 82-breed database.
+          Your dog can't tell you when something's wrong. But patterns can. When you log every meal, walk, and bathroom break, you'll spot the subtle changes that signal trouble — like soft stools appearing 6 hours after a specific food, or decreased appetite before anyone notices lethargy. Present your vet with objective data instead of trying to remember when symptoms started.
         </p>
         <ul class="feature__bullets">
-          <li>Mathematical RER & MER calculations tailored to your dog's weight, age, and activity level.</li>
-          <li>Adaptive nutrition planning for intact vs neutered adults, puppy growth phases, gestation, lactation, and weight management.</li>
-          <li>Breed-specific metabolic multipliers for 82 recognized breeds.</li>
-          <li>Dynamic targets that adjust automatically as your dog's profile evolves.</li>
+          <li>Spot food allergens by correlating stool consistency with specific ingredients over time.</li>
+          <li>Identify early signs of illness before they escalate to emergency vet visits.</li>
+          <li>Track symptom patterns your entire care team observes throughout the day.</li>
+          <li>Export complete health reports showing exactly what happened and when.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The unified timeline consolidates observations from everyone caring for your dog. Stool quality scores (1-7 scale), meal logs, and symptom notes create a complete clinical picture your veterinarian can actually use.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Metabolic Dashboard Screenshot]</div>
+        <div class="feature__media-placeholder">[Timeline showing symptom correlation]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 — Unified Clinical Timeline -->
+<!-- 02 — Never Worry About Missed Medications -->
 <section class="feature feature--alt">
   <div class="container">
     <div class="feature__grid feature__grid--reverse">
       <div class="feature__content">
-        <span class="feature__num">02 &middot; Unified Timeline</span>
-        <h2 class="feature__title">Every observation, <em>one chronological ledger.</em></h2>
+        <span class="feature__num">Benefit 02</span>
+        <h2 class="feature__title">Never worry about <em>missed medications or double-doses.</em></h2>
         <p class="feature__desc">
-          Aevia Pup eliminates fragmented tracking by consolidating every aspect of your dog's day into a single, cohesive chronological feed. Dietary intake, hydration events, weight entries, stool quality indexes, localized symptom records, and medication schedules all appear in a unified calendar view. Pattern correlation lets you view the exact relationship between clinical events and dietary intake, helping you identify environmental or dietary triggers before they become chronic problems.
+          Did someone already give the morning insulin? Is it time for the arthritis pill? When multiple people care for your dog, medication errors are terrifyingly easy. One family member logs the dose in the caregiver app, and you instantly see it confirmed on your dashboard. No more frantic texts. No more dangerous mistakes.
         </p>
         <ul class="feature__bullets">
-          <li>Comprehensive metrics: meals, hydration, weight, stool consistency, symptoms, and medications in one view.</li>
-          <li>Pattern correlation tools to identify triggers and trends over time.</li>
-          <li>Navigate by day, week, or month to review historical data.</li>
-          <li>Export structured PDF reports for veterinary consultations.</li>
+          <li>See exactly who gave which medication and when, across your entire household.</li>
+          <li>Prevent dangerous double-dosing with real-time medication logs.</li>
+          <li>Track compliance for chronic conditions your vet needs to monitor.</li>
+          <li>Set up your dog walker or sitter to administer meds while you're away, with full visibility.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: Caregivers using Aevia Pup Partner log medications with exact dosages. These entries route to your secure review queue where you approve them, creating an unbroken record of every dose administered.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Timeline View Screenshot]</div>
+        <div class="feature__media-placeholder">[Medication tracking dashboard]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 03 — Multi-Caregiver Collaboration -->
+<!-- 03 — Stop Overfeeding -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">03 &middot; Collaborative Care</span>
-        <h2 class="feature__title">Your entire care network, <em>synchronized securely.</em></h2>
+        <span class="feature__num">Benefit 03</span>
+        <h2 class="feature__title">Stop overfeeding, <em>start managing weight properly.</em></h2>
         <p class="feature__desc">
-          In modern households, caring for a dog is rarely a solitary task. Dog walkers, professional sitters, family helpers, and roommates all contribute to your dog's wellbeing. Aevia Pup connects your entire care network through a secure, zero-trust gatekeeper protocol. Caregivers use the companion app (Aevia Pup Partner: Caregivers) to submit observations, which route to your secure Review Queue where you can inspect, approve, or reject entries before they're committed to your dog's official history.
+          Everyone loves giving treats. The problem? When five people each give "just a few treats," your dog quietly gains 15% body weight before anyone realizes. See exactly how many calories your dog actually consumes — including every treat, meal, and "just a bite" — calculated against their scientifically-determined metabolic needs.
         </p>
         <ul class="feature__bullets">
-          <li>Generate scope-restricted invitations for dog walkers, sitters, and family helpers.</li>
-          <li>Review Queue (Inbox) for auditing caregiver submissions before committing to the timeline.</li>
-          <li>Dynamic scope isolation: restrict access to specific duties (walks only, vet care only, etc.).</li>
-          <li>Zero-knowledge transit: caregivers cannot access your personal accounts or private data.</li>
+          <li>Know your dog's precise caloric needs based on weight, breed, age, and activity level.</li>
+          <li>See total daily calories including treats logged by everyone in your care network.</li>
+          <li>Track weight trends over weeks and months to catch gradual changes.</li>
+          <li>Get your dog to a healthy weight with data, not guesswork.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The metabolic engine calculates Resting Energy Requirement (RER) and Maintenance Energy Requirement (MER) using veterinary formulas, adjusting for 82 breed-specific factors, life stages, and activity levels. Every meal and treat logged by your care network counts toward the daily total.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Multi-Caregiver Network Diagram]</div>
+        <div class="feature__media-placeholder">[Calorie tracking with metabolic targets]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 04 — Veterinary Diagnostic Loop -->
+<!-- 04 — Coordinate Your Entire Care Team -->
 <section class="feature feature--alt">
   <div class="container">
     <div class="feature__grid feature__grid--reverse">
       <div class="feature__content">
-        <span class="feature__num">04 &middot; Clinical Reporting</span>
-        <h2 class="feature__title">Objective data <em>for your veterinarian.</em></h2>
+        <span class="feature__num">Benefit 04</span>
+        <h2 class="feature__title">Coordinate your entire care team <em>without sharing passwords.</em></h2>
         <p class="feature__desc">
-          During diagnostic consultations, veterinarians are often forced to rely on subjective, retrospective owner recall. Aevia Pup translates subjective memory into objective, structured data. Export a comprehensive PDF Clinical Report showing multi-caregiver tracking ledgers, stool consistency scores correlated with dietary changes, stable body weight records, and strict medication compliance logs. Armed with this detailed, reliable data, your veterinarian can make confident diagnostic decisions without costly exploratory testing.
+          Your dog walker notices limping. Your pet sitter sees decreased appetite. Your teenager forgets to mention the vomiting. When everyone uses different group chats and sticky notes, critical information gets lost. Give your whole care network a secure way to report what they observe — without access to your personal data, billing info, or other dogs' records.
         </p>
         <ul class="feature__bullets">
-          <li>Export structured PDF Clinical Reports for vet visits.</li>
-          <li>True caloric trajectories plotted against computed RER and MER baselines.</li>
-          <li>Digestive consistency trends correlated directly with dietary changes.</li>
-          <li>Symptom and treatment timelines removing guesswork from therapeutic compliance.</li>
+          <li>Dog walkers log walks, stool quality, and behavioral observations in real-time.</li>
+          <li>Pet sitters track exact meal portions and water intake while you're traveling.</li>
+          <li>Family members document symptoms and medications without confusion.</li>
+          <li>Review and approve every entry before it becomes part of the official record.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: Generate secure invitation links with specific permissions (walks only, meals only, vet care, etc.). Caregivers download Aevia Pup Partner, sign in with their Apple ID, and submit observations. You review entries in your private queue and approve what goes into your dog's timeline — all with zero-knowledge encryption.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[PDF Report Preview]</div>
+        <div class="feature__media-placeholder">[Multi-caregiver network illustration]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 05 — Real-World Use Cases -->
+<!-- 05 — Make Vet Visits Actually Productive -->
 <section class="feature">
   <div class="container">
     <div class="feature__grid">
       <div class="feature__content">
-        <span class="feature__num">05 &middot; Use Cases</span>
-        <h2 class="feature__title">Proven clinical <em>applications.</em></h2>
+        <span class="feature__num">Benefit 05</span>
+        <h2 class="feature__title">Make vet visits <em>actually productive.</em></h2>
         <p class="feature__desc">
-          Aevia Pup's collaborative architecture enables powerful real-world clinical use cases. Isolate food allergens by correlating stool consistency scores with specific dietary proteins logged across multiple caregivers. Prevent double-medication errors with synchronized insulin injection logs visible across your entire household. Track osteoarthritis efficacy by monitoring mobility trends over 30-day supplement trials with objective walk duration and stiffness scores from professional pet-sitters and dog walkers.
+          "When did the limping start?" "How often does she vomit?" "What's her normal appetite?" You're paying $150 for a consultation while trying to reconstruct your dog's last two weeks from memory. Stop guessing. Hand your vet a complete clinical report showing exact meal times, symptom patterns, medication compliance, and weight trends — the kind of data they actually need to make confident diagnoses.
         </p>
         <ul class="feature__bullets">
-          <li>Gastrointestinal monitoring: isolate food allergens through multi-caregiver stool tracking.</li>
-          <li>Clinical safety: prevent double-medication errors with synchronized dose logs.</li>
-          <li>Mobility trends: track senior dog joint health with objective walk duration data.</li>
-          <li>Chronic diagnosis: provide veterinarians with high-fidelity symptom timelines.</li>
+          <li>Export structured PDF reports your veterinarian can review before the appointment.</li>
+          <li>Show exactly when symptoms started and how they correlate with diet or environment.</li>
+          <li>Prove medication compliance for chronic condition management.</li>
+          <li>Skip expensive exploratory testing when the data tells the story.</li>
         </ul>
+        <p class="feature__desc" style="margin-top: 16px; font-size: 14px; font-style: italic; color: var(--color-text-tertiary);">
+          How it works: The unified timeline aggregates multi-caregiver observations into chronological clinical reports. Export comprehensive PDFs showing caloric trajectories, digestive consistency trends, symptom timelines, and medication records — replacing subjective memory with objective documentation.
+        </p>
       </div>
       <div class="feature__media">
-        <div class="feature__media-placeholder">[Use Case Illustration]</div>
+        <div class="feature__media-placeholder">[PDF clinical report preview]</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECURITY & PRIVACY (dark) -->
+<!-- PRIVACY & SECURITY (dark) -->
 <section class="revive-household">
   <div class="container">
     <div class="revive-household__grid">
       <div>
-        <span class="label">Privacy-First Architecture</span>
-        <h2 class="revive-household__title">Zero-knowledge security, <em>absolute data sovereignty.</em></h2>
+        <span class="label">Your Data Stays Yours</span>
+        <h2 class="revive-household__title">Built for privacy, <em>designed for families.</em></h2>
         <p class="revive-household__desc">
-          Aevia Pup is built under a strict "privacy-first, local-first" philosophy. Your dog's personal information is protected by aggressive client-side sandboxing and modern cryptographic protocols. All data is stored locally on your iOS device, with optional private CloudKit backups managed entirely by Apple.
+          Your dog's health data is stored entirely on your device. Caregivers can't access your personal information, billing details, or other pets' records. All data syncs through Apple's private CloudKit — we can't read, access, or recover your information under any circumstances.
         </p>
         <div class="revive-household__legal">
           <a href="/apps/aevia-pup/support">Support &amp; FAQ</a>
@@ -372,20 +381,20 @@
       </div>
       <div class="revive-household__pillars">
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">Local SwiftData Sandboxing</div>
-          <div class="revive-household__pillar-desc">Your dog's profiles, histories, weight logs, and photographs are stored in an encrypted database directly on your physical iOS device.</div>
+          <div class="revive-household__pillar-title">Local-First Storage</div>
+          <div class="revive-household__pillar-desc">All your dog's data lives on your iPhone or iPad. Optional iCloud sync is encrypted and managed by Apple, not us.</div>
         </div>
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">Zero-Knowledge Transit</div>
-          <div class="revive-household__pillar-desc">Caregiver logs are encrypted on-device via AES-256-GCM using an ephemeral 32-byte key. The key is shared directly with caregivers via URL fragment, never traversing our servers.</div>
+          <div class="revive-household__pillar-title">Zero-Knowledge Sharing</div>
+          <div class="revive-household__pillar-desc">Caregiver logs are encrypted before leaving their device. We can't read the data passing through our servers.</div>
         </div>
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">Private Cloud Backups</div>
-          <div class="revive-household__pillar-desc">Optional synchronization uses Apple's private CloudKit container. West Solution Consulting Corp. cannot access, view, or restore your records under any circumstances.</div>
+          <div class="revive-household__pillar-title">Scope-Restricted Access</div>
+          <div class="revive-household__pillar-desc">Dog walkers see walks. Sitters see meals. Family sees everything. You control exactly what each caregiver can log.</div>
         </div>
         <div class="revive-household__pillar">
-          <div class="revive-household__pillar-title">At-Will Revocation</div>
-          <div class="revive-household__pillar-desc">Instantly revoke caregiver access tokens, rendering future uploads unauthorized and wiping matching entries from transit databases.</div>
+          <div class="revive-household__pillar-title">Instant Revocation</div>
+          <div class="revive-household__pillar-desc">Revoke a caregiver's access instantly. Their app stops working immediately and all pending entries are removed.</div>
         </div>
       </div>
     </div>
